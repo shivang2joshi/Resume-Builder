@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <!--Main Navigation-->
+  <header class="my-fixed-tab">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#">Logo</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link  waves-effect waves-light" href="/index.html">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+        </ul>
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <button type="button" class="my-login-button">Login</button>
+          <button type="button" class="my-reg-button">Register</button>
+        </ul>
+      </div>
+      <!-- Collapsible content -->
+    </nav>
+    <!--/.Navbar-->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="my-main" id="home">
+    <!--Main container-->
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card text-center">
+            <img src="img/daiictlogo.jpg" class="card-img-top" alt=".......">
+            <div class="card-body">
+              <h3 class="card-title">DA-IICT Recommanded</h3>
+              <p class="card-text">DA-IICT | Student Placement Cell
+                recommanded resume format for on-campus interviews</p>
+              <a href="#" class="btn btn-outline-success">select</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Main container-->
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small special-color-dark pt-4 my-footer">
+    <!-- Footer Elements -->
+    <div class="container text-center">
+      <!-- Social buttons -->
+      Share this Website
+      <br><br>
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Team Arrow:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> About Us</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    //to make scrolling of a tags transitive
+    $(document).ready(function () {
+      $("a").click(
+        function (event) {
+          event.preventDefault();
+          $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+          }, 500);
+        });
+    });
+  </script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.js"></script>
+</body>
+
+
+</html>

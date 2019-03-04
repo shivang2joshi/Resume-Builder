@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <!--Main Navigation-->
+  <header class="my-fixed-tab">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#">Logo</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link  waves-effect waves-light" href="#home">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+        </ul>
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <button type="button" class="my-login-button">Login</button>
+          <button type="button" class="my-reg-button">Register</button>
+        </ul>
+      </div>
+      <!-- Collapsible content -->
+    </nav>
+    <!--/.Navbar-->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="my-main" id="home">
+    <!--Main container-->
+    <div class="container">
+      <!--Grid row-->
+
+      <div class="row my-row">
+        <div class="col-md-12 text-center">
+          <h1>Welcome to The CV Maker!</h1>
+          <p>Choose from varieties of templates | Make precise Resumes | Download and Share</p>
+        </div>
+      </div>
+
+      <div id="first" class="row my-row">
+        <!--Grid column-->
+        <div class="col-md-7">
+          <div class="view overlay z-depth-1-half">
+            <img src="img/resumehomepic.jpg" class="card-img-top" alt="">
+            <!--
+            <img src="img/resumehomepic2.jpg" class="card-img-top" alt="">
+            <img src="img/resumehomepic.jpg" class="card-img-top  " alt="..."> -->
+            <div class="mask rgba-white-light"></div>
+          </div>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-5">
+          <h2>Simple & Easy<h2> 
+          <hr>
+          <h4>Select from Templates</h4>
+          <h4>Give professional information</h4>
+          <h4>Download & Share</h4>
+          <p>Select your favourite template from the list of templates OR find your institute's preffered resume format to make resumes for on-campus interviews.</p>
+        </div>
+        <!--Grid column-->
+      </div>
+
+      <div class="row my-row">
+        <div class="col-md-12 text-center">
+          <h4>Start building your Resumes now</h4>
+          <br>
+          <a href="templates.html" class="my-template-button">Choose Template</a>
+        </div>
+      </div>
+    </div>
+    <!--Main container-->
+  </main>
+  <!--Main layout-->
+
+  <!-- Footer -->
+  <footer class="page-footer font-small special-color-dark pt-4 my-footer">
+    <!-- Footer Elements -->
+    <div class="container text-center">
+      <!-- Social buttons -->
+      Share this Website
+      <br><br>
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Team Arrow:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> About Us</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  
+<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
+    authDomain: "resume-db-1403c.firebaseapp.com",
+    databaseURL: "https://resume-db-1403c.firebaseio.com",
+    projectId: "resume-db-1403c",
+    storageBucket: "resume-db-1403c.appspot.com",
+    messagingSenderId: "578628846812"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    //to make scrolling of a tags transitive
+    $(document).ready(function () {
+      $("a.nav-link").click(
+        function (event) {
+          event.preventDefault();
+          $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+          }, 500);
+        });
+    });
+  </script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.js"></script>
+</body>
+
+
+</html>
