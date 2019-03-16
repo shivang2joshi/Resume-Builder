@@ -23,11 +23,6 @@
 
   <!-- Start your project here-->
 
-  <div id="preview-div" class="my-quickpreview">
-    <iframe id="preview-frame" src=",,," frameborder="0" scrolling="no" style="height: 100%; width: 100%; flex-wrap: wrap;"></iframe>
-  </div>
-
-
   <!--Main layout-->
   <main class="my-main" id="home">
     <!--Main container-->
@@ -36,36 +31,34 @@
       <div class="row my-row">
         <div class="col-md-12">
           <div class="card text-center">
-            <div class="card-footer">
+            <div class="card-header">
               <h1>Templates</h1>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-
-        <div class="col-md-6">
+        
+        <div class="col-md-4">
           <div class="card text-center">
             <img src="img/daiictlogo.jpg" class="card-img-top" alt=".......">
             <div class="card-body">
               <h3 class="card-title">DA-IICT Recommanded</h3>
               <p class="card-text">DA-IICT | Student Placement Cell
-                recommanded resume format for on-campus interviews</p>
-              <a href="#" class="btn btn-outline-success" style="float:left;">select</a>
-              <a id="prev-resume-daiict" href="#" class="btn btn-outline-success">preview</a>
+                recommended resume format for on-campus interviews</p>
+              <a href="#" class="btn btn-outline-success">select</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card text-center">
-            <img src="img/helpicon.jpg" class="card-img-top" alt=".......">
+            <img src="img/daiictlogo.jpg" class="card-img-top" alt=".......">
             <div class="card-body">
               <h3 class="card-title">Some other Template</h3>
               <p class="card-text">DA-IICT | Student Placement Cell
-                recommanded resume format for on-campus interviews</p>
+                recommended resume format for on-campus interviews</p>
               <a href="#" class="btn btn-outline-success">select</a>
-              <a id="prev-resume-other" href="#" class="btn btn-outline-success">preview</a>
             </div>
           </div>
         </div>
@@ -80,16 +73,16 @@
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script>
-    var previewisON=false;
-
-    document.getElementById('prev-resume-daiict').onclick =
-      function () {
-        previewisON=true;
-        console.log(1);
-        document.getElementById('preview-frame').src = "resume_daiict.html";
-        document.getElementById('preview-div').style.opacity = 1;
-        document.getElementById('preview-div').style.zIndex = 1000;
-      };
+    //to make scrolling of a tags transitive
+    $(document).ready(function () {
+      $("a").click(
+        function (event) {
+          event.preventDefault();
+          $("html, body").animate({
+            scrollTop: $($(this).attr("href")).offset().top
+          }, 500);
+        });
+    });
   </script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
