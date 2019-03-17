@@ -62,7 +62,9 @@
 
 .my-main {
     /* setting background image with gradient overlay */
-    /*background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/bgpicture.jpg);
+    /*background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/bgpicture-1.png);
+    background-attachment: fixed;
+    background-size: cover;
     /**/
     margin: 0px auto auto auto;
     padding: 100px 0%;
@@ -102,10 +104,24 @@
     position: absolute;
     z-index: -1;
     align-self: center;
-    height: 100%;
-    width: 100%;
+    left: 25%;
+    top: 10%;
+    width: 50%;
+    height: 90%;
     opacity: 0;
+    box-shadow: rgba(0, 0, 0, 0.7) ;
     transition-duration: .5s;
+}
+
+.my-close-preview{
+    position: absolute;
+    display: block;
+    padding: 10px;
+    background-color: aliceblue;
+    z-index: -1;
+    top: 10%;
+    left:75%;
+    border: solid black;
 }
 
 /*------------------Resume CSS---------------------*/

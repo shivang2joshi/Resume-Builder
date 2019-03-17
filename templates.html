@@ -23,27 +23,60 @@
 
   <!-- Start your project here-->
 
+  <!--Main Navigation-->
+  <header class="my-fixed-tab">
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
+
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#">CVMaker</a>
+
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link  waves-effect waves-light" href="#home">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#temp-section">Templates</a>
+          </li>
+        </ul>
+        <!-- Links -->
+        <ul class="navbar-nav">
+          <button type="button" class="my-login-button">Login</button>
+          <button type="button" class="my-reg-button">Register</button>
+        </ul>
+      </div>
+      <!-- Collapsible content -->
+    </nav>
+    <!--/.Navbar-->
+  </header>
+  <!--Main Navigation-->
+
+
   <div id="preview-div" class="my-quickpreview">
-    <iframe id="preview-frame" src=",,," frameborder="0" scrolling="no" style="height: 100%; width: 100%; flex-wrap: wrap;"></iframe>
+    <iframe id="preview-frame" src="" frameborder="0" style="height: 100%; width: 100%; flex-wrap: wrap;"></iframe>
   </div>
 
+  <a id="close-preview" class="my-close-preview">x</a>
 
   <!--Main layout-->
   <main class="my-main" id="home">
     <!--Main container-->
     <div class="container">
       <!--Grid row-->
-      <div class="row my-row">
-        <div class="col-md-12">
-          <div class="card text-center">
-            <div class="card-footer">
-              <h1>Templates</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
 
+      <div class="row">
         <div class="col-md-6">
           <div class="card text-center">
             <img src="img/daiictlogo.jpg" class="card-img-top" alt=".......">
@@ -76,19 +109,79 @@
   </main>
   <!--Main layout-->
 
+  <footer class="page-footer font-small special-color-dark pt-4 my-footer">
+    <!-- Footer Elements -->
+    <div class="container text-center">
+      <!-- Social buttons -->
+      Share this Website
+      <br><br>
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook-f"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-dribbble"> </i>
+          </a>
+        </li>
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Team Arrow:
+      <a href="about.html"> About Us</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script>
-    var previewisON=false;
+    var previewisON = false;
 
     document.getElementById('prev-resume-daiict').onclick =
       function () {
-        previewisON=true;
+        previewisON = true;
         console.log(1);
         document.getElementById('preview-frame').src = "resume_daiict.html";
         document.getElementById('preview-div').style.opacity = 1;
         document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('close-preview').style.opacity = 1;
+        document.getElementById('close-preview').style.zIndex = 1000;
+      };
+
+    document.getElementById('close-preview').onclick =
+      function () {
+        if (previewisON) {
+          document.getElementById('preview-frame').src = "";
+          document.getElementById('preview-div').style.opacity = 0;
+          document.getElementById('preview-div').style.zIndex = -1;
+          document.getElementById('close-preview').style.opacity = 0;
+          document.getElementById('close-preview').style.zIndex = -1;
+          previewisON = false;
+        }
       };
   </script>
   <!-- Bootstrap tooltips -->
