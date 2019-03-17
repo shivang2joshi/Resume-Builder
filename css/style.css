@@ -62,13 +62,13 @@
 
 .my-main {
     /* setting background image with gradient overlay */
-    /*background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/bgpicture-1.png);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/bgpicture-1.png);
     background-attachment: fixed;
     background-size: cover;
     /**/
     margin: 0px auto auto auto;
     padding: 100px 0%;
-    /*color: aliceblue;
+    color: aliceblue;
     /**/
     /*uncomment for image background*/
 }
