@@ -153,4 +153,46 @@
     display: inline-block;
 }
 
+.my-side-line{
+    border-left: 4px solid rgb(14, 2, 80); 
+    padding-left:20px;
+    border-collapse: separate;
+}
+
+.addButton{
+    background: blue;
+    color:aliceblue;
+    border: 2px solid blue;
+    border-radius: 3px;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27);
+}
+
+.removeButton{
+    background: rgb(230, 30, 30);
+    color:aliceblue;
+    border: 2px solid  rgb(230, 30, 30);;
+    border-radius: 3px;
+    font-size: 14px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27); 
+}
+.my-resume-page{
+    padding-top:25px; 
+    background: white;
+    box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27); 
+    margin-top: 15px;
+}
+.my-resume-bg{
+    background: rgb(236, 233, 233); 
+}
+
+.my-controlls{
+    position: fixed;
+    right: 0;
+    top: 40%;
+    text-align: center;
+    background-color: white;
+    padding: 20px 0px;
+    border-radius: 20px 0px 0px 20px;
+}
 /*---------------------------------------------------*/
