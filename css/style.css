@@ -1,3 +1,5 @@
+
+
 .my-fixed-tab {
     position: fixed;
     top: 0%;
@@ -34,7 +36,7 @@
     border-style: solid;
     border-color: rgb(43, 187, 51);
     color: rgb(43, 187, 51);
-    background: rgba(0, 0, 0, 0);
+    background: none;
     font-family: sans-serif;
     transition-duration: .4s;
     cursor: pointer;
@@ -188,11 +190,13 @@
 
 .my-controlls{
     position: fixed;
+    z-index: 100;
     right: 0;
-    top: 40%;
+    top: 25%;
     text-align: center;
     background-color: white;
     padding: 20px 0px;
     border-radius: 20px 0px 0px 20px;
+    box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27);
 }
 /*---------------------------------------------------*/

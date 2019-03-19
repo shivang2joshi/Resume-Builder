@@ -23,47 +23,61 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <button>Preview</button>
+                    <button id="preview-doc" class="btn btn-outline-dark">Preview</button>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12">
-                    <button>Download</button>
+                    <button class="btn btn-outline-dark">Download</button>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12">
-                    <button>Add to Drive</button>
+                    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                    <div class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf" ; data-filename="Resume_Daiict.pdf"
+                        data-sitename="CVMaker">
+                    </div>
                 </div>
             </div>
             <hr>
             <div class="row">
                 <div class="col-md-12">
-                    <button id="print-doc">Print</button>
+                    <button id="print-doc" class="btn btn-outline-dark">Print</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container my-resume-page">
+    <div id="resume" class="container my-resume-page">
         <div class="row">
             <div class="col-md-12">
                 <table class="main my-side-line">
                     <tr style="display:flex; justify-content:space-between;">
                         <td class="w-40"><img src="img/daiictlogo.jpg"></td>
                         <td class="intro w-70">
-                            <h1 id="stud-name" contenteditable="true">Shivang Joshi</h1>
+                            <h1 id="stud-name" contenteditable="true">Shivang
+                                Joshi</h1>
                             <p><b>Dhirubhai Ambani Institute of Information and Communication Technology</b></p>
                             <p>
-                                <span class="w-60 inline-block"><b>Email:</b> <span id="e-mail"> 201601014@daiict.ac.in</span>
+                                <span class="w-60 inline-block"><b>Email:</b>
+                                    <span id="e-mail" contenteditable="true">
+                                        201601014@daiict.ac.in
+                                    </span>
                                 </span>
-                                <span class="w-40 text-right"><b>DOB:</b> <span id="dob"> February 27, 1998 </span>
+                                <span class="w-40 text-right"><b>DOB:</b>
+                                    <span id="dob" contenteditable="true">
+                                        February 27, 1998
+                                    </span>
                                 </span>
                             </p>
                             <p>
-                                <b>Address:</b> <span id="address"> F-313, HOR-MEN, DAIICT, Gandhinagar</span>
+                                <b>Address:</b>
+                                <span id="address" contenteditable="true">
+                                    F-313, HOR-MEN, DAIICT,
+                                    Gandhinagar
+                                </span>
                             </p>
                         </td>
                     </tr>
@@ -82,39 +96,39 @@
                         <th colspan="1">CPI/Aggregate</th>
                     </tr>
                     <tr>
-                        <td><b id="degree">B.Tech | ICT</b></td>
-                        <td id="university-name">
+                        <td><b id="degree" contenteditable="true">B.Tech | ICT</b></td>
+                        <td id="university-name" contenteditable="true">
                             Dhirubhai Ambani Institute of Information and Communication Technology
                         </td>
-                        <td id="grad-year">
+                        <td id="grad-year" contenteditable="true">
                             2016 - 2020
                         </td>
-                        <td id="cpi" class="text-center">
+                        <td id="cpi" class="text-center" contenteditable="true">
                             xx.xx
                         </td>
                     </tr>
                     <tr>
-                        <td><b id="class12">Higher Secondary | Class XII</b></td>
-                        <td id="class12-school">
+                        <td><b id="class12" contenteditable="true">Higher Secondary | Class XII</b></td>
+                        <td id="class12-school" contenteditable="true">
                             Name of the Highschool (Education Board)
                         </td>
                         <td id="class12-pass-year" contenteditable="true">
                             2013 - 2015
                         </td>
-                        <td id="class12-percentage" class="text-center">
+                        <td id="class12-percentage" class="text-center" contenteditable="true">
                             xx%
                         </td>
                     </tr>
                     <tr>
                         <td><b id="class10">Secondary | Class X</b></td>
-                        <td id="class10-school">
+                        <td id="class10-school" contenteditable="true">
                             Name of the Highschool (Education Board)
                         </td>
-                        <td id="class10-pass-year">
+                        <td id="class10-pass-year" contenteditable="true">
                             2012 - 2013
 
                         </td>
-                        <td id="class10-percentage" class="text-center">
+                        <td id="class10-percentage" class="text-center" contenteditable="true">
                             xx%
                         </td>
                     </tr>
@@ -134,26 +148,27 @@
                     <tr>
                         <td class="w-30"><b>Expertise Area/Area(s) of
                                 Interest</b></td>
-                        <td id="expertise" class="w-70">
+                        <td id="expertise" class="w-70" contenteditable="true">
                             eg. Data Structures and Algorithms
                         </td>
                     </tr>
                     <tr>
                         <td class="w-30"><b>Programming Language(s)</b></td>
-                        <td id="prog-languages" class="w-70">
+                        <td id="prog-languages" class="w-70" contenteditable="true">
                             C, C++, JavaScript etc..
                         </td>
                     </tr>
                     <tr>
                         <td class="w-30"><b>Tools and
                                 Technologies</b></td>
-                        <td id="tools" class="w-70">
+                        <td id="tools" class="w-70" contenteditable="true">
                             Android Studio etc..
                         </td>
                     </tr>
                     <tr>
                         <td class="w=30"><b>Technical Electives</b></td>
-                        <td id="electives" class="w-70">Operating Systems, Cryptography etc.</td>
+                        <td id="electives" class="w-70" contenteditable="true">
+                            Operating Systems, Cryptography etc.</td>
                     </tr>
                     <tr>
                         <td>
@@ -173,36 +188,33 @@
                     </tr>
                     <tr>
                         <td valign="top" class="w-20">
-                            <p><b>Name of Organization</b></p>
+                            <p><b contenteditable="true">Name of Organization</b></p>
                         </td>
-                        <td valign="top" class="w-60">
+                        <td valign="top" class="w-60" contenteditable="true">
                             <p>
-
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
                             <p><i>Guide: Mr. xyz</i></p>
-                            <p></p>
                         </td>
-                        <td valign="top" class="w-20">
+                        <td valign="top" class="w-20" contenteditable="true">
                             <p>(Dec 2017 - Jan 2018)</p>
                             <p>Team Size - xx</p>
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-20">
+                        <td valign="top" class="w-20" contenteditable="true">
                             <p><b>Name of Organization</b></p>
                         </td>
-                        <td valign="top" class="w-60">
+                        <td valign="top" class="w-60" contenteditable="true">
                             <p>
 
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
                             <p><i>Guide: Mr. xyz</i></p>
-                            <p></p>
                         </td>
-                        <td valign="top" class="w-20">
+                        <td valign="top" class="w-20" contenteditable="true">
                             <p>(Dec 2017 - Jan 2018)</p>
                             <p>Team Size - xx</p>
                         </td>
@@ -222,52 +234,51 @@
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p><b>Name of the Project</b></p>
                             <p><i>Guide: Prof. XYZ</i></p>
-                            <p></p>
                         </td>
-                        <td valign="top" class="w-50">
+                        <td valign="top" class="w-50" contenteditable="true">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
                         </td>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p>(Feb, 2018 - Mar, 2018)</p>
                             <p>Team Size - 10</p>
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p><b>Name of the Project</b></p>
                             <p><i>Guide: Prof. XYZ</i></p>
                             <p></p>
                         </td>
-                        <td valign="top" class="w-50">
+                        <td valign="top" class="w-50" contenteditable="true">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
                         </td>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p>(Feb, 2018 - Mar, 2018)</p>
                             <p>Team Size - 10</p>
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p><b>Name of the Project</b></p>
                             <p><i>Guide: Prof. XYZ</i></p>
                             <p></p>
                         </td>
-                        <td valign="top" class="w-50">
+                        <td valign="top" class="w-50" contenteditable="true">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
                         </td>
-                        <td valign="top" class="w-25">
+                        <td valign="top" class="w-25" contenteditable="true">
                             <p>(Feb, 2018 - Mar, 2018)</p>
                             <p>Team Size - 10</p>
                         </td>
@@ -293,7 +304,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top">
+                                        <td valign="top" contenteditable="true">
                                             <ul id="positions-list" class="list">
                                                 <li>
                                                     Position 0
@@ -304,17 +315,13 @@
                                                 <li>
                                                     Position 2
                                                 </li>
-
-                                                <button id="add-position" class="addButton">Add</button>
-                                                <button id="remove-position" class="removeButton">Remove</button>
-
                                             </ul>
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                             <td class="w-40">
-                                <table class="w-100 section">
+                                <table class="w-100 section" contenteditable="true">
                                     <tr>
                                         <td colspan="2" class="section-header">
                                             <h3>INTERESTS AND HOBBIES</h3>
@@ -332,10 +339,6 @@
                                                 <li>
                                                     Hobbie 2
                                                 </li>
-
-                                                <button id="add-hobbie" class="addButton">Add</button>
-                                                <button id="remove-hobbie" class="removeButton">Remove</button>
-
                                             </ul>
                                         </td>
                                     </tr>
@@ -355,16 +358,12 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" id="awards-list">
+                                        <td valign="top" id="awards-list" contenteditable="true">
                                             <p>
                                                 Stood first in xyz competition.
                                             </p>
                                             <p>
                                                 Highest Rating in Compititive Sites.
-                                            </p>
-                                            <p>
-                                                <button id="add-position" class="addButton">Add</button>
-                                                <button id="remove-position" class="removeButton">Remove</button>
                                             </p>
                                         </td>
                                     </tr>
@@ -378,37 +377,72 @@
         </div>
     </div>
 
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script>
         document.getElementById('print-doc').onclick =
             function () {
-                var addbtns= document.getElementsByClassName("addButton");
+                var addbtns = document.getElementsByClassName("addButton");
                 var rmbtns = document.getElementsByClassName("removeButton");
                 var i;
-                for(i=0;i<addbtns.length;i++)
-                {
-                    addbtns[i].style.display='none';
+                for (i = 0; i < addbtns.length; i++) {
+                    addbtns[i].style.display = 'none';
                 }
-                for(i=0;i<rmbtns.length;i++)
-                {
-                    rmbtns[i].style.display='none';
+                for (i = 0; i < rmbtns.length; i++) {
+                    rmbtns[i].style.display = 'none';
                 }
-                
                 document.body.classList.remove("my-resume-bg");
-                document.getElementById("controlls").style.visibility="hidden";
+                document.getElementById("controlls").style.visibility = "hidden";
+                document.getElementById("resume").style.marginTop = 0;
+                if (document.getElementById("___savetodrive_0"))
+                    document.getElementById("___savetodrive_0").style.visibility = "hidden";
+
                 window.print();
-                for(i=0;i<addbtns.length;i++)
-                {
-                    addbtns[i].style.display='inline';
+
+                document.getElementById("resume").style.marginTop = "15px";
+                for (i = 0; i < addbtns.length; i++) {
+                    addbtns[i].style.display = 'inline';
                 }
-                for(i=0;i<rmbtns.length;i++)
-                {
-                    rmbtns[i].style.display='inline';
+                for (i = 0; i < rmbtns.length; i++) {
+                    rmbtns[i].style.display = 'inline';
                 }
-                
                 document.body.classList.add("my-resume-bg");
-                document.getElementById("controlls").style.visibility="visible";
+                document.getElementById("controlls").style.visibility = "visible";
+                if(document.getElementById("___savetodrive_0"))
+                    document.getElementById("___savetodrive_0").style.visibility = "visible";
             };
+        var isPreviewClicked = true;
+        document.getElementById("preview-doc").onclick =
+            function () {
+                var addbtns = document.getElementsByClassName("addButton");
+                var rmbtns = document.getElementsByClassName("removeButton");
+                var i;
+                if (isPreviewClicked) {
+                    for (i = 0; i < addbtns.length; i++) {
+                        addbtns[i].style.display = 'none';
+                    }
+                    for (i = 0; i < rmbtns.length; i++) {
+                        rmbtns[i].style.display = 'none';
+                    }
+                    document.getElementById("preview-doc").innerHTML = "Edit";
+                    isPreviewClicked = false; //now edit option should be available
+                } else {
+                    for (i = 0; i < addbtns.length; i++) {
+                        addbtns[i].style.display = 'inline';
+                    }
+                    for (i = 0; i < rmbtns.length; i++) {
+                        rmbtns[i].style.display = 'inline';
+                    }
+                    document.getElementById("preview-doc").innerHTML = "Preview";
+                    isPreviewClicked = true; //now Preview option should be available
+                }
+            };
+
+        function removeContent(id) {
+            document.getElementById(id).innerHTML = "";
+        }
+        //$('#stud-name').one("click",removeContent('stud-name'));
     </script>
 
 </body>
+
 </html>

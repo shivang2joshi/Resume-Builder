@@ -43,7 +43,7 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link  waves-effect waves-light" href="#home">Home
+            <a class="nav-link  waves-effect waves-light" href="index.html">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -77,28 +77,28 @@
       <!--Grid row-->
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card text-center">
-            <img src="img/daiictlogo.jpg" class="card-img-top" alt=".......">
             <div class="card-body">
-              <h3 class="card-title">DA-IICT Recommanded</h3>
+              <h3 class="card-title" style="color:black;">DA-IICT Regular</h3>
               <p class="card-text">DA-IICT | Student Placement Cell
                 recommanded resume format for on-campus interviews</p>
-              <a href="#" class="btn btn-outline-success" style="float:left;">select</a>
+                <img src="img/resumes/daiict.png" class="card-img-top" alt=".......">
+              <a href="#" class="btn btn-outline-success">select</a>
               <a id="prev-resume-daiict" href="#" class="btn btn-outline-success">preview</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card text-center">
-            <img src="img/helpicon.jpg" class="card-img-top" alt=".......">
             <div class="card-body">
-              <h3 class="card-title">Some other Template</h3>
-              <p class="card-text">DA-IICT | Student Placement Cell
+              <h3 class="card-title" style="color:black;">DA-IICT Classic</h3>
+              <p class="card-text">DA-IICT | Classic version of
                 recommanded resume format for on-campus interviews</p>
-              <a href="#" class="btn btn-outline-success">select</a>
-              <a id="prev-resume-other" href="#" class="btn btn-outline-success">preview</a>
+                <img src="img/resumes/daiict_classic.png" class="card-img-top" alt=".......">
+                <a href="resume_daiict_classic.html" class="btn btn-outline-success">select</a>
+              <a id="prev-resume-daiict-classic" href="#" class="btn btn-outline-success">preview</a>
             </div>
           </div>
         </div>
@@ -172,6 +172,16 @@
         document.getElementById('close-preview').style.zIndex = 1000;
       };
 
+    document.getElementById('prev-resume-daiict-classic').onclick =
+      function () {
+        previewisON = true;
+        console.log(1);
+        document.getElementById('preview-frame').src = "resume_daiict_classic.html";
+        document.getElementById('preview-div').style.opacity = 1;
+        document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('close-preview').style.opacity = 1;
+        document.getElementById('close-preview').style.zIndex = 1000;
+      };
     document.getElementById('close-preview').onclick =
       function () {
         if (previewisON) {
