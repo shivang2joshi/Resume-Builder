@@ -4,6 +4,9 @@ firebase.auth().onAuthStateChanged(function (user) {
     // i tried putting redirection here it is conatantly redirecting
     if (user) {
         //signed in
+        document.getElementById('user-photo').src=user.photoURL;
+        document.getElementById('user-name').innerHTML=user.displayName;     
+        console.log("1");
     } else {
         //not signed in
     }
@@ -17,8 +20,6 @@ function login() {
         // The signed-in user info.
         var user = result.user;
         window.location = "templates.html";
-        document.getElementById('user-photo').src=user.photoURL;
-        document.getElementById('user-name').innerHTML=user.displayName;     
         
         // ...
     }).catch(function (error) {
