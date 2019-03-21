@@ -17,7 +17,30 @@
 
   <link rel="icon" type="image/x-icon" href="img/daiictlogo.jpg">
 
+  <!-- Firebase App is always required and must be first -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
 
+  <!-- Add additional services that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
+
+  <!-- Comment out (or don't include) services that you don't want to use -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-storage.js"></script> -->
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
+      authDomain: "resume-db-1403c.firebaseapp.com",
+      databaseURL: "https://resume-db-1403c.firebaseio.com",
+      projectId: "resume-db-1403c",
+      storageBucket: "resume-db-1403c.appspot.com",
+      messagingSenderId: "578628846812"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 </head>
 
@@ -55,7 +78,8 @@
           </ul>
           <!-- Links -->
           <!--<button onclick="" type="button" class="my-login-button">Login</button>-->
-          <a href="templates.html" class="navbar-nav"><span class="my-reg-button">Login with Google</span></a>
+          <button id="SignInWithGoogle" onclick="login()" class="my-reg-button">Login with
+              Google</button>
         </div>
         <!-- Collapsible content -->
       </div>
@@ -112,7 +136,7 @@
           <h4>Start building your Resume now</h4>
           <br>
           <!--<button onclick="" type="button" class="my-login-button">Login</button>-->
-          <a href="templates.html"><span class="my-reg-button">Login with Google</span></a>
+          <button onclick="login()" class="my-reg-button">Login with Google</button>
         </div>
       </div>
 
@@ -138,11 +162,13 @@
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#controller" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" style="background-color:rgba(0,0,0,0.9)" aria-hidden="true"></span>
+                  <span class="carousel-control-prev-icon" style="background-color:rgba(0,0,0,0.9)"
+                    aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" href="#controller" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" style="background-color:rgba(0,0,0,0.9)" aria-hidden="true"></span>
+                  <span class="carousel-control-next-icon" style="background-color:rgba(0,0,0,0.9)"
+                    aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
               </div>
@@ -207,20 +233,9 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
+  
+  <script src="app.js"></script>
 
-  <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
-      authDomain: "resume-db-1403c.firebaseapp.com",
-      databaseURL: "https://resume-db-1403c.firebaseio.com",
-      projectId: "resume-db-1403c",
-      storageBucket: "resume-db-1403c.appspot.com",
-      messagingSenderId: "578628846812"
-    };
-    firebase.initializeApp(config);
-  </script>
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script>
     //to make scrolling of a tags transitive
