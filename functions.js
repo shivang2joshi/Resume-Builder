@@ -163,7 +163,6 @@ function saveResume() {
     }
     console.log(skills_tabledata);
 
-
     //make resume dictionary map
     var resumeDetails = {
         name: studentname,
