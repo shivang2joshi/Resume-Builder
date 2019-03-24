@@ -116,7 +116,8 @@
                     </tr>
                     <tr>
                         <td id="degree" contenteditable="true"><b>B.Tech | ICT</b></td>
-                        <td id="university-name" contenteditable="true">Dhirubhai Ambani Institute of Information and Communication Technology</td>
+                        <td id="university-name" contenteditable="true">Dhirubhai Ambani Institute of Information and
+                            Communication Technology</td>
                         <td id="grad-year" contenteditable="true">2016 - 2020</td>
                         <td id="cpi" class="text-center" contenteditable="true">xx.xx</td>
                     </tr>
@@ -181,7 +182,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-20"><p><b contenteditable="true">Name of Organization</b></p></td>
+                        <td valign="top" class="w-20">
+                            <p><b contenteditable="true">Name of Organization</b></p>
+                        </td>
                         <td valign="top" class="w-60" contenteditable="true">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
@@ -297,15 +300,9 @@
                                     <tr>
                                         <td valign="top" contenteditable="true">
                                             <ul id="positions-list" class="list">
-                                                <li>
-                                                    Position 0
-                                                </li>
-                                                <li>
-                                                    Position 1
-                                                </li>
-                                                <li>
-                                                    Position 2
-                                                </li>
+                                                <li>Position 0</li>
+                                                <li>Position 1</li>
+                                                <li>Position 2</li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -321,15 +318,9 @@
                                     <tr>
                                         <td valign="top">
                                             <ul id="hobbies-list" class="list" contenteditable="true">
-                                                <li>
-                                                    Hobbie 0
-                                                </li>
-                                                <li>
-                                                    Hobbie 1
-                                                </li>
-                                                <li>
-                                                    Hobbie 2
-                                                </li>
+                                                <li>Hobbie 0</li>
+                                                <li>Hobbie 1</li>
+                                                <li>Hobbie 2</li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -349,16 +340,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" id="awards-list" contenteditable="true">
-                                            <ul id="awards-list" class="list" style="list-style:none">
-                                                <li>
-                                                    Stood first in xyz competition.
-                                                </li>
-                                                <li>
-                                                    Your highest rating in compititive sites.
-                                                </li>
-                                            </ul>
-                                        </td>
+                                        <td valign="top" id="awards-list" contenteditable="true"><p>Stood first in xyz competition.</p>
+                                            <p>Your highest rating in compititive sites.</p></td>
                                     </tr>
                                 </table>
                             </td>
@@ -385,7 +368,7 @@
             if (curruser) {
                 user = curruser;
                 db = firebase.database();
-                loadResume();
+                //loadResume();
                 console.log(user.displayName);
             } else {
                 console.log("Not logged In");

@@ -154,29 +154,70 @@ function saveResume() {
             edu_tabledata[i - 2][j] = rowcells[j].innerHTML;
         //console.log(i);
     }
-    console.log(edu_tabledata);
-    //SKILLS
+    //console.log(edu_tabledata);
+    //Skills
     tablerows = document.getElementById('skills-table').rows;
     var skills_tabledata = [];
     for (i = 1; i < tablerows.length - 1; i++) {
         skills_tabledata.push(tablerows[i].cells[1].innerHTML);
     }
-    console.log(skills_tabledata);
+    //console.log(skills_tabledata);
+    //Internships
+    tablerows = document.getElementById('internships-table').rows;
+    var internships_tabledata = [];
+    for (i = 1; i < tablerows.length - 1; i++) {
+        internships_tabledata[i - 1] = [];
+        for (j = 0; j < 3; j++) {
+            internships_tabledata[i - 1][j] = tablerows[i].cells[j].innerHTML;
+        }
+        //console.log(i);
+    }
+    //Projects
+    tablerows = document.getElementById('projects-table').rows;
+    var projects_tabledata = [];
+    for (i = 1; i < tablerows.length - 1; i++) {
+        projects_tabledata[i - 1] = [];
+        for (j = 0; j < 3; j++) {
+            projects_tabledata[i - 1][j] = tablerows[i].cells[j].innerHTML;
+        }
+    }
+    //positions
+    var ul = document.getElementById('positions-list')
+    var ul_items = ul.getElementsByTagName('li');
+    var positions_list = [];
+    for (i = 0; i < ul_items.length; i++) {
+        positions_list[i] = ul_items[i].innerHTML;
+    }
+    //hobbies
+    ul = document.getElementById('hobbies-list')
+    ul_items = ul.getElementsByTagName('li');
+    var hobbies_list = [];
+    for (i = 0; i < ul_items.length; i++) {
+        hobbies_list[i] = ul_items[i].innerHTML;
+    }
+    //achievments
+    var awards_list = document.getElementById('awards-list').innerHTML; 
+
+
 
     //make resume dictionary map
     var resumeDetails = {
         name: studentname,
         email: emailaddr,
         dob: dob,
+        address: address,
         education: edu_tabledata,
         skills: skills_tabledata,
-        address: address,
+        internships: internships_tabledata,
+        projects: projects_tabledata,
+        positions: positions_list,
+        hobbies: hobbies_list,
+        awards: awards_list
     };
 
     //firebase.database().ref().child("text").push("somevalue");
     //add resume to dictionary
-    firebase.database().ref().child("users")
-        .child(user.uid)
+    firebase.database().ref("users/" + user.uid)
         .child(template)
         .set(resumeDetails)
         .then(function () {
