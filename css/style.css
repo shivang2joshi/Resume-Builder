@@ -181,6 +181,7 @@
     border-collapse: separate;
 }
 
+
 .addButton{
     background: blue;
     color:aliceblue;
@@ -218,5 +219,9 @@
     padding: 20px 0px;
     border-radius: 20px 0px 0px 20px;
     box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27);
+}
+
+.invisible-template-name{
+    display: none;
 }
 /*---------------------------------------------------*/

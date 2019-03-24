@@ -28,20 +28,8 @@
   <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
 
-  <!-- Comment out (or don't include) services that you don't want to use -->
-  <!-- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-storage.js"></script> -->
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
-      authDomain: "resume-db-1403c.firebaseapp.com",
-      databaseURL: "https://resume-db-1403c.firebaseio.com",
-      projectId: "resume-db-1403c",
-      storageBucket: "resume-db-1403c.appspot.com",
-      messagingSenderId: "578628846812"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <script src="functions.js"></script>
+  <script src="app.js"></script>
 
 
 </head>
@@ -71,12 +59,8 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link  waves-effect waves-light" href="index.html">Home
-                <span class="sr-only">(current)</span>
+              <a class="nav-link  waves-effect waves-light" href="templates.html">Dashboard
               </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#temp-section">Templates</a>
             </li>
           </ul>
           <!-- Links -->
@@ -101,10 +85,10 @@
 
 
   <div id="preview-div" class="my-quickpreview">
-    <iframe id="preview-frame" src="" frameborder="0" style="height: 100%; width: 100%; flex-wrap: wrap;"></iframe>
+    <iframe id="preview-frame" src="" frameborder="0" style="height: 100%; width: 100%; overflow:hidden;" ></iframe>
   </div>
 
-  <a id="close-preview" class="my-close-preview">x</a>
+  <a id="close-preview" class="my-close-preview">X</a>
 
   <!--Main layout-->
   <main class="my-main" id="home">

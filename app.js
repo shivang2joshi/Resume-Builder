@@ -1,42 +1,28 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
+    authDomain: "resume-db-1403c.firebaseapp.com",
+    databaseURL: "https://resume-db-1403c.firebaseio.com",
+    projectId: "resume-db-1403c",
+    storageBucket: "resume-db-1403c.appspot.com",
+    messagingSenderId: "578628846812"
+};
+firebase.initializeApp(config);
 
 firebase.auth().onAuthStateChanged(function (user) {
-    // caution! this will run constantly!
-    // i tried putting redirection here it is conatantly redirecting
+    // calling other window in here will run abruptly
     if (user) {
         //signed in
-        document.getElementById('user-photo').src=user.photoURL;
-        document.getElementById('user-name').innerHTML=user.displayName;     
-        console.log("1");
+        if (document.getElementById('user-photo'))        
+        {   //to be sure we have such element on this page.
+            document.getElementById('user-photo').src = user.photoURL;
+        }
+        if( document.getElementById('user-name'))
+        {
+            document.getElementById('user-name').innerHTML = user.displayName;
+        }
+        console.log("runs one time");
     } else {
         //not signed in
     }
 });
-
-function login() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithPopup(provider).then(function (result) {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        window.location = "templates.html";
-        
-        // ...
-    }).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-    });
-};
-
-function logout() {
-    firebase.auth().signOut()
-        .then(function () {
-            window.location = "index.html";
-        });
-}

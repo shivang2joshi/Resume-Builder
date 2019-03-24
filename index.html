@@ -29,19 +29,9 @@
 
   <!-- Comment out (or don't include) services that you don't want to use -->
   <!-- <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-storage.js"></script> -->
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyDECYRkmOiwqIsmw3MJxf0XAxk0ljf4sGo",
-      authDomain: "resume-db-1403c.firebaseapp.com",
-      databaseURL: "https://resume-db-1403c.firebaseio.com",
-      projectId: "resume-db-1403c",
-      storageBucket: "resume-db-1403c.appspot.com",
-      messagingSenderId: "578628846812"
-    };
-    firebase.initializeApp(config);
-  </script>
-
+  
+  <script src="app.js"></script>
+  <script src="functions.js"></script>
 </head>
 
 <body>
@@ -79,7 +69,7 @@
           <!-- Links -->
           <!--<button onclick="" type="button" class="my-login-button">Login</button>-->
           <button id="SignInWithGoogle" onclick="login()" class="my-reg-button">Login with
-              Google</button>
+            Google</button>
         </div>
         <!-- Collapsible content -->
       </div>
@@ -233,12 +223,12 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
+
   
-  <script src="app.js"></script>
 
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
   <script>
-    //to make scrolling of a tags transitive
+    //just to make scrolling of a tags transitive
     $(document).ready(function () {
       $("a.nav-link").click(
         function (event) {

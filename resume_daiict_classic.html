@@ -15,12 +15,37 @@
     <link href="css/style.css" rel="stylesheet">
     <title>DA-IICT Template</title>
     <link rel="icon" type="image/x-icon" href="img/daiictlogo.jpg">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
+
+    <script src="functions.js"></script>
+    <script src="app.js"></script>
+
+
 </head>
 
 <body class="my-resume-bg">
 
+    <h1 id="template-name" class="invisible-template-name">resume_daiict_classic</h1>
+
     <div id="controlls" class="my-controlls">
         <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="save-doc" class="btn btn-outline-dark">Save</button>
+                </div>
+            </div>
+            <hr>
+            <hr>
             <div class="row">
                 <div class="col-md-12">
                     <button id="preview-doc" class="btn btn-outline-dark">Preview</button>
@@ -36,8 +61,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <script src="https://apis.google.com/js/platform.js" async defer></script>
-                    <div class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf" ; data-filename="Resume_Daiict.pdf"
-                        data-sitename="CVMaker">
+                    <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf" ;
+                        data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
                     </div>
                 </div>
             </div>
@@ -57,33 +82,27 @@
                     <tr style="display:flex; justify-content:space-between;">
                         <td class="w-40"><img src="img/daiictlogo.jpg"></td>
                         <td class="intro w-70">
-                            <h1 id="stud-name" contenteditable="true">Shivang
-                                Joshi</h1>
+                            <h1 id="stud-name" contenteditable="true">Shivang Joshi</h1>
                             <p><b>Dhirubhai Ambani Institute of Information and Communication Technology</b></p>
                             <p>
                                 <span class="w-60 inline-block"><b>Email:</b>
-                                    <span id="e-mail" contenteditable="true">
-                                        201601014@daiict.ac.in
-                                    </span>
+                                    <span id="e-mail" contenteditable="true">201601014@daiict.ac.in</span>
                                 </span>
                                 <span class="w-40 text-right"><b>DOB:</b>
-                                    <span id="dob" contenteditable="true">
-                                        February 27, 1998
-                                    </span>
+                                    <span id="dob" contenteditable="true">February 27, 1998</span>
                                 </span>
                             </p>
                             <p>
                                 <b>Address:</b>
-                                <span id="address" contenteditable="true">
-                                    F-313, HOR-MEN, DAIICT,
-                                    Gandhinagar
-                                </span>
+                                <span id="address" contenteditable="true">F-313, HOR-MEN, DAIICT, Gandhinagar</span>
                             </p>
                         </td>
                     </tr>
                 </table>
+
                 <hr>
-                <table class="w-100 section my-side-line">
+
+                <table id="education-table" class="w-100 section my-side-line">
                     <tr>
                         <td colspan="4" class="section-header">
                             <h3>EDUCATION</h3>
@@ -96,41 +115,22 @@
                         <th colspan="1">CPI/Aggregate</th>
                     </tr>
                     <tr>
-                        <td><b id="degree" contenteditable="true">B.Tech | ICT</b></td>
-                        <td id="university-name" contenteditable="true">
-                            Dhirubhai Ambani Institute of Information and Communication Technology
-                        </td>
-                        <td id="grad-year" contenteditable="true">
-                            2016 - 2020
-                        </td>
-                        <td id="cpi" class="text-center" contenteditable="true">
-                            xx.xx
-                        </td>
+                        <td id="degree" contenteditable="true"><b>B.Tech | ICT</b></td>
+                        <td id="university-name" contenteditable="true">Dhirubhai Ambani Institute of Information and Communication Technology</td>
+                        <td id="grad-year" contenteditable="true">2016 - 2020</td>
+                        <td id="cpi" class="text-center" contenteditable="true">xx.xx</td>
                     </tr>
                     <tr>
-                        <td><b id="class12" contenteditable="true">Higher Secondary | Class XII</b></td>
-                        <td id="class12-school" contenteditable="true">
-                            Name of the Highschool (Education Board)
-                        </td>
-                        <td id="class12-pass-year" contenteditable="true">
-                            2013 - 2015
-                        </td>
-                        <td id="class12-percentage" class="text-center" contenteditable="true">
-                            xx%
-                        </td>
+                        <td id="class12" contenteditable="true"><b>Higher Secondary | Class XII</b></td>
+                        <td id="class12-school" contenteditable="true">Name of the Highschool (Education Board)</td>
+                        <td id="class12-pass-year" contenteditable="true">2013 - 2015</td>
+                        <td id="class12-percentage" class="text-center" contenteditable="true">xx%</td>
                     </tr>
                     <tr>
-                        <td><b id="class10">Secondary | Class X</b></td>
-                        <td id="class10-school" contenteditable="true">
-                            Name of the Highschool (Education Board)
-                        </td>
-                        <td id="class10-pass-year" contenteditable="true">
-                            2012 - 2013
-
-                        </td>
-                        <td id="class10-percentage" class="text-center" contenteditable="true">
-                            xx%
-                        </td>
+                        <td id="class10" contenteditable="true"><b>Secondary | Class X</b></td>
+                        <td id="class10-school" contenteditable="true">Name of the Highschool (Education Board)</td>
+                        <td id="class10-pass-year" contenteditable="true">2012 - 2013</td>
+                        <td id="class10-percentage" class="text-center" contenteditable="true">xx%</td>
                     </tr>
                     <tr>
                         <td>
@@ -139,36 +139,28 @@
                         </td>
                     </tr>
                 </table>
-                <table class="w-100 section my-side-line">
+
+                <table id="skills-table" class="w-100 section my-side-line">
                     <tr>
                         <td colspan="2" class="section-header">
                             <h3>SKILLS</h3>
                         </td>
                     </tr>
                     <tr>
-                        <td class="w-30"><b>Expertise Area/Area(s) of
-                                Interest</b></td>
-                        <td id="expertise" class="w-70" contenteditable="true">
-                            eg. Data Structures and Algorithms
-                        </td>
+                        <td class="w-30"><b>Expertise Area/Area(s) of Interest</b></td>
+                        <td id="expertise" class="w-70" contenteditable="true">eg. Data Structures and Algorithms</td>
                     </tr>
                     <tr>
                         <td class="w-30"><b>Programming Language(s)</b></td>
-                        <td id="prog-languages" class="w-70" contenteditable="true">
-                            C, C++, JavaScript etc..
-                        </td>
+                        <td id="prog-languages" class="w-70" contenteditable="true">C, C++, JavaScript etc..</td>
                     </tr>
                     <tr>
-                        <td class="w-30"><b>Tools and
-                                Technologies</b></td>
-                        <td id="tools" class="w-70" contenteditable="true">
-                            Android Studio etc..
-                        </td>
+                        <td class="w-30"><b>Tools and Technologies</b></td>
+                        <td id="tools" class="w-70" contenteditable="true">Android Studio etc..</td>
                     </tr>
                     <tr>
-                        <td class="w=30"><b>Technical Electives</b></td>
-                        <td id="electives" class="w-70" contenteditable="true">
-                            Operating Systems, Cryptography etc.</td>
+                        <td class="w-30"><b>Technical Electives</b></td>
+                        <td id="electives" class="w-70" contenteditable="true">Operating Systems, Cryptography etc.</td>
                     </tr>
                     <tr>
                         <td>
@@ -178,7 +170,9 @@
                     </tr>
                     <!---->
                 </table>
+
                 <hr>
+
                 <div class="page-break"></div>
                 <table id="internships-table" class="w-100 section my-side-line">
                     <tr>
@@ -187,9 +181,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td valign="top" class="w-20">
-                            <p><b contenteditable="true">Name of Organization</b></p>
-                        </td>
+                        <td valign="top" class="w-20"><p><b contenteditable="true">Name of Organization</b></p></td>
                         <td valign="top" class="w-60" contenteditable="true">
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
@@ -208,7 +200,6 @@
                         </td>
                         <td valign="top" class="w-60" contenteditable="true">
                             <p>
-
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar nibh in
                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                             </p>
@@ -321,7 +312,7 @@
                                 </table>
                             </td>
                             <td class="w-40">
-                                <table class="w-100 section" contenteditable="true">
+                                <table class="w-100 section">
                                     <tr>
                                         <td colspan="2" class="section-header">
                                             <h3>INTERESTS AND HOBBIES</h3>
@@ -329,7 +320,7 @@
                                     </tr>
                                     <tr>
                                         <td valign="top">
-                                            <ul id="hobbies-list" class="list">
+                                            <ul id="hobbies-list" class="list" contenteditable="true">
                                                 <li>
                                                     Hobbie 0
                                                 </li>
@@ -359,12 +350,14 @@
                                     </tr>
                                     <tr>
                                         <td valign="top" id="awards-list" contenteditable="true">
-                                            <p>
-                                                Stood first in xyz competition.
-                                            </p>
-                                            <p>
-                                                Highest Rating in Compititive Sites.
-                                            </p>
+                                            <ul id="awards-list" class="list" style="list-style:none">
+                                                <li>
+                                                    Stood first in xyz competition.
+                                                </li>
+                                                <li>
+                                                    Your highest rating in compititive sites.
+                                                </li>
+                                            </ul>
                                         </td>
                                     </tr>
                                 </table>
@@ -378,69 +371,32 @@
     </div>
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
     <script>
-        document.getElementById('print-doc').onclick =
-            function () {
-                var addbtns = document.getElementsByClassName("addButton");
-                var rmbtns = document.getElementsByClassName("removeButton");
-                var i;
-                for (i = 0; i < addbtns.length; i++) {
-                    addbtns[i].style.display = 'none';
-                }
-                for (i = 0; i < rmbtns.length; i++) {
-                    rmbtns[i].style.display = 'none';
-                }
-                document.body.classList.remove("my-resume-bg");
-                document.getElementById("controlls").style.visibility = "hidden";
-                document.getElementById("resume").style.marginTop = 0;
-                if (document.getElementById("___savetodrive_0"))
-                    document.getElementById("___savetodrive_0").style.visibility = "hidden";
-
-                window.print();
-
-                document.getElementById("resume").style.marginTop = "15px";
-                for (i = 0; i < addbtns.length; i++) {
-                    addbtns[i].style.display = 'inline';
-                }
-                for (i = 0; i < rmbtns.length; i++) {
-                    rmbtns[i].style.display = 'inline';
-                }
-                document.body.classList.add("my-resume-bg");
-                document.getElementById("controlls").style.visibility = "visible";
-                if(document.getElementById("___savetodrive_0"))
-                    document.getElementById("___savetodrive_0").style.visibility = "visible";
-            };
+        document.getElementById('print-doc').addEventListener('click', printResume);
         var isPreviewClicked = true;
-        document.getElementById("preview-doc").onclick =
-            function () {
-                var addbtns = document.getElementsByClassName("addButton");
-                var rmbtns = document.getElementsByClassName("removeButton");
-                var i;
-                if (isPreviewClicked) {
-                    for (i = 0; i < addbtns.length; i++) {
-                        addbtns[i].style.display = 'none';
-                    }
-                    for (i = 0; i < rmbtns.length; i++) {
-                        rmbtns[i].style.display = 'none';
-                    }
-                    document.getElementById("preview-doc").innerHTML = "Edit";
-                    isPreviewClicked = false; //now edit option should be available
-                } else {
-                    for (i = 0; i < addbtns.length; i++) {
-                        addbtns[i].style.display = 'inline';
-                    }
-                    for (i = 0; i < rmbtns.length; i++) {
-                        rmbtns[i].style.display = 'inline';
-                    }
-                    document.getElementById("preview-doc").innerHTML = "Preview";
-                    isPreviewClicked = true; //now Preview option should be available
-                }
-            };
+        document.getElementById("preview-doc").onclick = previewResume;
+        document.getElementById("save-doc").onclick = saveResume;
 
-        function removeContent(id) {
+
+        var user;
+        var db;
+        firebase.auth().onAuthStateChanged(function (curruser) {
+            if (curruser) {
+                user = curruser;
+                db = firebase.database();
+                loadResume();
+                console.log(user.displayName);
+            } else {
+                console.log("Not logged In");
+            }
+        });
+
+
+        /*function removeContent(id) {
             document.getElementById(id).innerHTML = "";
         }
-        //$('#stud-name').one("click",removeContent('stud-name'));
+        $('#stud-name').one("click",removeContent('stud-name'));*/
     </script>
 
 </body>
