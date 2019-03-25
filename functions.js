@@ -37,6 +37,7 @@ function printResume() {
     document.getElementById('resume').classList.remove('my-resume-page');
     document.body.innerHTML=printdocument;
     //
+    
     //$(document).ready();
     //img isn't ready and its printing already
     //so set timeout and wait for image to load
