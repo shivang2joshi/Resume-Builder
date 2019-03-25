@@ -202,8 +202,9 @@
 .my-resume-page{
     padding-top:25px; 
     background: white;
-    box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27); 
-    margin-top: 15px;
+    box-shadow: 0 20px 22px rgba(250, 248, 248, 0.27); 
+    margin-left: 15px;
+    color: black;
 }
 .my-resume-bg{
     background: rgb(236, 233, 233); 
@@ -223,5 +224,14 @@
 
 .invisible-template-name{
     display: none;
+}
+
+.form-group{
+    border: 1px solid white;
+    border-radius: 20pt;
+    padding: 2rem 3rem;
+}
+.form-control form input{
+    width: 15rem;
 }
 /*---------------------------------------------------*/

@@ -29,40 +29,23 @@ function logout() {
 
 function printResume() {
     //document represent respective resume template
-    var addbtns = document.getElementsByClassName("addButton");
-    var rmbtns = document.getElementsByClassName("removeButton");
-    var i;
+    
+    var printdocument = document.getElementById('resume').innerHTML;
+    var originalDocument = document.body.innerHTML;
 
-    for (i = 0; i < addbtns.length; i++) {
-        addbtns[i].style.display = 'none';
-    }
-    for (i = 0; i < rmbtns.length; i++) {
-        rmbtns[i].style.display = 'none';
-    }
-    document.body.classList.remove("my-resume-bg");
-    document.getElementById("controlls").style.visibility = "hidden";
-    document.getElementById("resume").classList.remove("my-resume-page");
-    if (document.getElementById("___savetodrive_0"))
-        document.getElementById("___savetodrive_0").style.display = "none";
-    else if (document.getElementById("savetodrive"))
-        document.getElementById("savetodrive").style.display = "none";
-    document.body.style.width = "100%";
-    document.body.style.marginLeft = 0;
-    window.print();
-
-    if (document.getElementById("___savetodrive_0"))
-        document.getElementById("___savetodrive_0").style.display = "inline";
-    else if (document.getElementById("savetodrive"))
-        document.getElementById("savetodrive").style.display = "inline";
-    document.getElementById("resume").classList.add("my-resume-page");
-    document.getElementById("controlls").style.visibility = "visible";
-    document.body.classList.add("my-resume-bg");
-    for (i = 0; i < addbtns.length; i++) {
-        addbtns[i].style.display = 'inline';
-    }
-    for (i = 0; i < rmbtns.length; i++) {
-        rmbtns[i].style.display = 'inline';
-    }
+    //order matter here
+    document.getElementById('resume').classList.remove('my-resume-page');
+    document.body.innerHTML=printdocument;
+    //
+    //$(document).ready();
+    //img isn't ready and its printing already
+    //so set timeout and wait for image to load
+    //.5s would be sufficient
+    setTimeout(function(){
+        window.print();
+        document.body.innerHTML = originalDocument;
+    },500);
+    
 }
 
 function previewResume() {
