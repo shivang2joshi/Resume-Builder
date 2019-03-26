@@ -27,6 +27,10 @@ function logout() {
         });
 }
 
+function selectAll(){
+    document.execCommand('selectAll',true,"replace this");
+}
+
 function printResume() {
     //document represent respective resume template
     
@@ -45,8 +49,7 @@ function printResume() {
     setTimeout(function(){
         window.print();
         document.body.innerHTML = originalDocument;
-    },500);
-    
+    },500);    
 }
 
 function previewResume() {
@@ -111,15 +114,14 @@ function loadResume() {
             skills_tabledata[i - 2][0] = rowcells[1];
         }*/
 
-
-
+        console.log("user data loaded");
     }, function (error) {
         console.log("Error: " + error.code);
     });
+
 }
 
 function saveResume() {
-
     //Heading
     var template = document.getElementById('template-name').innerHTML;
     var studentname = document.getElementById('stud-name').innerHTML;
@@ -199,13 +201,18 @@ function saveResume() {
         awards: awards_list
     };
 
+    //add uid into user_uid_list
+    //for flattening the tree so that for finding user
+    //we do not have to load all users data.
+    //firebase.database().ref("user_uid_list").push(user.uid);
     //firebase.database().ref().child("text").push("somevalue");
+    
     //add resume to dictionary
     firebase.database().ref("users/" + user.uid)
         .child(template)
         .set(resumeDetails)
         .then(function () {
-            window.alert("Saved Successfully");
+            window.alert("Data Saved");
         });
 
 

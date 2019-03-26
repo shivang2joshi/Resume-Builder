@@ -36,42 +36,6 @@
 
     <h1 id="template-name" class="invisible-template-name">resume_daiict_classic</h1>
 
-    <div id="controlls" class="my-controlls">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <button id="save-doc" class="btn btn-outline-dark">Save</button>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <button id="preview-doc" class="btn btn-outline-dark">Preview</button>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <button class="btn btn-outline-dark">Download</button>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <script src="https://apis.google.com/js/platform.js" async defer></script>
-                    <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf" ;
-                        data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-md-12">
-                    <button id="print-doc" class="btn btn-outline-dark">Print</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!--Main Navigation-->
     <header class="my-fixed-tab">
@@ -93,14 +57,15 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link  waves-effect waves-light" href="templates.html" onclick="saveResume()">Dashboard
+                            <a class="nav-link  waves-effect waves-light" href="templates.html"
+                                onclick="saveResume()">Dashboard
                             </a>
                         </li>
                     </ul>
                     <!-- Links -->
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <img id="user-photo" src="..." alt="user" height="47px" width="47px">
+                            <img id="user-photo" src="" alt="user" height="47px" width="47px">
                         </li>
                         <li class="nav-item">
                             <span id="user-name" class="nav-link">...</span>
@@ -118,436 +83,375 @@
     </header>
     <!--Main Navigation-->
 
-    <main class="my-main">
+    <main class="my-main" style="background:white; color: black;">
         <div class="row">
-            <div class="col-md-4">
-                <form>
-                    <div class="form-group">
-                        <table>
-                            <tr>
-                                <td><label>NAME</label></td>
-                                <td>
-                                    <input id="form-stud-name" type="text" class="form-control" style="font-weight:300"
-                                        placeholder="Full Name">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>EMAIL</label></td>
-                                <td>
-                                    <input id="form-e-mail" type="text" class="form-control"
-                                        placeholder="DA-IICT Email ID">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>BIRTHDAY</label></td>
-                                <td><input id="form-dob" type="date" class="form-control"></td>
-                                <!--include a date type, rather than making the user type it-->
-                            </tr>
-                            <tr>
-                                <td><label>ADDRESS</label></td>
-                                <td>
-                                    <textarea id="form-address" height="3" widht="7" class="form-control"
-                                        placeholder="Address">
-
-                                    </textarea>
-                                </td>
-                            </tr>
-                            <!--------------------Education---------------------------->
-                            <!--build an add option-->
-                            <tr>
-                                <td><label>DEGREE NAME</label></td>
-                                <td><input id="form-degree" type="text" class="form-control" placeholder="BTech"></td>
-                            </tr>
-                            <tr>
-                                <td><label>INSTITUTE/UNIVERSITY</label></td>
-                                <td><input id="form-university-name" type="text" class="form-control"
-                                        placeholder="DA-IICT">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>YEAR</label></td>
-                                <td><input id="form-grad-year" type="text" class="form-control" placeholder="2014-2016">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>CPI/AGGREGATE</label></td>
-                                <td><input id="form-cpi" type="text" class="form-control" placeholder="8.15"></td>
-                            </tr>
-                            <!-----------------------------Skills------------------------------------------->
-                            <tr>
-                                <td><label>AREAS OF EXPERTISE</label></td>
-                                <td><input id="form-expertise" type="text" class="form-control"
-                                        placeholder="Web/Android Development, Data Structures and Algorithms">
-                                    <!--Implement a datalist here.-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>PROGRAMMING LANGUAGES</label></td>
-                                <td><input id="form-prog-languages" type="text" class="form-control"
-                                        placeholder="Java, C++, Python">
-                                    <!--Implement a datalist here.-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>TOOLS AND TECHNOLOGIES</label></td>
-                                <td><input id="form-tools" type="text" class="form-control"
-                                        placeholder="Android Studio, Arduino, Microsoft Visual Studio Code">
-                                    <!--Implement a datalist here.-->
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>TECHNICAL ELECTIVES</label></td>
-                                <td><input id="form-electives" type="text" class="form-control"
-                                        placeholder="Operating Systems, Cryptography"></td>
-                            </tr>
-                            <!------------------------------Professional Experience------------------------------------>
-                            <!--build an add option-->
-                            <tr>
-                                <td><label>COMPANY/ORGANIZATION NAME</label></td>
-                                <td><input id="form-company" type="text" class="form-control" placeholder="Amazon"></td>
-                            </tr>
-                            <tr>
-                                <td><label>GUIDE/SUPERVISOR</label></td>
-                                <td><input id="form-guide" type="text" class="form-control"
-                                        placeholder="Prof. __ / Mr. __">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><label>START DATE</label></td>
-                                <td><input id="form-start" type="date" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label>END DATE</label></td>
-                                <td><input id="form-end" type="date" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td><label>TEAM SIZE</label></td>
-                                <td><input id="form-team" type="number" class="form-control"></td>
-                            </tr>
-                            <!----------------------------Position of Responsibility------------------------------------>
-                            <tr>
-                                <td><label>PoR</label></td>
-                                <!--Delete this. Modify it. Check instaresume.-->
-                                <td><input id="form-positions-list" type="test" class="form-control"
-                                        placeholder="Member of XYZ committee from April 2017 to April 2018"></td>
-                            </tr>
-                            <!----------------------------Awards and Achievements----------------------------------->
-                            <tr>
-                                <td><label>AWARDS AND ACHIEVEMENTS</label></td>
-                                <td><input id="form-awards" type="text" class="form-control"
-                                        placeholder="Stood first in XYZ Competition"></td>
-                                <!--Build an add option-->
-                                <!--Check instaresume-->
-                            </tr>
-                            <tr>
-                                <td><label>INTERESTS AND HOBBIES</label></td>
-                                <td><input id="form-hobbies-list" type="text" class="form-control"></td>
-                                <!--Implement a datalist list-->
-                            </tr>
-                        </table>
+            <div class="col-md-12">
+                <div class="text-center">
+                    <div id="controlls" class=" my-controls">
+                        <ul>
+                            <li><button id="save-doc" class="btn btn-primary" onclick="saveResume()">Save</button></li>
+                            <li><button id="preview-doc" class="btn btn-outline-dark">Preview</button></li>
+                            <li><button class="btn btn-outline-dark">Download</button></li>
+                            <li><button id="print-doc" class="btn btn-outline-dark"
+                                    onclick="printResume()">Print</button></li>
+                            <li>
+                                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf"
+                                    data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                </div>
             </div>
-            <div class="col-md-8">
-                <div id="resume" class="container my-resume-page">
-                    <div  class="row">
-                        <div class="col-md-12">
-                            <table class="main my-side-line">
-                                <tr style="display:flex; justify-content:space-between;">
-                                    <td class="w-40"><img src="img/daiictlogo.jpg"></td>
-                                    <td class="intro w-70">
-                                        <h1 id="stud-name" contenteditable="true">Shivang Joshi</h1>
-                                        <p><b>Dhirubhai Ambani Institute of Information and Communication Technology</b>
-                                        </p>
-                                        <p>
-                                            <span class="w-60 inline-block"><b>Email:</b>
-                                                <span id="e-mail" contenteditable="true">201601014@daiict.ac.in</span>
-                                            </span>
-                                            <span class="w-40 text-right"><b>DOB:</b>
-                                                <span id="dob" contenteditable="true">February 27, 1998</span>
-                                            </span>
-                                        </p>
-                                        <p>
-                                            <b>Address:</b>
-                                            <span id="address" contenteditable="true">F-313, HOR-MEN, DAIICT,
-                                                Gandhinagar</span>
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <hr>
-
-                            <table id="education-table" class="w-100 section my-side-line">
-                                <tr>
-                                    <td colspan="4" class="section-header">
-                                        <h3>EDUCATION</h3>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <th colspan="1" class="text-left">Degree</th>
-                                    <th colspan="1">University/Institute</th>
-                                    <th colspan="1">Year</th>
-                                    <th colspan="1">CPI/Aggregate</th>
-                                </tr>
-                                <tr>
-                                    <td id="degree" contenteditable="true"><b>B.Tech | ICT</b></td>
-                                    <td id="university-name" contenteditable="true">Dhirubhai Ambani Institute of
-                                        Information and
-                                        Communication Technology</td>
-                                    <td id="grad-year" contenteditable="true">2016 - 2020</td>
-                                    <td id="cpi" class="text-center" contenteditable="true">xx.xx</td>
-                                </tr>
-                                <tr>
-                                    <td id="class12" contenteditable="true"><b>Higher Secondary | Class XII</b></td>
-                                    <td id="class12-school" contenteditable="true">Name of the Highschool (Education
-                                        Board)
-                                    </td>
-                                    <td id="class12-pass-year" contenteditable="true">2013 - 2015</td>
-                                    <td id="class12-percentage" class="text-center" contenteditable="true">xx%</td>
-                                </tr>
-                                <tr>
-                                    <td id="class10" contenteditable="true"><b>Secondary | Class X</b></td>
-                                    <td id="class10-school" contenteditable="true">Name of the Highschool (Education
-                                        Board)
-                                    </td>
-                                    <td id="class10-pass-year" contenteditable="true">2012 - 2013</td>
-                                    <td id="class10-percentage" class="text-center" contenteditable="true">xx%</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="add-education" class="addButton">Add</button>
-                                        <button id="remove-education" class="removeButton">Remove</button>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <table id="skills-table" class="w-100 section my-side-line">
-                                <tr>
-                                    <td colspan="2" class="section-header">
-                                        <h3>SKILLS</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="w-30"><b>Expertise Area/Area(s) of Interest</b></td>
-                                    <td id="expertise" class="w-70" contenteditable="true">eg. Data Structures and
-                                        Algorithms</td>
-                                </tr>
-                                <tr>
-                                    <td class="w-30"><b>Programming Language(s)</b></td>
-                                    <td id="prog-languages" class="w-70" contenteditable="true">C, C++, JavaScript etc..
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="w-30"><b>Tools and Technologies</b></td>
-                                    <td id="tools" class="w-70" contenteditable="true">Android Studio etc..</td>
-                                </tr>
-                                <tr>
-                                    <td class="w-30"><b>Technical Electives</b></td>
-                                    <td id="electives" class="w-70" contenteditable="true">Operating Systems,
-                                        Cryptography
-                                        etc.</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="add-skill" class="addButton">Add</button>
-                                        <button id="remove-skill" class="removeButton">Remove</button>
-                                    </td>
-                                </tr>
-                                <!---->
-                            </table>
-
-                            <hr>
-
-                            <div class="page-break"></div>
-                            <table id="internships-table" class="w-100 section my-side-line">
-                                <tr>
-                                    <td colspan="3" class="section-header">
-                                        <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="w-20">
-                                        <p><b contenteditable="true">Name of Organization</b></p>
-                                    </td>
-                                    <td valign="top" class="w-60" contenteditable="true">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar
-                                            nibh
-                                            in
-                                            scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
-                                        </p>
-                                        <p><i>Guide: Mr. xyz</i></p>
-                                    </td>
-                                    <td valign="top" class="w-20" contenteditable="true">
-                                        <p>(Dec 2017 - Jan 2018)</p>
-                                        <p>Team Size - xx</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="w-20" contenteditable="true">
-                                        <p><b>Name of Organization</b></p>
-                                    </td>
-                                    <td valign="top" class="w-60" contenteditable="true">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar
-                                            nibh
-                                            in
-                                            scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
-                                        </p>
-                                        <p><i>Guide: Mr. xyz</i></p>
-                                    </td>
-                                    <td valign="top" class="w-20" contenteditable="true">
-                                        <p>(Dec 2017 - Jan 2018)</p>
-                                        <p>Team Size - xx</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="add-internship" class="addButton">Add</button>
-                                        <button id="remove-internship" class="removeButton">Remove</button>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <table id="projects-table" class="w-100 section my-side-line">
-                                <tr>
-                                    <td colspan="2" class="section-header">
-                                        <h3>PROJECTS</h3>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p><b>Name of the Project</b></p>
-                                        <p><i>Guide: Prof. XYZ</i></p>
-                                    </td>
-                                    <td valign="top" class="w-50" contenteditable="true">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar
-                                            nibh
-                                            in
-                                            scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
-                                        </p>
-                                    </td>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p>(Feb, 2018 - Mar, 2018)</p>
-                                        <p>Team Size - 10</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p><b>Name of the Project</b></p>
-                                        <p><i>Guide: Prof. XYZ</i></p>
-                                        <p></p>
-                                    </td>
-                                    <td valign="top" class="w-50" contenteditable="true">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar
-                                            nibh
-                                            in
-                                            scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
-                                        </p>
-                                    </td>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p>(Feb, 2018 - Mar, 2018)</p>
-                                        <p>Team Size - 10</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p><b>Name of the Project</b></p>
-                                        <p><i>Guide: Prof. XYZ</i></p>
-                                        <p></p>
-                                    </td>
-                                    <td valign="top" class="w-50" contenteditable="true">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pulvinar
-                                            nibh
-                                            in
-                                            scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
-                                        </p>
-                                    </td>
-                                    <td valign="top" class="w-25" contenteditable="true">
-                                        <p>(Feb, 2018 - Mar, 2018)</p>
-                                        <p>Team Size - 10</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <button id="add-project" class="addButton">Add</button>
-                                        <button id="remove-project" class="removeButton">Remove</button>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <hr>
-
-                            <table class="w-100 my-side-line">
-                                <tbody>
-                                    <tr style="display:flex; justify-content: space-between">
-                                        <td class="w-40">
-                                            <table class="w-100 section">
-                                                <tr>
-                                                    <td colspan="2" class="section-header">
-                                                        <h3>POSITIONS OF RESPONSIBILITY</h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td valign="top" contenteditable="true">
-                                                        <ul id="positions-list" class="list">
-                                                            <li>Position 0</li>
-                                                            <li>Position 1</li>
-                                                            <li>Position 2</li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </table>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="resume" class="container my-resume-page">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <table class="main my-side-line">
+                                    <tr style="display:flex; justify-content:space-between;">
+                                        <td class="w-40"><img src="img/daiictlogo.jpg" width="250px"></td>
+                                        <td class="intro w-70">
+                                            <h1 id="stud-name" contenteditable spellcheck="true" onclick="selectAll()">
+                                                Shivang Joshi</h1>
+                                            <p><b>Dhirubhai Ambani Institute of Information and Communication
+                                                    Technology</b>
+                                            </p>
+                                            <p>
+                                                <span class="w-60 inline-block"><b>Email:</b>
+                                                    <span id="e-mail" contenteditable spellcheck="true"
+                                                        onclick="selectAll()">201601014@daiict.ac.in</span>
+                                                </span>
+                                                <span class="w-40 text-right"><b>DOB:</b>
+                                                    <span id="dob" contenteditable spellcheck="true"
+                                                        onclick="selectAll()">February 27, 1998</span>
+                                                </span>
+                                            </p>
+                                            <p>
+                                                <b>Address:</b>
+                                                <span id="address" contenteditable spellcheck="true"
+                                                    onclick="selectAll()">F-313, HOR-MEN, DAIICT,
+                                                    Gandhinagar</span>
+                                            </p>
                                         </td>
-                                        <td class="w-40">
-                                            <table class="w-100 section">
-                                                <tr>
-                                                    <td colspan="2" class="section-header">
-                                                        <h3>INTERESTS AND HOBBIES</h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td valign="top">
-                                                        <ul id="hobbies-list" class="list" contenteditable="true">
-                                                            <li>Hobbie 0</li>
-                                                            <li>Hobbie 1</li>
-                                                            <li>Hobbie 2</li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                    </tr>
+                                </table>
+
+                                <hr>
+
+                                <table id="education-table" class="w-100 section my-side-line">
+                                    <tr>
+                                        <td colspan="4" class="section-header">
+                                            <h3>EDUCATION</h3>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-center">
+                                        <th colspan="1" class="text-left">Degree</th>
+                                        <th colspan="1">University/Institute</th>
+                                        <th colspan="1">Year</th>
+                                        <th colspan="1">CPI/Aggregate</th>
+                                    </tr>
+                                    <tr>
+                                        <td id="degree" contenteditable spellcheck="true" onclick="selectAll()">
+                                            <b>B.Tech | ICT</b></td>
+                                        <td id="university-name" contenteditable spellcheck="true"
+                                            onclick="selectAll()">Dhirubhai Ambani Institute of
+                                            Information and
+                                            Communication Technology</td>
+                                        <td id="grad-year" contenteditable spellcheck="true" onclick="selectAll()">2016
+                                            - 2020</td>
+                                        <td id="cpi" class="text-center" contenteditable spellcheck="true"
+                                            onclick="selectAll()">xx.xx</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="class12" contenteditable spellcheck="true" onclick="selectAll()">
+                                            <b>Higher Secondary | Class XII</b></td>
+                                        <td id="class12-school" contenteditable spellcheck="true" onclick="selectAll()">
+                                            Name of the Highschool (Education
+                                            Board)
+                                        </td>
+                                        <td id="class12-pass-year" contenteditable spellcheck="true"
+                                            onclick="selectAll()">2013 - 2015</td>
+                                        <td id="class12-percentage" class="text-center" contenteditable
+                                            spellcheck="true" onclick="selectAll()">xx%</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="class10" contenteditable spellcheck="true" onclick="selectAll()">
+                                            <b>Secondary | Class X</b></td>
+                                        <td id="class10-school" contenteditable spellcheck="true" onclick="selectAll()">
+                                            Name of the Highschool (Education
+                                            Board)
+                                        </td>
+                                        <td id="class10-pass-year" contenteditable spellcheck="true"
+                                            onclick="selectAll()">2012 - 2013</td>
+                                        <td id="class10-percentage" class="text-center" contenteditable
+                                            spellcheck="true" onclick="selectAll()">xx%</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="text-right">
+                                            <button id="add-education" class="addButton">Add</button>
+                                            <button id="remove-education" class="removeButton">Remove</button>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table id="skills-table" class="w-100 section my-side-line">
+                                    <tr>
+                                        <td colspan="2" class="section-header">
+                                            <h3>SKILLS</h3>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-center">
-
-                                            <table class="w-100 section" id="awards-table">
-                                                <tr>
-                                                    <td colspan="2" class="section-header">
-                                                        <h3>AWARDS AND ACHIEVEMENTS
-                                                            <button id="remove-awards"
-                                                                class="removeButton">Delete</button>
-                                                        </h3>
-
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td valign="top" id="awards-list" contenteditable="true">
-                                                        <p>Stood first in xyz competition.</p>
-                                                        <p>Your highest rating in compititive sites.</p>
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                        <td class="w-30"><b>Expertise Area/Area(s) of Interest</b></td>
+                                        <td id="expertise" class="w-70" contenteditable spellcheck="true"
+                                            onclick="selectAll()">eg. Data Structures and
+                                            Algorithms</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-30"><b>Programming Language(s)</b></td>
+                                        <td id="prog-languages" class="w-70" contenteditable spellcheck="true"
+                                            onclick="selectAll()">C, C++, JavaScript
+                                            etc..
                                         </td>
                                     </tr>
-                                </tbody>
-                            </table>
-                            <hr>
+                                    <tr>
+                                        <td class="w-30"><b>Tools and Technologies</b></td>
+                                        <td id="tools" class="w-70" contenteditable spellcheck="true"
+                                            onclick="selectAll()">Android Studio etc..</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w-30"><b>Technical Electives</b></td>
+                                        <td id="electives" class="w-70" contenteditable spellcheck="true"
+                                            onclick="selectAll()">Operating Systems,
+                                            Cryptography
+                                            etc.</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" class="text-right">
+                                            <button id="add-skill" class="addButton">Add</button>
+                                            <button id="remove-skill" class="removeButton">Remove</button>
+                                        </td>
+                                    </tr>
+                                    <!---->
+                                </table>
+
+                                <hr>
+
+                                <div class="page-break"></div>
+                                <table id="internships-table" class="w-100 section my-side-line">
+                                    <tr>
+                                        <td colspan="3" class="section-header">
+                                            <h3>PROFESSIONAL EXPERIENCE/INTERNSHIPS</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="w-20">
+                                            <p><b contenteditable spellcheck="true" onclick="selectAll()">Name of
+                                                    Organization</b></p>
+                                        </td>
+                                        <td valign="top" class="w-60" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                pulvinar
+                                                nibh
+                                                in
+                                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
+                                            </p>
+                                            <p><i>Guide: Mr. xyz</i></p>
+                                        </td>
+                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>(Dec 2017 - Jan 2018)</p>
+                                            <p>Team Size - xx</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p><b>Name of Organization</b></p>
+                                        </td>
+                                        <td valign="top" class="w-60" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                pulvinar
+                                                nibh
+                                                in
+                                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
+                                            </p>
+                                            <p><i>Guide: Mr. xyz</i></p>
+                                        </td>
+                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>(Dec 2017 - Jan 2018)</p>
+                                            <p>Team Size - xx</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-right">
+                                            <button id="add-internship" class="addButton">Add</button>
+                                            <button id="remove-internship" class="removeButton">Remove</button>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <table id="projects-table" class="w-100 section my-side-line">
+                                    <tr>
+                                        <td colspan="2" class="section-header">
+                                            <h3>PROJECTS</h3>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p><b>Name of the Project</b></p>
+                                            <p><i>Guide: Prof. XYZ</i></p>
+                                        </td>
+                                        <td valign="top" class="w-50" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                pulvinar
+                                                nibh
+                                                in
+                                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
+                                            </p>
+                                        </td>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>(Feb, 2018 - Mar, 2018)</p>
+                                            <p>Team Size - 10</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p><b>Name of the Project</b></p>
+                                            <p><i>Guide: Prof. XYZ</i></p>
+                                            <p></p>
+                                        </td>
+                                        <td valign="top" class="w-50" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                pulvinar
+                                                nibh
+                                                in
+                                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
+                                            </p>
+                                        </td>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>(Feb, 2018 - Mar, 2018)</p>
+                                            <p>Team Size - 10</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p><b>Name of the Project</b></p>
+                                            <p><i>Guide: Prof. XYZ</i></p>
+                                            <p></p>
+                                        </td>
+                                        <td valign="top" class="w-50" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                pulvinar
+                                                nibh
+                                                in
+                                                scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
+                                            </p>
+                                        </td>
+                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <p>(Feb, 2018 - Mar, 2018)</p>
+                                            <p>Team Size - 10</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="text-right">
+                                            <button id="add-project" class="addButton">Add</button>
+                                            <button id="remove-project" class="removeButton">Remove</button>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <hr>
+
+                                <table class="w-100 my-side-line">
+                                    <tbody>
+                                        <tr style="display:flex; justify-content: space-between">
+                                            <td class="w-40">
+                                                <table class="w-100 section">
+                                                    <tr>
+                                                        <td colspan="2" class="section-header">
+                                                            <h3>POSITIONS OF RESPONSIBILITY</h3>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" contenteditable spellcheck="true"
+                                                            onclick="selectAll()">
+                                                            <ul id="positions-list" class="list">
+                                                                <li>Position 0</li>
+                                                                <li>Position 1</li>
+                                                                <li>Position 2</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td class="w-40">
+                                                <table class="w-100 section">
+                                                    <tr>
+                                                        <td colspan="2" class="section-header">
+                                                            <h3>INTERESTS AND HOBBIES</h3>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top">
+                                                            <ul id="hobbies-list" class="list" contenteditable
+                                                                spellcheck="true" onclick="selectAll()">
+                                                                <li>Hobbie 0</li>
+                                                                <li>Hobbie 1</li>
+                                                                <li>Hobbie 2</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">
+
+                                                <table class="w-100 section" id="awards-table">
+                                                    <tr>
+                                                        <td colspan="2" class="section-header">
+                                                            <h3>AWARDS AND ACHIEVEMENTS
+                                                                <button id="remove-awards"
+                                                                    class="removeButton">Delete</button>
+                                                            </h3>
+
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td valign="top" id="awards-list" contenteditable
+                                                            spellcheck="true" onclick="selectAll()">
+                                                            <p>Stood first in xyz competition.</p>
+                                                            <p>Your highest rating in compititive sites.</p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -558,27 +462,34 @@
 
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-
     <script>
-        document.getElementById('print-doc').onclick =  printResume;
+        //controls handler
+        document.getElementById('print-doc').onclick = printResume;
         var isPreviewClicked = true;
         document.getElementById("preview-doc").onclick = previewResume;
         document.getElementById("save-doc").onclick = saveResume;
 
-
         var user;
-        var db;
+        var dbref;
+        var isUserExists = true;
+        var snapshotloaded = false;
         firebase.auth().onAuthStateChanged(function (curruser) {
             if (curruser) {
                 user = curruser;
-                db = firebase.database();
-                loadResume();
+                dbref = firebase.database().ref("users/" + user.uid);
+
+                //checking if user is not first time visitor
+                if (dbref != null)
+                    loadResume();
+                else
+                    console.log("Default data loaded");
+                //for first time user
+
                 console.log(user.displayName);
             } else {
                 console.log("Not logged In");
             }
         });
-
 
         /*function removeContent(id) {
             document.getElementById(id).innerHTML = "";

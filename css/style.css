@@ -202,24 +202,36 @@
 .my-resume-page{
     padding-top:25px; 
     background: white;
-    box-shadow: 0 20px 22px rgba(250, 248, 248, 0.27); 
+    box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27); 
     margin-left: 15px;
     color: black;
+    overflow: auto;
 }
 .my-resume-bg{
     background: rgb(236, 233, 233); 
 }
 
-.my-controlls{
-    position: fixed;
+.my-controls{
+    /*position: fixed;
     z-index: 100;
     right: 0;
     top: 25%;
+    */
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
     text-align: center;
     background-color: white;
     padding: 20px 0px;
-    border-radius: 20px 0px 0px 20px;
+    /*border-radius: 20px 20px 20px 20px;*/
     box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27);
+}
+.my-controls ul{
+    list-style: none;
+    margin-bottom: 0%;
+}
+.my-controls ul li{
+    display: inline-block;
 }
 
 .invisible-template-name{
@@ -230,6 +242,8 @@
     border: 1px solid white;
     border-radius: 20pt;
     padding: 2rem 3rem;
+    background: white;
+    color: black;
 }
 .form-control form input{
     width: 15rem;
