@@ -104,6 +104,7 @@ function loadResume() {
             .innerHTML = snapshot.child('dob').val() + "&nbsp";
         document.getElementById('address')
             .innerHTML = snapshot.child('address').val() + "&nbsp";
+
         //Education
         tablerows = document.getElementById('education-table').rows;
         var edu_tabledata = snapshot.child('education').val();
@@ -121,10 +122,11 @@ function loadResume() {
                 tablerows[i + 2].cells[j].innerHTML = edu_tabledata[i][j];
             //console.log(i);
         }
+
         //skills
         tablerows = document.getElementById('skills-table').rows;
         var skills_tabledata = snapshot.child('skills').val();
-        var rowstobeupdated = skills_tabledata.length;
+        rowstobeupdated = skills_tabledata.length;
         while (rowstobeupdated - (tablerows.length - 2) > 0) {
             addSkills();
             tablerows = document.getElementById('skills-table').rows;
@@ -136,7 +138,25 @@ function loadResume() {
         for (i = 0; i < rowstobeupdated; i++) {
             tablerows[i + 1].cells[1].innerHTML = skills_tabledata[i];
         }
-        //
+
+        //Internships
+        tablerows = document.getElementById('internships-table').rows;
+        var internships_tabledata = snapshot.child('internships').val();
+        rowstobeupdated = internships_tabledata.length;
+        while (rowstobeupdated - (tablerows.length - 2) > 0) {
+            addInternships();
+            tablerows = document.getElementById('internships-table').rows;
+        }
+        while ((tablerows.length - 2) - rowstobeupdated > 0) {
+            removeInternships();
+            tablerows = document.getElementById('internships-table').rows;
+        }
+        for (i = 0; i < rowstobeupdated; i++) {
+            for (j = 0; j < 3; j++) {
+                tablerows[i + 1].cells[j].innerHTML = internships_tabledata[i][j];
+            }
+        }
+
 
         console.log("user data loaded from loadResume()");
     }, function (error) {
@@ -291,36 +311,84 @@ function addSkills() {
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
     cell.innerHTML = newCellPlaceholder;
-    console.log('added Skil');
+    console.log('added Skill');
     //console.log('added skills');    
 }
 
 function addInternships() {
+    var internshipstable = document.getElementById('internships-table');
+    var lastrowindex = internshipstable.rows.length - 1;
+    var newrow = internshipstable.insertRow(lastrowindex);
+    var cell = newrow.insertCell(0);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<b>' + newCellPlaceholder + '</b>';
 
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<p>' + newCellPlaceholder + '</p><p><i>' + newCellPlaceholder + '</i></p>';
+
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<p>' + newCellPlaceholder + '</p><p>' + newCellPlaceholder + '</p>';
 }
 
 function addProjects() {
+    var projectstable = document.getElementById('projects-table');
+    var lastrowindex = projectstable.rows.length - 1;
+    var newrow = projectstable.insertRow(lastrowindex);
+    var cell = newrow.insertCell(0);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<p><b>' + newCellPlaceholder + '</b></p><p><i>'+newCellPlaceholder+'</i></p>';
+
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<p>' + newCellPlaceholder + '</p>';
+
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('valign', 'top');
+    cell.setAttribute('class', 'text-right');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<p>' + newCellPlaceholder + '</p><p>'+newCellPlaceholder+'</p>';
 
 }
+function addAchievements(){
+    document.getElementById('awards-table').style.display='inline';
+    setTimeout(function(){
+        document.getElementById('awards-table').style.opacity=1;
+    },1);
+    document.getElementById('ach-btn').classList.add('invisible');
+}
+
 //resume removeButtons utility
-function removeEducation() {
-    var lastrowindex = document.getElementById('education-table').rows.length - 1;
-    document.getElementById('education-table').deleteRow(lastrowindex - 1);
-}
-
-function removeSkills() {
-    var lastrowindex = document.getElementById('skills-table').rows.length - 1;
-    document.getElementById('skills-table').deleteRow(lastrowindex - 1);
-}
-
-function removeInternships() {
-
-}
-
-function removeProjects() {
-
+function removeRow(tableid) {
+    console.log(tableid);
+    var lastrowindex = document.getElementById(tableid).rows.length - 1;
+    document.getElementById(tableid).deleteRow(lastrowindex - 1);
 }
 
 function removeAchievements() {
-
+    document.getElementById('awards-table').style.opacity=0;
+    setTimeout(function(){
+        document.getElementById('ach-btn').classList.remove('invisible');
+        document.getElementById('awards-table').style.display='none';  
+    },600);
+    
+    
 }

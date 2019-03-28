@@ -43,7 +43,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
             <div class="container">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">CVMaker</a>
+                <a class="navbar-brand" href="index.html" onclick="saveResume()">CVMaker</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -193,7 +193,7 @@
                                     <tr>
                                         <td colspan="4" class="text-right">
                                             <button id="add-education" class="addButton" onclick="addEducation()">Add</button>
-                                            <button id="remove-education" class="removeButton" onclick="removeEducation()">Remove</button>
+                                            <button id="remove-education" class="removeButton" onclick="removeRow('education-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -232,7 +232,7 @@
                                     <tr>
                                         <td colspan="2" class="text-right">
                                             <button id="add-skill" class="addButton" onclick="addSkills()">Add</button>
-                                            <button id="remove-skill" class="removeButton" onclick="removeSkills()">Remove</button>
+                                            <button id="remove-skill" class="removeButton" onclick="removeRow('skills-table')">Remove</button>
                                         </td>
                                     </tr>
                                     <!---->
@@ -248,9 +248,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" class="w-20">
-                                            <p><b contenteditable spellcheck="true" onclick="selectAll()">Name of
-                                                    Organization</b></p>
+                                        <td valign="top" class="w-20" contenteditable spellcheck="true" onclick="selectAll()">
+                                            <b >Name of Organization</b>
                                         </td>
                                         <td valign="top" class="w-60" contenteditable spellcheck="true"
                                             onclick="selectAll()">
@@ -272,7 +271,7 @@
                                     <tr>
                                         <td valign="top" class="w-20" contenteditable spellcheck="true"
                                             onclick="selectAll()">
-                                            <p><b>Name of Organization</b></p>
+                                            <b>Name of Organization</b>
                                         </td>
                                         <td valign="top" class="w-60" contenteditable spellcheck="true"
                                             onclick="selectAll()">
@@ -293,8 +292,8 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-right">
-                                            <button id="add-internship" class="addButton">Add</button>
-                                            <button id="remove-internship" class="removeButton">Remove</button>
+                                            <button id="add-internship" class="addButton" onclick="addInternships()">Add</button>
+                                            <button id="remove-internship" class="removeButton" onclick="removeRow('internships-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -375,8 +374,8 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-right">
-                                            <button id="add-project" class="addButton">Add</button>
-                                            <button id="remove-project" class="removeButton">Remove</button>
+                                            <button id="add-project" class="addButton" onclick="addProjects()">Add</button>
+                                            <button id="remove-project" class="removeButton" onclick="removeRow('projects-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -427,15 +426,14 @@
                                         </tr>
                                         <tr>
                                             <td class="text-center">
-
+                                                <button id="ach-btn" class="addButton invisible" onclick="addAchievements()">Achievements</button>
                                                 <table class="w-100 section" id="awards-table">
                                                     <tr>
                                                         <td colspan="2" class="section-header">
                                                             <h3>AWARDS AND ACHIEVEMENTS
                                                                 <button id="remove-awards"
-                                                                    class="removeButton">Delete</button>
+                                                                    class="removeButton" onclick="removeAchievements()">Delete</button>
                                                             </h3>
-
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -478,13 +476,15 @@
                 user = curruser;
                 dbref = firebase.database().ref("users/" + user.uid);
 
+                // this is not working------
                 //checking if user is not first time visitor
                 if (dbref != null)
                     loadResume();
                 else
-                    console.log("Default data loaded");
+                    console.log("First time visitor | Default data loaded");
                 //for first time user
-
+                //--------
+                
                 console.log(user.displayName);
             } else {
                 console.log("Not logged In");

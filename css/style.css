@@ -184,22 +184,36 @@
     border-collapse: separate;
 }
 
+.invisible{
+    display: none;
+}
+#ach-btn{
+    margin: 15px;
+    font-size: 14pt; 
+}
+#awards-table{
+    transition: opacity .5s linear ;
+}
 
 .addButton{
-    background: blue;
+    margin: 10px 5px; 
+    padding: 5px 14px;
+    background: rgb(85, 85, 226);
     color:aliceblue;
-    border: 2px solid blue;
+    border: none;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27);
 }
 
 .removeButton{
-    background: rgb(230, 30, 30);
+    margin: 10px 5px;
+    padding: 5px 14px;
+    background: rgb(233, 31, 31);
     color:aliceblue;
-    border: 2px solid  rgb(230, 30, 30);;
+    border: none;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27); 
 }
 .my-resume-page{
