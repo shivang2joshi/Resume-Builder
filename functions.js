@@ -91,7 +91,7 @@ function loadResume() {
     var ref = firebase.database().ref("users/" + user.uid + "/" + template);
 
     ref.on("value", function (snapshot) {
-        //console.log(snapshot.val());
+        console.log(snapshot.val());
         var tablerows;
         var i, j;
 
@@ -107,26 +107,36 @@ function loadResume() {
         //Education
         tablerows = document.getElementById('education-table').rows;
         var edu_tabledata = snapshot.child('education').val();
-        var rows = edu_tabledata.length;
-        while(rows-(tablerows.length-3)>0)
-        {
+        var rowstobeupdated = edu_tabledata.length;
+        while (rowstobeupdated - (tablerows.length - 3) > 0) {
             addEducation();
             tablerows = document.getElementById('education-table').rows;
-        }//addextra rows bcoz database more rows then html table
-        //update rows
-        for (i = 0; i < rows; i++) {
+        } //addextra rows bcoz database has more rows then html table
+        while ((tablerows.length - 3) - rowstobeupdated > 0) {
+            addEducation();
+            tablerows = document.getElementById('education-table').rows;
+        } //remove rows bcoz default html has more rows then database
+        for (i = 0; i < rowstobeupdated; i++) { //update rows
             for (j = 0; j < 4; j++)
-                tablerows[i+2].cells[j].innerHTML = edu_tabledata[i][j];
+                tablerows[i + 2].cells[j].innerHTML = edu_tabledata[i][j];
             //console.log(i);
         }
         //skills
-        /*tablerows = document.getElementById('skills-table').rows;
-        var skills_tabledata = snapshot.child('skills');
-        for (i = 2; i < tablerows.length - 1; i++) {
-            skills_tabledata[i - 2] = [];
-            var rowcells = tablerows[i].cells;
-            skills_tabledata[i - 2][0] = rowcells[1];
-        }*/
+        tablerows = document.getElementById('skills-table').rows;
+        var skills_tabledata = snapshot.child('skills').val();
+        var rowstobeupdated = skills_tabledata.length;
+        while (rowstobeupdated - (tablerows.length - 2) > 0) {
+            addSkills();
+            tablerows = document.getElementById('skills-table').rows;
+        } //when database has more rows
+        while ((tablerows.length - 2) - rowstobeupdated > 0) {
+            removeSkills();
+            tablerows = document.getElementById('skills-table').rows;
+        } //when defalt html page got more rows
+        for (i = 0; i < rowstobeupdated; i++) {
+            tablerows[i + 1].cells[1].innerHTML = skills_tabledata[i];
+        }
+        //
 
         console.log("user data loaded from loadResume()");
     }, function (error) {
@@ -146,7 +156,7 @@ function saveResume() {
     var i, j;
     //Education
     tablerows = document.getElementById('education-table').rows;
-    console.log(tablerows.length);
+    //console.log(tablerows.length);
     var edu_tabledata = [];
     for (i = 2; i < tablerows.length - 1; i++) {
         edu_tabledata[i - 2] = [];
@@ -155,7 +165,6 @@ function saveResume() {
             edu_tabledata[i - 2][j] = rowcells[j].innerHTML;
         //console.log(i);
     }
-    console.log(edu_tabledata.length);
     //console.log(edu_tabledata);
     //Skills
     tablerows = document.getElementById('skills-table').rows;
@@ -231,63 +240,87 @@ function saveResume() {
             window.alert("Data Saved");
         });
 
-
 }
 
+var newCellPlaceholder = 'Click to select';
+
 //resume addButtons utility
-function addEducation(){
-    var lastrowindex = document.getElementById('education-table').rows.length-1;
-    var row = document.getElementById('education-table').insertRow(lastrowindex);
-    var cell = row.insertCell(0);
-    cell.setAttribute('contenteditable',"true");
-    cell.setAttribute('spellcheck','true');
-    cell.setAttribute('onclick','selectAll()');
-    cell.innerHTML='<b>Enter Degree</b>';
-    
-    cell = row.insertCell(-1);
-    cell.setAttribute('contenteditable',"true");
-    cell.setAttribute('spellcheck','true');
-    cell.setAttribute('onclick','selectAll()');
-    cell.innerHTML='University';
+function addEducation() {
+    var lastrowindex = document.getElementById('education-table').rows.length - 1;
+    var newrow = document.getElementById('education-table').insertRow(lastrowindex);
+    var cell = newrow.insertCell(0);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<b>' + newCellPlaceholder + '</b>';
 
-    cell = row.insertCell(-1);
-    cell.setAttribute('contenteditable',"true");
-    cell.setAttribute('spellcheck','true');
-    cell.setAttribute('onclick','selectAll()');
-    cell.innerHTML='year';
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = newCellPlaceholder;
 
-    cell = row.insertCell(-1);
-    cell.setAttribute('contenteditable',"true");
-    cell.setAttribute('spellcheck','true');
-    cell.setAttribute('onclick','selectAll()');
-    cell.setAttribute('class','text-center');
-    cell.innerHTML='grads';
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = newCellPlaceholder;
+
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.setAttribute('class', 'text-center');
+    cell.innerHTML = newCellPlaceholder;
     // -1 is for appending at last
     //console.log('added education');
 }
-function addSkills(){
+
+function addSkills() {
+    var skilltable = document.getElementById('skills-table');
+    var lastrowindex = skilltable.rows.length - 1;
+    var newrow = skilltable.insertRow(lastrowindex);
+    var cell = newrow.insertCell(0);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = '<b>Technical Electives</b>';
+
+    cell = newrow.insertCell(-1);
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = newCellPlaceholder;
+    console.log('added Skil');
+    //console.log('added skills');    
+}
+
+function addInternships() {
 
 }
-function addInternships(){
 
-}
-function addProjects(){
+function addProjects() {
 
 }
 //resume removeButtons utility
-function removeEducation(){
-    var lastrowindex = document.getElementById('education-table').rows.length-1;
-    document.getElementById('education-table').deleteRow(lastrowindex-1);
+function removeEducation() {
+    var lastrowindex = document.getElementById('education-table').rows.length - 1;
+    document.getElementById('education-table').deleteRow(lastrowindex - 1);
 }
-function removeSkills(){
+
+function removeSkills() {
+    var lastrowindex = document.getElementById('skills-table').rows.length - 1;
+    document.getElementById('skills-table').deleteRow(lastrowindex - 1);
+}
+
+function removeInternships() {
 
 }
-function removeInternships(){
+
+function removeProjects() {
 
 }
-function removeProjects(){
 
-}
-function removeAchievements(){
+function removeAchievements() {
 
 }
