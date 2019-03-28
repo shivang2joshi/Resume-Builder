@@ -27,29 +27,36 @@ function logout() {
         });
 }
 
-function selectAll(){
-    document.execCommand('selectAll',true,"replace this");
+function selectAll() {
+    document.execCommand('selectAll', true, "replace this");
 }
 
 function printResume() {
     //document represent respective resume template
-    
+
     var printdocument = document.getElementById('resume').innerHTML;
     var originalDocument = document.body.innerHTML;
 
     //order matter here
     document.getElementById('resume').classList.remove('my-resume-page');
-    document.body.innerHTML=printdocument;
+    document.body.innerHTML = printdocument;
+    var addbtns = document.getElementsByClassName('addButton');
+    var rmbtns = document.getElementsByClassName('removeButton');
+    var i;
+    for (i = 0; i < addbtns.length; i++)
+        addbtns[i].style.display = 'none';
+    for (i = 0; i < rmbtns.length; i++)
+        rmbtns[i].style.display = 'none';
     //
-    
+
     //$(document).ready();
     //img isn't ready and its printing already
     //so set timeout and wait for image to load
     //.5s would be sufficient
-    setTimeout(function(){
+    setTimeout(function () {
         window.print();
         document.body.innerHTML = originalDocument;
-    },500);    
+    }, 500);
 }
 
 function previewResume() {
@@ -84,25 +91,32 @@ function loadResume() {
     var ref = firebase.database().ref("users/" + user.uid + "/" + template);
 
     ref.on("value", function (snapshot) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
         var tablerows;
         var i, j;
 
         //Heading
         document.getElementById('stud-name')
-            .innerHTML = snapshot.child('name').val();
+            .innerHTML = snapshot.child('name').val() + "&nbsp";
         document.getElementById('e-mail')
-            .innerHTML = snapshot.child('email').val();
+            .innerHTML = snapshot.child('email').val() + "&nbsp";
         document.getElementById('dob')
-            .innerHTML = snapshot.child('dob').val();
+            .innerHTML = snapshot.child('dob').val() + "&nbsp";
         document.getElementById('address')
-            .innerHTML = snapshot.child('address').val();
+            .innerHTML = snapshot.child('address').val() + "&nbsp";
         //Education
         tablerows = document.getElementById('education-table').rows;
         var edu_tabledata = snapshot.child('education').val();
-        for (i = 2; i < tablerows.length - 1; i++) {
+        var rows = edu_tabledata.length;
+        while(rows-(tablerows.length-3)>0)
+        {
+            addEducation();
+            tablerows = document.getElementById('education-table').rows;
+        }//addextra rows bcoz database more rows then html table
+        //update rows
+        for (i = 0; i < rows; i++) {
             for (j = 0; j < 4; j++)
-                tablerows[i].cells[j].innerHTML = edu_tabledata[i - 2][j];
+                tablerows[i+2].cells[j].innerHTML = edu_tabledata[i][j];
             //console.log(i);
         }
         //skills
@@ -114,7 +128,7 @@ function loadResume() {
             skills_tabledata[i - 2][0] = rowcells[1];
         }*/
 
-        console.log("user data loaded");
+        console.log("user data loaded from loadResume()");
     }, function (error) {
         console.log("Error: " + error.code);
     });
@@ -132,6 +146,7 @@ function saveResume() {
     var i, j;
     //Education
     tablerows = document.getElementById('education-table').rows;
+    console.log(tablerows.length);
     var edu_tabledata = [];
     for (i = 2; i < tablerows.length - 1; i++) {
         edu_tabledata[i - 2] = [];
@@ -140,6 +155,7 @@ function saveResume() {
             edu_tabledata[i - 2][j] = rowcells[j].innerHTML;
         //console.log(i);
     }
+    console.log(edu_tabledata.length);
     //console.log(edu_tabledata);
     //Skills
     tablerows = document.getElementById('skills-table').rows;
@@ -182,7 +198,7 @@ function saveResume() {
         hobbies_list[i] = ul_items[i].innerHTML;
     }
     //achievments
-    var awards_list = document.getElementById('awards-list').innerHTML; 
+    var awards_list = document.getElementById('awards-list').innerHTML;
 
 
 
@@ -206,7 +222,7 @@ function saveResume() {
     //we do not have to load all users data.
     //firebase.database().ref("user_uid_list").push(user.uid);
     //firebase.database().ref().child("text").push("somevalue");
-    
+
     //add resume to dictionary
     firebase.database().ref("users/" + user.uid)
         .child(template)
@@ -215,5 +231,63 @@ function saveResume() {
             window.alert("Data Saved");
         });
 
+
+}
+
+//resume addButtons utility
+function addEducation(){
+    var lastrowindex = document.getElementById('education-table').rows.length-1;
+    var row = document.getElementById('education-table').insertRow(lastrowindex);
+    var cell = row.insertCell(0);
+    cell.setAttribute('contenteditable',"true");
+    cell.setAttribute('spellcheck','true');
+    cell.setAttribute('onclick','selectAll()');
+    cell.innerHTML='<b>Enter Degree</b>';
+    
+    cell = row.insertCell(-1);
+    cell.setAttribute('contenteditable',"true");
+    cell.setAttribute('spellcheck','true');
+    cell.setAttribute('onclick','selectAll()');
+    cell.innerHTML='University';
+
+    cell = row.insertCell(-1);
+    cell.setAttribute('contenteditable',"true");
+    cell.setAttribute('spellcheck','true');
+    cell.setAttribute('onclick','selectAll()');
+    cell.innerHTML='year';
+
+    cell = row.insertCell(-1);
+    cell.setAttribute('contenteditable',"true");
+    cell.setAttribute('spellcheck','true');
+    cell.setAttribute('onclick','selectAll()');
+    cell.setAttribute('class','text-center');
+    cell.innerHTML='grads';
+    // -1 is for appending at last
+    //console.log('added education');
+}
+function addSkills(){
+
+}
+function addInternships(){
+
+}
+function addProjects(){
+
+}
+//resume removeButtons utility
+function removeEducation(){
+    var lastrowindex = document.getElementById('education-table').rows.length-1;
+    document.getElementById('education-table').deleteRow(lastrowindex-1);
+}
+function removeSkills(){
+
+}
+function removeInternships(){
+
+}
+function removeProjects(){
+
+}
+function removeAchievements(){
 
 }

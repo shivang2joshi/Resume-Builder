@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="pragma" content="no-cache" />
+ 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -83,7 +83,7 @@
     </header>
     <!--Main Navigation-->
 
-    <main class="my-main" style="background:white; color: black;">
+    <main class="my-main my-resume-bg">
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
@@ -192,8 +192,8 @@
                                     </tr>
                                     <tr>
                                         <td colspan="4" class="text-right">
-                                            <button id="add-education" class="addButton">Add</button>
-                                            <button id="remove-education" class="removeButton">Remove</button>
+                                            <button id="add-education" class="addButton" onclick="addEducation()">Add</button>
+                                            <button id="remove-education" class="removeButton" onclick="removeEducation()">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -263,7 +263,7 @@
                                             </p>
                                             <p><i>Guide: Mr. xyz</i></p>
                                         </td>
-                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                        <td valign="top" class="w-20 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>(Dec 2017 - Jan 2018)</p>
                                             <p>Team Size - xx</p>
@@ -285,7 +285,7 @@
                                             </p>
                                             <p><i>Guide: Mr. xyz</i></p>
                                         </td>
-                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                        <td valign="top" class="w-20 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>(Dec 2017 - Jan 2018)</p>
                                             <p>Team Size - xx</p>
@@ -321,7 +321,7 @@
                                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                                             </p>
                                         </td>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                        <td valign="top" class="w-25 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>(Feb, 2018 - Mar, 2018)</p>
                                             <p>Team Size - 10</p>
@@ -344,7 +344,7 @@
                                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                                             </p>
                                         </td>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                        <td valign="top" class="w-25 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>(Feb, 2018 - Mar, 2018)</p>
                                             <p>Team Size - 10</p>
@@ -367,7 +367,7 @@
                                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                                             </p>
                                         </td>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
+                                        <td valign="top" class="w-25 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>(Feb, 2018 - Mar, 2018)</p>
                                             <p>Team Size - 10</p>
@@ -386,7 +386,7 @@
                                 <table class="w-100 my-side-line">
                                     <tbody>
                                         <tr style="display:flex; justify-content: space-between">
-                                            <td class="w-40">
+                                            <td class="w-50">
                                                 <table class="w-100 section">
                                                     <tr>
                                                         <td colspan="2" class="section-header">
@@ -405,7 +405,7 @@
                                                     </tr>
                                                 </table>
                                             </td>
-                                            <td class="w-40">
+                                            <td class="w-45">
                                                 <table class="w-100 section">
                                                     <tr>
                                                         <td colspan="2" class="section-header">
