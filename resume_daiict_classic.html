@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +25,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
-
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="functions.js"></script>
     <script src="app.js"></script>
 
@@ -34,7 +34,8 @@
 
 <body class="my-resume-bg">
 
-    <h1 id="template-name" class="invisible-template-name">resume_daiict_classic</h1>
+    <!--template's name is stored in this tag-->
+    <h1 id="template-name" class="invisible">resume_daiict_classic</h1>
 
 
     <!--Main Navigation-->
@@ -91,7 +92,7 @@
                         <ul>
                             <li><button id="save-doc" class="btn btn-primary" onclick="saveResume()">Save</button></li>
                             <li><button id="preview-doc" class="btn btn-outline-dark">Preview</button></li>
-                            <li><button class="btn btn-outline-dark">Download</button></li>
+                            <li><button id="download-doc" class="btn btn-outline-dark">Download</button></li>
                             <li><button id="print-doc" class="btn btn-outline-dark"
                                     onclick="printResume()">Print</button></li>
                             <li>
@@ -192,8 +193,10 @@
                                     </tr>
                                     <tr>
                                         <td colspan="4" class="text-right">
-                                            <button id="add-education" class="addButton" onclick="addEducation()">Add</button>
-                                            <button id="remove-education" class="removeButton" onclick="removeRow('education-table')">Remove</button>
+                                            <button id="add-education" class="addButton"
+                                                onclick="addEducation()">Add</button>
+                                            <button id="remove-education" class="removeButton"
+                                                onclick="removeRow('education-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -232,7 +235,8 @@
                                     <tr>
                                         <td colspan="2" class="text-right">
                                             <button id="add-skill" class="addButton" onclick="addSkills()">Add</button>
-                                            <button id="remove-skill" class="removeButton" onclick="removeRow('skills-table')">Remove</button>
+                                            <button id="remove-skill" class="removeButton"
+                                                onclick="removeRow('skills-table')">Remove</button>
                                         </td>
                                     </tr>
                                     <!---->
@@ -248,8 +252,9 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" class="w-20" contenteditable spellcheck="true" onclick="selectAll()">
-                                            <b >Name of Organization</b>
+                                        <td valign="top" class="w-20" contenteditable spellcheck="true"
+                                            onclick="selectAll()">
+                                            <b>Name of Organization</b>
                                         </td>
                                         <td valign="top" class="w-60" contenteditable spellcheck="true"
                                             onclick="selectAll()">
@@ -292,8 +297,10 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-right">
-                                            <button id="add-internship" class="addButton" onclick="addInternships()">Add</button>
-                                            <button id="remove-internship" class="removeButton" onclick="removeRow('internships-table')">Remove</button>
+                                            <button id="add-internship" class="addButton"
+                                                onclick="addInternships()">Add</button>
+                                            <button id="remove-internship" class="removeButton"
+                                                onclick="removeRow('internships-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -374,8 +381,10 @@
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="text-right">
-                                            <button id="add-project" class="addButton" onclick="addProjects()">Add</button>
-                                            <button id="remove-project" class="removeButton" onclick="removeRow('projects-table')">Remove</button>
+                                            <button id="add-project" class="addButton"
+                                                onclick="addProjects()">Add</button>
+                                            <button id="remove-project" class="removeButton"
+                                                onclick="removeRow('projects-table')">Remove</button>
                                         </td>
                                     </tr>
                                 </table>
@@ -415,9 +424,9 @@
                                                         <td valign="top">
                                                             <ul id="hobbies-list" class="list" contenteditable
                                                                 spellcheck="true" onclick="selectAll()">
-                                                                <li>Hobbie 0</li>
-                                                                <li>Hobbie 1</li>
-                                                                <li>Hobbie 2</li>
+                                                                <li>Hobby 0</li>
+                                                                <li>Hobby 1</li>
+                                                                <li>Hobby 2</li>
                                                             </ul>
                                                         </td>
                                                     </tr>
@@ -426,13 +435,14 @@
                                         </tr>
                                         <tr>
                                             <td class="text-center">
-                                                <button id="ach-btn" class="addButton invisible" onclick="addAchievements()">Achievements</button>
+                                                <button id="ach-btn" class="addButton invisible"
+                                                    onclick="addAchievements()">Achievements</button>
                                                 <table class="w-100 section" id="awards-table">
                                                     <tr>
                                                         <td colspan="2" class="section-header">
                                                             <h3>AWARDS AND ACHIEVEMENTS
-                                                                <button id="remove-awards"
-                                                                    class="removeButton" onclick="removeAchievements()">Delete</button>
+                                                                <button id="remove-awards" class="removeButton"
+                                                                    onclick="removeAchievements()">Delete</button>
                                                             </h3>
                                                         </td>
                                                     </tr>
@@ -455,17 +465,13 @@
                 </div>
             </div>
         </div>
+        <div id="editor"></div>
     </main>
 
-
-
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
     <script>
         //controls handler
-        document.getElementById('print-doc').onclick = printResume;
         var isPreviewClicked = true;
-        document.getElementById("preview-doc").onclick = previewResume;
-        document.getElementById("save-doc").onclick = saveResume;
 
         var user;
         var dbref;
@@ -476,7 +482,7 @@
                 user = curruser;
                 dbref = firebase.database().ref("users/" + user.uid);
 
-                // this is not working------
+                // this is not working as desired------
                 //checking if user is not first time visitor
                 if (dbref != null)
                     loadResume();
@@ -484,12 +490,21 @@
                     console.log("First time visitor | Default data loaded");
                 //for first time user
                 //--------
-                
+
                 console.log(user.displayName);
             } else {
                 console.log("Not logged In");
             }
         });
+
+
+        //---------------------------------------------
+        //PDF conversion
+        $('#download-doc').on('click', function () {
+            console.log('clicked');
+        });
+
+
 
         /*function removeContent(id) {
             document.getElementById(id).innerHTML = "";

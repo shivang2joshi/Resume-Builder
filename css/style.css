@@ -31,37 +31,40 @@
 .my-reg-button {
     margin-left: 0px;
     margin-right: 1.25rem;
-    padding: .25rem .90rem;
+    padding: 7px 21px;
     border-radius: 4px;
-    border-style: solid;
-    border-color: rgb(43, 187, 51);
-    color: rgb(43, 187, 51);
-    background: none;
+    font-size: 14pt;
+    border-style: none;
+    /*border-color: rgb(43, 187, 51);
+    */background: rgb(48, 36, 219);
+    color: white;
     font-family: sans-serif;
     transition-duration: .4s;
     cursor: pointer;
 }
 
 .my-reg-button:hover {
-    background: rgb(43, 187, 51);
+    margin: 0;
+    font-size: 18pt;
     color: aliceblue;
 }
 
 .my-logout-button {
-    margin-left: 1rem;
-    margin-right: 1.25rem;
-    padding: .25rem .90rem;
-    border-radius: 4px;
-    border-style: solid;
-    border-color: rgb(243, 12, 12);
-    color: rgb(243, 12, 12);
-    background: none;
+    margin: 7px 0px 0px 17px;
+    padding: 7px 21px;
+    border-radius: 7px;
+    border-style: none;
+    color: rgb(255, 9, 9);
+    background: black;
     font-family: sans-serif;
+    font-size: 14pt;
     transition-duration: .4s;
     cursor: pointer;
 }
 
 .my-logout-button:hover {
+    font-size: 18pt;
+    margin-top: 0%;
     background: rgb(243, 12, 12);
     color: aliceblue;
 }
@@ -114,12 +117,18 @@
     padding: 10px 29px;
     position: fixed;
     background: #cc2f2f;
+    color: white;
+    font-size: 27pt;
     z-index: 999999;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.my-help:hover{
+    color: blanchedalmond;
+    font-size:29pt;
 }
 
 .my-quickpreview{
@@ -192,9 +201,12 @@
     font-size: 14pt; 
 }
 #awards-table{
-    transition: opacity .5s linear ;
+    transition: opacity .5s cubic-bezier(0.075, 0.82, 0.165, 1) ;
 }
-
+/* 
+table:nth-child(n+2) tr:first-child{
+    background: rgba(201, 175, 175, 0.753);
+}*/
 .addButton{
     margin: 10px 5px; 
     padding: 5px 14px;
@@ -202,7 +214,7 @@
     color:aliceblue;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 11pt;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27);
 }
 
@@ -213,8 +225,20 @@
     color:aliceblue;
     border: none;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 11pt;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27); 
+}
+
+.addButton:hover{
+    margin: 0px 5px; 
+    font-size: 14pt;
+    transition-duration: .3s;
+}
+
+.removeButton:hover{
+    margin: 0px 0px;
+    font-size: 14pt;
+    transition-duration: .3s;
 }
 .my-resume-page{
     padding-top:25px; 

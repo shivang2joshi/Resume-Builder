@@ -97,13 +97,13 @@ function loadResume() {
 
         //Heading
         document.getElementById('stud-name')
-            .innerHTML = snapshot.child('name').val() + "&nbsp";
+            .innerHTML = "" + snapshot.child('name').val();
         document.getElementById('e-mail')
-            .innerHTML = snapshot.child('email').val() + "&nbsp";
+            .innerHTML = "" + snapshot.child('email').val();
         document.getElementById('dob')
-            .innerHTML = snapshot.child('dob').val() + "&nbsp";
+            .innerHTML = "" + snapshot.child('dob').val();
         document.getElementById('address')
-            .innerHTML = snapshot.child('address').val() + "&nbsp";
+            .innerHTML = "" + snapshot.child('address').val();
 
         //Education
         tablerows = document.getElementById('education-table').rows;
@@ -114,7 +114,7 @@ function loadResume() {
             tablerows = document.getElementById('education-table').rows;
         } //addextra rows bcoz database has more rows then html table
         while ((tablerows.length - 3) - rowstobeupdated > 0) {
-            addEducation();
+            removeRow('education-table');
             tablerows = document.getElementById('education-table').rows;
         } //remove rows bcoz default html has more rows then database
         for (i = 0; i < rowstobeupdated; i++) { //update rows
@@ -132,7 +132,7 @@ function loadResume() {
             tablerows = document.getElementById('skills-table').rows;
         } //when database has more rows
         while ((tablerows.length - 2) - rowstobeupdated > 0) {
-            removeSkills();
+            removeRow('skills-table');
             tablerows = document.getElementById('skills-table').rows;
         } //when defalt html page got more rows
         for (i = 0; i < rowstobeupdated; i++) {
@@ -148,7 +148,7 @@ function loadResume() {
             tablerows = document.getElementById('internships-table').rows;
         }
         while ((tablerows.length - 2) - rowstobeupdated > 0) {
-            removeInternships();
+            removeRow('internships-table');
             tablerows = document.getElementById('internships-table').rows;
         }
         for (i = 0; i < rowstobeupdated; i++) {
@@ -157,8 +157,35 @@ function loadResume() {
             }
         }
 
+        //Projects
+        tablerows = document.getElementById('projects-table').rows;
+        var projects_tabledata = snapshot.child('projects').val();
+        rowstobeupdated = projects_tabledata.length;
+        while (rowstobeupdated - (tablerows.length - 2) > 0) {
+            addProjects();
+            tablerows = document.getElementById('projects-table').rows;
+        }
+        while ((tablerows.length - 2) - rowstobeupdated > 0) {
+            removeRow('projects-table');
+            tablerows = document.getElementById('internships-table').rows;
+        }
+        for (i = 0; i < rowstobeupdated; i++) {
+            for (j = 0; j < 3; j++) {
+                tablerows[i + 1].cells[j].innerHTML = projects_tabledata[i][j];
+            }
+        }
 
-        console.log("user data loaded from loadResume()");
+        //positions
+        document.getElementById('positions-list')
+            .innerHTML = snapshot.child('positions').val();
+        //hobbies
+        document.getElementById('hobbies-list')
+            .innerHTML = snapshot.child('hobbies').val();
+        //positions
+        document.getElementById('awards-list')
+            .innerHTML = snapshot.child('awards').val();
+
+            console.log("user data loaded from latest saved database");
     }, function (error) {
         console.log("Error: " + error.code);
     });
@@ -214,18 +241,10 @@ function saveResume() {
     }
     //positions
     var ul = document.getElementById('positions-list')
-    var ul_items = ul.getElementsByTagName('li');
-    var positions_list = [];
-    for (i = 0; i < ul_items.length; i++) {
-        positions_list[i] = ul_items[i].innerHTML;
-    }
+    var positions_list = ul.innerHTML;
     //hobbies
     ul = document.getElementById('hobbies-list')
-    ul_items = ul.getElementsByTagName('li');
-    var hobbies_list = [];
-    for (i = 0; i < ul_items.length; i++) {
-        hobbies_list[i] = ul_items[i].innerHTML;
-    }
+    var hobbies_list = ul.innerHTML;
     //achievments
     var awards_list = document.getElementById('awards-list').innerHTML;
 
@@ -350,7 +369,7 @@ function addProjects() {
     cell.setAttribute('contenteditable', "true");
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
-    cell.innerHTML = '<p><b>' + newCellPlaceholder + '</b></p><p><i>'+newCellPlaceholder+'</i></p>';
+    cell.innerHTML = '<p><b>' + newCellPlaceholder + '</b></p><p><i>' + newCellPlaceholder + '</i></p>';
 
     cell = newrow.insertCell(-1);
     cell.setAttribute('valign', 'top');
@@ -365,14 +384,15 @@ function addProjects() {
     cell.setAttribute('contenteditable', "true");
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
-    cell.innerHTML = '<p>' + newCellPlaceholder + '</p><p>'+newCellPlaceholder+'</p>';
+    cell.innerHTML = '<p>' + newCellPlaceholder + '</p><p>' + newCellPlaceholder + '</p>';
 
 }
-function addAchievements(){
-    document.getElementById('awards-table').style.display='inline';
-    setTimeout(function(){
-        document.getElementById('awards-table').style.opacity=1;
-    },1);
+
+function addAchievements() {
+    document.getElementById('awards-table').style.display = 'inline';
+    setTimeout(function () {
+        document.getElementById('awards-table').style.opacity = 1;
+    }, 1);
     document.getElementById('ach-btn').classList.add('invisible');
 }
 
@@ -384,11 +404,16 @@ function removeRow(tableid) {
 }
 
 function removeAchievements() {
-    document.getElementById('awards-table').style.opacity=0;
-    setTimeout(function(){
+    document.getElementById('awards-table').style.opacity = 0;
+    setTimeout(function () {
         document.getElementById('ach-btn').classList.remove('invisible');
-        document.getElementById('awards-table').style.display='none';  
-    },600);
-    
-    
+        document.getElementById('awards-table').style.display = 'none';
+    }, 600);
 }
+
+/* 
+ * jQuery helper plugin for examples and tests 
+ */
+(function ($) {
+    
+})(jQuery);
