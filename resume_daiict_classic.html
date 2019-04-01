@@ -36,7 +36,7 @@
 
     <!--template's name is stored in this tag-->
     <h1 id="template-name" class="invisible">resume_daiict_classic</h1>
-
+    <div id="save-message-div" class="save-message">Saved!</div>
 
     <!--Main Navigation-->
     <header class="my-fixed-tab">
@@ -88,12 +88,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
-                    <div id="controlls" class=" my-controls">
-                        <ul>
-                            <li><button id="save-doc" class="btn btn-primary" onclick="saveResume()">Save</button></li>
-                            <li><button id="preview-doc" class="btn btn-outline-dark">Preview</button></li>
-                            <li><button id="download-doc" class="btn btn-outline-dark">Download</button></li>
-                            <li><button id="print-doc" class="btn btn-outline-dark"
+                    <div id="controlls" class="my-controls">
+                        <ul style="padding-left:0%">
+                            <li><button id="save-doc" class="btn-select" onclick="saveResume()">Save</button></li>
+                            <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button></li>
+                            <li><button id="download-doc" class="btn-select">Download</button></li>
+                            <li><button id="print-doc" class="btn-select"
                                     onclick="printResume()">Print</button></li>
                             <li>
                                 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -226,16 +226,10 @@
                                             onclick="selectAll()">Android Studio etc..</td>
                                     </tr>
                                     <tr>
-                                        <td class="w-30"><b>Technical Electives</b></td>
-                                        <td id="electives" class="w-70" contenteditable spellcheck="true"
-                                            onclick="selectAll()">Operating Systems,
-                                            Cryptography
-                                            etc.</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2" class="text-right">
-                                            <button id="add-skill" class="addButton" onclick="addSkills()">Add</button>
-                                            <button id="remove-skill" class="removeButton"
+                                        <td colspan="2">
+                                            <button id="add-skill" class="addButton" onclick="addSkills()">Technical
+                                                Electives</button>
+                                            <button id="remove-skill" class="removeButton invisible"
                                                 onclick="removeRow('skills-table')">Remove</button>
                                         </td>
                                     </tr>
@@ -256,16 +250,17 @@
                                             onclick="selectAll()">
                                             <b>Name of Organization</b>
                                         </td>
-                                        <td valign="top" class="w-60" contenteditable spellcheck="true"
-                                            onclick="selectAll()">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                        <td valign="top" class="w-60">
+                                            <p contenteditable spellcheck="true" onclick="selectAll()">
+                                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque
                                                 pulvinar
                                                 nibh
                                                 in
                                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                                             </p>
-                                            <p><i>Guide: Mr. xyz</i></p>
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><i>Guide: Mr.
+                                                    xyz</i></p>
                                         </td>
                                         <td valign="top" class="w-20 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
@@ -278,16 +273,17 @@
                                             onclick="selectAll()">
                                             <b>Name of Organization</b>
                                         </td>
-                                        <td valign="top" class="w-60" contenteditable spellcheck="true"
-                                            onclick="selectAll()">
-                                            <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                        <td valign="top" class="w-60">
+                                            <p contenteditable spellcheck="true" onclick="selectAll()">
+                                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque
                                                 pulvinar
                                                 nibh
                                                 in
                                                 scelerisque bibendum. Phasellus ipsum ipsum, cursus nec sem sit amet.
                                             </p>
-                                            <p><i>Guide: Mr. xyz</i></p>
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><i>Guide: Mr.
+                                                    xyz</i></p>
                                         </td>
                                         <td valign="top" class="w-20 text-right" contenteditable spellcheck="true"
                                             onclick="selectAll()">
@@ -312,15 +308,17 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
-                                            onclick="selectAll()">
-                                            <p><b>Name of the Project</b></p>
-                                            <p><i>Guide: Prof. XYZ</i></p>
+                                        <td valign="top" class="w-25">
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><b>Name of the
+                                                    Project</b></p>
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><i>Guide: Prof.
+                                                    XYZ</i></p>
                                         </td>
                                         <td valign="top" class="w-50" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque
                                                 pulvinar
                                                 nibh
                                                 in
@@ -334,16 +332,17 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
-                                            onclick="selectAll()">
-                                            <p><b>Name of the Project</b></p>
-                                            <p><i>Guide: Prof. XYZ</i></p>
-                                            <p></p>
+                                        <td valign="top" class="w-25">
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><b>Name of the
+                                                    Project</b></p>
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><i>Guide: Prof.
+                                                    XYZ</i></p>
                                         </td>
                                         <td valign="top" class="w-50" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque
                                                 pulvinar
                                                 nibh
                                                 in
@@ -357,16 +356,18 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" class="w-25" contenteditable spellcheck="true"
-                                            onclick="selectAll()">
-                                            <p><b>Name of the Project</b></p>
-                                            <p><i>Guide: Prof. XYZ</i></p>
+                                        <td valign="top" class="w-25">
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><b>Name of the
+                                                    Project</b></p>
+                                            <p contenteditable spellcheck="true" onclick="selectAll()"><i>Guide: Prof.
+                                                    XYZ</i></p>
                                             <p></p>
                                         </td>
                                         <td valign="top" class="w-50" contenteditable spellcheck="true"
                                             onclick="selectAll()">
                                             <p>
-                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                                                Describe here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                Quisque
                                                 pulvinar
                                                 nibh
                                                 in
@@ -402,15 +403,22 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td valign="top" contenteditable spellcheck="true"
-                                                            onclick="selectAll()">
+                                                        <td valign="top" >
                                                             <ul id="positions-list" class="list">
-                                                                <li>Position 0</li>
-                                                                <li>Position 1</li>
-                                                                <li>Position 2</li>
+                                                                <li contenteditable spellcheck="true"
+                                                                onclick="selectAll()">Position 0</li>
+                                                                <li contenteditable spellcheck="true"
+                                                                onclick="selectAll()">Position 1</li>
+                                                                <li contenteditable spellcheck="true"
+                                                                onclick="selectAll()">Position 2</li>
                                                             </ul>
                                                         </td>
                                                     </tr>
+                                                    
+                                                    <tr><td>
+                                                            <button class="addButton small-btn" onclick="addtoList('positions-list')">Add</button>
+                                                            <button class="removeButton small-btn" onclick="removeRow('positions-list')">Remove</button>
+                                                    </td></tr>
                                                 </table>
                                             </td>
                                             <td class="w-45">
@@ -422,14 +430,20 @@
                                                     </tr>
                                                     <tr>
                                                         <td valign="top">
-                                                            <ul id="hobbies-list" class="list" contenteditable
-                                                                spellcheck="true" onclick="selectAll()">
-                                                                <li>Hobby 0</li>
-                                                                <li>Hobby 1</li>
-                                                                <li>Hobby 2</li>
+                                                            <ul id="hobbies-list">
+                                                                <li contenteditable spellcheck="true"
+                                                                    onclick="selectAll()">Hobby 0</li>
+                                                                <li contenteditable spellcheck="true"
+                                                                onclick="selectAll()">Hobby 1</li>
+                                                                <li contenteditable spellcheck="true"
+                                                                    onclick="selectAll()">Hobby 2</li>
                                                             </ul>
                                                         </td>
                                                     </tr>
+                                                    <tr><td>
+                                                        <button class="addButton small-btn" onclick="addtoList('hobbies-list')">Add</button>
+                                                        <button class="removeButton small-btn" onclick="removeRow('hobbies-list')">Remove</button>
+                                                    </td></tr>
                                                 </table>
                                             </td>
                                         </tr>
@@ -484,9 +498,9 @@
 
                 // this is not working as desired------
                 //checking if user is not first time visitor
-                if (dbref != null)
-                    loadResume();
-                else
+                if (dbref != null) {
+                    //loadResume();
+                } else
                     console.log("First time visitor | Default data loaded");
                 //for first time user
                 //--------

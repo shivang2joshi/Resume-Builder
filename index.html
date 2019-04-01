@@ -58,18 +58,33 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link  waves-effect waves-light" href="#home">Home
+              <a class="nav-link smooth-link waves-effect waves-light" href="#home">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#temp-section">Templates</a>
+              <a class="nav-link smooth-link" href="#temp-section">Templates</a>
+            </li>
+            <li class="nav-item">
+              <a id="dahboard-link" class="nav-link" href="dashboard.html">Dashboard</a>
             </li>
           </ul>
           <!-- Links -->
           <!--<button onclick="" type="button" class="my-login-button">Login</button>-->
-          <button id="SignInWithGoogle" onclick="login()" class="my-reg-button">Login with
-            Google</button>
+          <ul class="navbar-nav">
+            <button id="SignInWithGoogle" onclick="login()" class="my-reg-button invisible">Login with Google</button>
+            <li class="nav-item">
+              <img id="user-photo" class="invisible" src="" alt="user" height="47px" width="47px">
+            </li>
+            <li class="nav-item">
+              <span id="user-name" class="nav-link invisible"></span>
+            </li>
+            <li class="nav-item">
+              <button id="Logout" onclick="logout()" type="button"
+                class="my-logout-button invisible"><b>Logout</b></button>
+            </li>
+          </ul>
+
         </div>
         <!-- Collapsible content -->
       </div>
@@ -78,7 +93,7 @@
   </header>
   <!--Main Navigation-->
 
-  <a href="#" class="my-help" ><b>?</b></a>
+  <a href="#" class="my-help"><b>?</b></a>
 
 
   <!--Main layout-->
@@ -133,7 +148,7 @@
         <div class="col-md-12">
           <div class="card text-center">
             <div class="card-header">
-
+              _
             </div>
             <div class="card-body">
               <h1 style="color: black">Templates</h1>
@@ -229,13 +244,35 @@
   <script>
     //just to make scrolling of a tags transitive
     $(document).ready(function () {
-      $("a.nav-link").click(
+      $("a.smooth-link").click(
         function (event) {
           event.preventDefault();
           $("html, body").animate({
             scrollTop: $($(this).attr("href")).offset().top
           }, 500);
         });
+    });
+
+    firebase.auth().onAuthStateChanged(function(user){
+      var signinbtn = document.getElementById('SignInWithGoogle');
+      var userphoto = document.getElementById('user-photo');
+      var username = document.getElementById('user-name');
+      var logoutbtn = document.getElementById('Logout');
+      var dashboard = document.getElementById('dashboard-link');
+      if(user){
+        signinbtn.classList.add('invisible');
+        username.classList.remove('invisible');
+        userphoto.classList.remove('invisible');
+        logoutbtn.classList.remove('invisible');
+        dashboard.classList.remove('invisible');
+      }
+      else{
+        signinbtn.classList.remove('invisible');
+        username.classList.add('invisible');
+        userphoto.classList.add('invisible');
+        logoutbtn.classList.add('invisible');
+        dashboard.classList.add('invisible');
+      }
     });
   </script>
   <!-- Bootstrap tooltips -->

@@ -29,6 +29,12 @@ function logout() {
 
 function selectAll() {
     document.execCommand('selectAll', true, "replace this");
+    //firefox doesn't allow keyboard operations with scripts
+}
+
+function applyBorder(element){
+    element.style.border = "1px solid rgb(150,150,150)";
+    element.style.borderRadius = "3px";
 }
 
 function printResume() {
@@ -276,7 +282,14 @@ function saveResume() {
         .child(template)
         .set(resumeDetails)
         .then(function () {
-            window.alert("Data Saved");
+            document.getElementById('save-message-div').style.display='block';
+            setTimeout(function(){
+                document.getElementById('save-message-div').style.opacity=0;
+            },2500);
+            setTimeout(function(){
+                document.getElementById('save-message-div').style.display='none';
+                document.getElementById('save-message-div').style.opacity=1;
+            },2500 + 800);
         });
 
 }
@@ -331,6 +344,9 @@ function addSkills() {
     cell.setAttribute('onclick', 'selectAll()');
     cell.innerHTML = newCellPlaceholder;
     console.log('added Skill');
+
+    document.getElementById('add-skill').classList.add('invisible');
+    document.getElementById('remove-skill').classList.remove('invisible');
     //console.log('added skills');    
 }
 
@@ -388,6 +404,17 @@ function addProjects() {
 
 }
 
+function addtoList(list_id){
+    var list = document.getElementById(list_id);
+    var cell = document.createElement('li');
+    cell.setAttribute('contenteditable', "true");
+    cell.setAttribute('spellcheck', 'true');
+    cell.setAttribute('onclick', 'selectAll()');
+    cell.innerHTML = newCellPlaceholder;
+    
+    list.appendChild(cell);
+}
+
 function addAchievements() {
     document.getElementById('awards-table').style.display = 'inline';
     setTimeout(function () {
@@ -398,9 +425,25 @@ function addAchievements() {
 
 //resume removeButtons utility
 function removeRow(tableid) {
-    console.log(tableid);
+    //console.log(tableid);
+    if(tableid == 'skills-table')
+    {
+        document.getElementById('remove-skill').classList.add('invisible');
+        document.getElementById('add-skill').classList.remove('invisible');
+    }
+    else if(tableid=='hobbies-list'){
+        var list = document.getElementById('hobbies-list')
+        list.removeChild(list.lastChild); 
+        return;
+    }
+    else if(tableid=='positions-list'){
+        var list = document.getElementById('positions-list')
+        list.removeChild(list.lastChild); 
+        return;
+    }
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     document.getElementById(tableid).deleteRow(lastrowindex - 1);
+    
 }
 
 function removeAchievements() {
@@ -410,6 +453,7 @@ function removeAchievements() {
         document.getElementById('awards-table').style.display = 'none';
     }, 600);
 }
+
 
 /* 
  * jQuery helper plugin for examples and tests 
