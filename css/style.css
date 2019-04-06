@@ -68,6 +68,9 @@
     color: aliceblue;
 }
 
+.no-background{
+    background:none;
+}
 
 .my-template-button {
     color: black;
@@ -181,6 +184,16 @@
 .btn-select:hover{
     background: rgb(17, 100, 255);
     color:white;
+}
+.btn-pla-sig{
+    padding: 5px 21px;
+    border: 1px solid rgba(177, 175, 175, 0.431);
+    border-radius: 4px;
+    color: white;
+    font-size: 18pt;
+    margin: 5px 10px;
+    background: inherit;
+    transition: .2s ease;
 }
 
 

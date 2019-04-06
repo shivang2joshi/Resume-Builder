@@ -455,9 +455,3 @@ function removeAchievements() {
 }
 
 
-/* 
- * jQuery helper plugin for examples and tests 
- */
-(function ($) {
-    
-})(jQuery);
