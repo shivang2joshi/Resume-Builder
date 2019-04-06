@@ -173,12 +173,13 @@
     padding: 5px 21px;
     border: 1px solid rgba(177, 175, 175, 0.431);
     border-radius: 4px;
+    color: black;
     margin: 5px 10px;
     background: inherit;
-    transition: .3s ease;
+    transition: .2s ease;
 }
 .btn-select:hover{
-    background: rgb(0, 83, 236);
+    background: rgb(17, 100, 255);
     color:white;
 }
 
@@ -250,23 +251,23 @@ table:nth-child(n+2) tr:first-child{
 .addButton {
     margin: 10px 5px;
     padding: 5px 14px;
-    background: rgb(85, 85, 226);
-    color: aliceblue;
+    background: rgb(128, 255, 128);
+    color: black;
     border: none;
     border-radius: 3px;
     font-size: 11pt;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.27);
 }
 
 .removeButton {
     margin: 10px 5px;
     padding: 5px 14px;
-    background: rgb(233, 31, 31);
-    color: aliceblue;
+    background: rgb(255, 255, 153);
+    color: black;
     border: none;
     border-radius: 3px;
     font-size: 11pt;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.27);
 }
 
 .addButton:hover {
