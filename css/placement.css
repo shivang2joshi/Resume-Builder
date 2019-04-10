@@ -1,0 +1,30 @@
+.upload-section{
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 5% 20%;
+    text-align: center;
+    padding: 9%;
+    background: rgba(1, 1, 1, .4);
+}
+.heading{
+    display: block;
+    padding-bottom: 10px;
+}
+.portal{
+    align-content: center;
+    padding: 2%;
+    font-size: 12pt;
+    margin-bottom: 10%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+}
+
+.message-section{
+    border: 1px solid none;
+    border-radius: 10px;
+    margin: 5% 0%;
+    text-align: center;
+    padding: 5% 10%;
+    background: rgba(51, 255, 0, 0.4);
+    opacity: 0;
+}
