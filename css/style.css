@@ -187,13 +187,24 @@
 }
 .btn-pla-sig{
     padding: 5px 21px;
-    border: 1px solid rgba(177, 175, 175, 0.431);
-    border-radius: 4px;
+    border: 2px solid rgba(177, 175, 175, 0.431);
+    border-radius: 5px;
     color: white;
-    font-size: 18pt;
+    font-size: 17pt;
     margin: 5px 10px;
     background: inherit;
     transition: .2s ease;
+}
+.btn-pla-sig:hover{
+    background: rgba(133, 111, 111, 0.651);
+}
+
+#formheading{
+    transition: .2s ease-out;
+}
+
+#flname,#forgotpswd,#plasignin, #institute, #p {
+    transition: .4s ease;
 }
 
 

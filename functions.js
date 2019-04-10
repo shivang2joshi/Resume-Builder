@@ -32,7 +32,7 @@ function selectAll() {
     //firefox doesn't allow keyboard operations with scripts
 }
 
-function applyBorder(element){
+function applyBorder(element) {
     element.style.border = "1px solid rgb(150,150,150)";
     element.style.borderRadius = "3px";
 }
@@ -191,7 +191,7 @@ function loadResume() {
         document.getElementById('awards-list')
             .innerHTML = snapshot.child('awards').val();
 
-            console.log("user data loaded from latest saved database");
+        console.log("user data loaded from latest saved database");
     }, function (error) {
         console.log("Error: " + error.code);
     });
@@ -282,17 +282,62 @@ function saveResume() {
         .child(template)
         .set(resumeDetails)
         .then(function () {
-            document.getElementById('save-message-div').style.display='block';
-            setTimeout(function(){
-                document.getElementById('save-message-div').style.opacity=0;
-            },2500);
-            setTimeout(function(){
-                document.getElementById('save-message-div').style.display='none';
-                document.getElementById('save-message-div').style.opacity=1;
-            },2500 + 800);
+            document.getElementById('save-message-div').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('save-message-div').style.opacity = 0;
+            }, 2500);
+            setTimeout(function () {
+                document.getElementById('save-message-div').style.display = 'none';
+                document.getElementById('save-message-div').style.opacity = 1;
+            }, 2500 + 800);
         });
 
 }
+
+
+var x = 0;
+
+function popRegister() {
+    x = (x + 1) % 2;
+    if (x == 1) {
+        var reg = [];
+        reg[0] = document.getElementById('formheading');
+        reg[1] = document.getElementById('flname');
+        reg[2] = document.getElementById('institute');
+        reg[3] = document.getElementById('p');
+        reg[4] = document.getElementById('forgotpswd');
+        reg[5] = document.getElementById('plasignin');
+
+        reg[0].innerText = 'Register';
+        reg[0].style.fontSize = '58pt';
+        setTimeout(function () {
+            reg[0].style.fontSize = '38pt';
+        }, 300);
+
+        reg[1].classList.remove('invisible');
+        reg[2].classList.remove('invisible');
+        setTimeout(function () {
+            reg[1].style.opacity = 1;
+            reg[2].style.opacity = 1;
+        }, 1);
+
+        reg[3].style.fontSize = 0;
+        reg[5].style.fontSize = 0;
+        reg[4].style.fontSize = 0;
+
+        setTimeout(() => {
+            reg[3].style.display = 'none';
+            reg[5].style.display = 'none';
+            reg[4].style.display = 'none';
+        }, 400);
+        //reg[3].style.height='10px';s
+    } else {
+
+
+        window.location = "placementcell.html";
+    }
+}
+
 
 var newCellPlaceholder = 'Click to select';
 
@@ -404,14 +449,14 @@ function addProjects() {
 
 }
 
-function addtoList(list_id){
+function addtoList(list_id) {
     var list = document.getElementById(list_id);
     var cell = document.createElement('li');
     cell.setAttribute('contenteditable', "true");
     cell.setAttribute('spellcheck', 'true');
     cell.setAttribute('onclick', 'selectAll()');
     cell.innerHTML = newCellPlaceholder;
-    
+
     list.appendChild(cell);
 }
 
@@ -426,24 +471,21 @@ function addAchievements() {
 //resume removeButtons utility
 function removeRow(tableid) {
     //console.log(tableid);
-    if(tableid == 'skills-table')
-    {
+    if (tableid == 'skills-table') {
         document.getElementById('remove-skill').classList.add('invisible');
         document.getElementById('add-skill').classList.remove('invisible');
-    }
-    else if(tableid=='hobbies-list'){
+    } else if (tableid == 'hobbies-list') {
         var list = document.getElementById('hobbies-list')
-        list.removeChild(list.lastChild); 
+        list.removeChild(list.lastChild);
         return;
-    }
-    else if(tableid=='positions-list'){
+    } else if (tableid == 'positions-list') {
         var list = document.getElementById('positions-list')
-        list.removeChild(list.lastChild); 
+        list.removeChild(list.lastChild);
         return;
     }
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     document.getElementById(tableid).deleteRow(lastrowindex - 1);
-    
+
 }
 
 function removeAchievements() {
@@ -453,5 +495,3 @@ function removeAchievements() {
         document.getElementById('awards-table').style.display = 'none';
     }, 600);
 }
-
-
