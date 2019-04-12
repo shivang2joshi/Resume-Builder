@@ -396,6 +396,7 @@ function popRegister() {
         //reg[3].style.height='10px';s
     } else {
 
+        
 
         window.location = "placementcell.html";
     }

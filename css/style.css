@@ -328,14 +328,13 @@ table:nth-child(n+2) tr:first-child{
     right: 0;
     top: 25%;
     */
-    margin-bottom: 15px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 15px 15px;
     text-align: center;
     background-color: white;
-    padding: 20px 0px;
+    padding: 20px 30px;
     /*border-radius: 20px 20px 20px 20px;*/
     box-shadow: 0 20px 22px rgba(0, 0, 0, 0.27);
+    border-radius: 2px;
 }
 
 .my-controls ul {
@@ -363,6 +362,11 @@ table:nth-child(n+2) tr:first-child{
     font-weight: 500;
 }
 
+@media only screen and (max-width: 800px){
+    #logo{
+        display: none;
+    }
+}
 
 /*
 .form-group {
