@@ -88,7 +88,7 @@ function previewResume() {
         document.getElementById("preview-doc").innerHTML = "Preview";
         isPreviewClicked = true; //now Preview option should be available
     }
-};
+}
 
 function loadResume() {
 
@@ -294,6 +294,69 @@ function saveResume() {
 
 }
 
+function placementlogin() {
+
+    var email = document.getElementById('e-mail').value,
+        password = document.getElementById('password').value;
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            signOut();
+        }
+    });
+
+    firebase.auth().signInWithEmailAndPassword(email, password)
+        .then(function () {
+            window.location = "placementcell.html";
+        })
+        .catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorMessage);
+            // ...
+        });
+}
+
+function printf(x) {
+    console.log(x);
+}
+
+function replaceDotwithSpace(s) {
+    str = new String(s);
+    return str.replace(".", " ");
+}
+
+function uploadFile() {
+
+    var file = document.getElementById('inp-file').files[0];
+    var instituteid;
+
+    if (file) {
+
+        firebase.auth().onAuthStateChanged(
+            function (user) {
+                if (user) {
+                    instituteid = replaceDotwithSpace(user.email);
+                    print(instituteid);
+                    print(file);
+                    firebase.storage().ref()
+                        .child(instituteid)
+                        .put(file);
+                    //pdf will be found at firebase storage
+                }
+            }
+        );
+        var message = document.getElementById('message');
+        message.classList.remove('invisible');
+        setTimeout(() => {
+            message.style.opacity = 1;
+        }, 10);
+        
+    } else {
+        window.alert('nothing is selected!');   
+    }
+}
 
 var x = 0;
 

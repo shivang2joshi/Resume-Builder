@@ -157,13 +157,13 @@
               <div id="controller" class="carousel slide text-center" data-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img class="w-40" style="height:6.5in" src="img/resumes/daiict.png" alt="First slide">
+                    <img class="w-40" style="max-height:6.5in" src="img/resumes/daiict.png" alt="First slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="w-40" style="height:6.5in" src="img/resumes/elon-musk-one-page-resume.png" alt="Second slide">
+                    <img class="w-40" style="max-height:6.5in" src="img/resumes/elon-musk-one-page-resume.png" alt="Second slide">
                   </div>
                   <div class="carousel-item">
-                    <img class="w-40" style="height:6.5in" src="img/resumes/daiict_classic.png" alt="Second slide">
+                    <img class="w-40" style="max-height:6.5in" src="img/resumes/daiict_classic.png" alt="Second slide">
                   </div>
                 </div>
                 <a class="carousel-control-prev" href="#controller" role="button" data-slide="prev">
@@ -189,7 +189,7 @@
           <div class="card no-background">
             <div class="card-body">
               
-              <form class="container border border-light p-5">
+              <div class="container border border-light p-5">
                 <h1 id="formheading" class="mb-4">Sign In</h1>
                 <hr>
                 <div id="flname" class="row mb-4 invisible" style="opacity:0">
@@ -202,18 +202,17 @@
                 </div>
 
                 <input id="institute" class="form-control mb-4 invisible" style="opacity:0" type="text" placeholder="Institute">
-                <input class="form-control mb-4" type="e-mail" placeholder="e-mail" id="e-mail">
-                <input class="form-control mb-4" type="password" placeholder="password">
+                <input id="e-mail" class="form-control mb-4" type="e-mail" placeholder="e-mail">
+                <input id="password" class="form-control mb-4" type="password" placeholder="password">
                 <small style="display:inline-block;overflow:hidden" id="forgotpswd"> <a href="">Forgot password?</a></small>
                 
                 <div class="container text-center">
-                  <input id="plasignin" class="btn-pla-sig" type="button" value="Sign In"
-                    onclick="placementlogin()"><br><br>
-                  <p id="p" style="display:inline-block;overflow:none"> Does not have account?
-                  </p>
+                  <button id="plasignin" class="btn-pla-sig"
+                    onclick="placementlogin()"> Sign In </button><br><br>
+                  <p id="p" style="display:inline-block;overflow:none"> Does not have account?</p>
                   <a style="display:inline-block" class="btn-pla-sig" onclick="popRegister()">Register</a>
                 </div>
-              </form>
+              </div>
 
             </div>
           </div>

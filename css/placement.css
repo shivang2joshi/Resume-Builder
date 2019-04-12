@@ -17,6 +17,7 @@
     margin-bottom: 10%;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 5px;
+    width: -webkit-fill-available;
 }
 
 .message-section{
@@ -27,4 +28,5 @@
     padding: 5% 10%;
     background: rgba(51, 255, 0, 0.4);
     opacity: 0;
+    transition: .2s ease-in;
 }

@@ -19,7 +19,6 @@
         $('body').scrollTop(0);
         previewResume();
         createPDF();
-        previewResume();
     });
     //create pdf  
     function createPDF() {
@@ -27,7 +26,7 @@
             unit: 'mm',
             format: 'a4',
         });
-       
+
         getCanvas(page1).then(function (canvas) {
             var
                 img = canvas.toDataURL("image/png"),
@@ -35,23 +34,26 @@
 
             doc.addImage(img, 'JPEG', 2, 7, a4width, height);
             doc.addPage();
+
+
+            getCanvas(page2).then(function (canvas) {
+                var
+                    img = canvas.toDataURL("image/png"),
+                    height = 0.264583 * canvas.height;
+                //px to mm coversion
+                //canvas height is in px.
+
+                doc.addImage(img, 'JPEG', 2, 7, a4width, height);
+                doc.save(document.getElementById('stud-name').innerText);
+
+                page1.width(cache_width1);
+                page2.width(cache_width2);
+                previewResume();
+            });
+
         });
 
 
-        getCanvas(page2).then(function (canvas) {
-            var
-                img = canvas.toDataURL("image/png"),
-                height = 0.264583 * canvas.height;
-            //px to mm coversion
-            //canvas height is in px.
-
-            doc.addImage(img, 'JPEG', 2, 7, a4width, height);
-            doc.save('resume-html-to-pdf.pdf');
-
-            page1.width(cache_width1);
-            page2.width(cache_width2);
-        });
-        
     }
 
     // create canvas object  

@@ -21,6 +21,10 @@ firebase.auth().onAuthStateChanged(function (user) {
         {
             document.getElementById('user-name').innerHTML = user.displayName;
         }
+        if( document.getElementById('user-id'))
+        {
+            document.getElementById('user-id').innerHTML = user.email;
+        }
         console.log("runs one time");
     } else {
         //not signed in
