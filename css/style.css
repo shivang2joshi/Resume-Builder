@@ -206,7 +206,17 @@
 #flname,#forgotpswd,#plasignin, #institute, #p {
     transition: .4s ease;
 }
+.black-transparent{
+    background: rgba(1, 1, 1, 0.5);
+    border: 1px solid grey;
+}
 
+.fontblack{
+    color:black;
+}
+.fontwhite{
+    color:aliceblue;
+}
 
 /*------------------Resume CSS---------------------*/
 .w-20 {
