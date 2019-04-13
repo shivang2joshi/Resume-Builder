@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/elonmusk.css" rel="stylesheet">
+    <title>DA-IICT Template</title>
+    <link rel="icon" type="image/x-icon" href="img/daiictlogo.jpg">
+
+    <!-- Firebase App is always required and must be first -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-functions.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="functions.js"></script>
+    <script src="app.js"></script>
+    <script src="elonmusk.js"></script>
+
+
+</head>
+
+<body class="my-resume-bg">
+
+    <!--template's name is stored in this tag-->
+    <h1 id="template-name" class="invisible">resume_elon_musk</h1>
+    <div id="save-message-div" class="save-message">Saved!</div>
+
+    <!--Main Navigation-->
+    <header class="my-fixed-tab">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
+            <div class="container">
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="index.html" onclick="saveResume()">CVMaker</a>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link  waves-effect waves-light" href="dashboard.html"
+                                onclick="saveResume()">Dashboard
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Links -->
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <img id="user-photo" src="" alt="user" height="47px" width="47px">
+                        </li>
+                        <li class="nav-item">
+                            <span id="user-name" class="nav-link">...</span>
+                        </li>
+                        <li class="nav-item">
+                            <button id="Logout" onclick="logout()" type="button"
+                                class="my-logout-button"><b>Logout</b></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Collapsible content -->
+        </nav>
+        <!--/.Navbar-->
+    </header>
+    <!--Main Navigation-->
+
+    <main class="my-main my-resume-bg">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <div id="controlls" class="my-controls inline-block">
+                        <ul style="padding-left:0%">
+                            <li><button id="save-doc" class="btn-select" onclick="saveResume()">Save</button></li>
+                            <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button>
+                            </li>
+                            <li><button id="download-doc" class="btn-select">Download</button></li>
+                            <li><button id="print-doc" class="btn-select" onclick="printResume()">Print/Save
+                                    PDF</button></li>
+                            <li style="display:none">
+                                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                                <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf"
+                                    data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="resume" class="container my-resume-page">
+                        <div class="row" style="padding-top:50px;">
+                            
+                            <div class="col-md-5">
+                                <div class="row side-design">
+                                    <h1 id="name" contenteditable="true" onclick="selectAll()"> Elon Musk</h1>
+                                    <h4 id="current-position" class="color-1" contenteditable="true" onclick="selectAll()"> Entrepreneur, Engineer,....</h4>
+                                </div>
+                                <div class="row pl-100">
+                                    <p id="about" class="text-14 color-2" contenteditable="true" onclick="selectAll()">sdmskdk kkadkasdk kasdkaskd kasdknsakdn aksndknaskdn aksndknaskdn</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <img id="photo" src="" alt="...." height="180">
+                                <input id="inputphoto" type="file">
+                            </div>
+                            <div class="col-md-4 text-12">
+                                <div class="text-right">
+                                        <span contenteditable="true" onclick="selectAll()" class="inline-block">elon@teslamoters.com</span>
+                                        <span class="contact-icons inline-block">e</span>    
+                                </div>
+                                <br>
+                                <div class="text-right">
+                                    <span contenteditable="true" onclick="selectAll()">8457-343-4332</span>
+                                    <span class="contact-icons">p</span>
+                                </div>
+                                <br>
+                                <div class="text-right">
+                                    <span contenteditable="true" onclick="selectAll()">Los Angeles, USA</span>
+                                    <span class="contact-icons">l</span>
+                                </div>
+                                <br>
+                                <div class="text-right">
+                                    <span contenteditable="true" onclick="selectAll()">@elonmusk</span>
+                                    <span class="contact-icons">t</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <hr style="border-bottom: 2px solid rgba(0,177,177,1)">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h2 class="pl-75"><b>Work Experience</b></h2>
+                            </div>
+                            <div class="col-md-5">
+                                <h2><b>Skills and Competencies</b></h2>
+                                <div id="skillset" contenteditable="true">
+                                    <span class="skill">Java</span>
+                                    <span class="skill">Python</span>
+                                </div>
+                                <input id="inputskill" type="text" placeholder="JavaScript, C++">
+                                <button class="addButton" onclick="AddSkill3()">Add</button>
+                            
+                                <hr>
+
+                                <h2><b>Achievements & Certificates</b></h2>
+                                <div class="text-achievements" contenteditable="true" onclick="selectAll()">
+                                    <p>53rd Richest Person in the world -Forbes(2018)</p>
+                                    <p>21st on the Forbes list of The World's Most Powerful People (2016)</p>
+                                </div>
+
+                                <hr>
+
+                                <h2><b>Interests</b></h2>
+                                <div id="interestset" class="text-interests" contenteditable="true">
+                                    <span class="interest">Physics</span>
+                                    <span class="interest">Alternative Energy</span>
+                                    <span class="interest">Sustainability</span>
+                                    <span class="interest">Space Engineering</span>
+                                    <span class="interest">Philanthropy</span>
+                                </div>
+                                <input id="inputinterest" type="text" placeholder="Research and Developement">
+                                <button class="addButton" onclick="Addinterest3()">Add</button>
+                                
+                                <hr>
+                                <div>
+                                    <h3 class="CVMaker color-1">CVMaker.com</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="createPDF.js"></script>
+
+    <script>
+        //controls handler
+        var isPreviewClicked = true;
+
+        var user;
+        var dbref;
+        var isUserExists = true;
+        var snapshotloaded = false;
+        firebase.auth().onAuthStateChanged(function (curruser) {
+            if (curruser) {
+                user = curruser;
+                var pic=document.getElementById('inputphoto');
+                pic.onclick = function(){
+                    document.getElementById('photo').src = pic.files[0].value;
+                };
+                dbref = firebase.database().ref("users/" + user.uid);
+
+                // this is not working as desired------
+                //checking if user is not first time visitor
+                if (dbref != null) {
+                    //loadResume();
+                } else
+                    console.log("First time visitor | Default data loaded");
+                //for first time user
+                //--------
+
+                console.log(user.displayName);
+            } else {
+                console.log("Not logged In");
+            }
+        });
+
+
+
+        /*function removeContent(id) {
+            document.getElementById(id).innerHTML = "";
+        }
+        $('#stud-name').one("click",removeContent('stud-name'));*/
+    </script>
+</body>
+
+</html>

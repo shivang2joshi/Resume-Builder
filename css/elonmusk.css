@@ -1,0 +1,75 @@
+.contact-icons{
+    display: inline-block;
+    padding: 0px 15px;
+    min-width: 10px;
+}
+.text-12{
+    font-size:12pt;
+    font-weight:400;
+}
+.text-14{
+    font-size:14pt;
+    font-weight:500;
+}
+.text-achievements{
+    font-size: 15pt;
+    font-weight: 450;
+}
+.text-interests{
+    
+    font-size: 13pt;
+    font-weight: 450;
+}
+h1,h2,h3,h4,h5,h6{
+    display: block;
+    font-weight: 400;
+}
+.color-1{
+    color: rgb(0, 177, 177);
+}
+.color-2{
+    color: rgb(26, 26, 26);
+}
+.side-design{
+    border-left: 75px solid black;
+    padding: 5px 25px;
+}
+.pl-100{
+    padding: 5px 25px 5px 100px;
+}
+.pl-75{
+    padding: 5px 25px 5px 75px;
+}
+
+input{
+margin: 5px 10px;
+padding: 5px;
+background: none;
+border: 2px solid grey;
+border-radius: 5px;
+}
+
+.skill{
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px 4px;
+    background: rgb(0, 177, 177);
+    color: white;
+    font-size: 15pt;
+    border-radius: 5px;
+}
+
+.interest{
+    display: inline-block;
+    min-width: 45%;
+    margin: 15px 5px 0px 0px;
+    padding-left: 6px;
+    border-left: 5px solid rgb(0, 177, 177);
+    
+}
+.CVMaker{
+    padding: 15px;
+    text-align: right;
+    font-size: 15pt;
+    font-weight:600;
+}

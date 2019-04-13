@@ -106,7 +106,7 @@
               <a title="Click to preview" id="prev-resume-daiict" href="#">
                 <img src="img/resumes/daiict.png" class="card-img-top get-big">
               </a>
-              <a href="resume_daiict.html" class="btn-select fontwhite">Select</a>
+              <a href="resume_daiict_regular.html" class="btn-select fontwhite">Select</a>
             </div>
           </div>
         </div>
@@ -114,13 +114,27 @@
         <div class="col-md-4">
           <div class="card text-center black-transparent">
             <div class="card-body">
-              <h4 class="card-title" style="color:blac;">DA-IICT Classic</h4>
+              <h4 class="card-title">DA-IICT Classic</h4>
               <p class="card-text fontwhite">DA-IICT | Classic version of
                 recommanded resume format for on-campus interviews</p>
-                <a title="Click to preview" id="prev-resume-daiict-classic" href="#">
-                    <img src="img/resumes/daiict_classic.png" class="card-img-top get-big" alt=".......">
-                </a>
+              <a title="Click to preview" id="prev-resume-daiict-classic" href="#">
+                <img src="img/resumes/daiict_classic.png" class="card-img-top get-big" alt=".......">
+              </a>
               <a href="resume_daiict_classic.html" class="btn-select fontwhite">Select</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card text-center black-transparent">
+            <div class="card-body">
+              <h4 class="card-title">Elon Musk Style</h4>
+              <p class="card-text fontwhite">Standard one page resume. Best suited for professional employees.</p>
+              <br>
+              <a title="Click to preview" id="prev-resume-elon-musk" href="#">
+                <img src="img/resumes/elon-musk-one-page-resume.png" class="card-img-top get-big" alt=".......">
+              </a>
+              <a href="resume_elon_musk.html" class="btn-select fontwhite">Select</a>
             </div>
           </div>
         </div>
@@ -200,6 +214,16 @@
         previewisON = true;
         console.log(1);
         document.getElementById('preview-frame').src = "img/resumes/daiict_classic.png";
+        document.getElementById('preview-div').style.opacity = 1;
+        document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('close-preview').style.opacity = 1;
+        document.getElementById('close-preview').style.zIndex = 1000;
+      };
+    document.getElementById('prev-resume-elon-musk').onclick =
+      function () {
+        previewisON = true;
+        console.log(1);
+        document.getElementById('preview-frame').src = "img/resumes/elon-musk-one-page-resume.png";
         document.getElementById('preview-div').style.opacity = 1;
         document.getElementById('preview-div').style.zIndex = 1000;
         document.getElementById('close-preview').style.opacity = 1;
