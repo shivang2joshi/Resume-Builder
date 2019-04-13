@@ -114,7 +114,6 @@
                 <div class="col-md-12">
                     <div id="resume" class="container my-resume-page">
                         <div class="row" style="padding-top:50px;">
-
                             <div class="col-md-5">
                                 <div class="row side-design">
                                     <h1 id="name" contenteditable="true" onclick="selectAll()"> Elon Musk</h1>
@@ -127,9 +126,9 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <label for="inputphoto">
-                                    <img id="photo" src="" alt="....">
-                                    <small id="photocaption">Click to replace</small>
+                                <label for="inputphoto" class="text-center">
+                                    <img id="photo" src="" alt="...."><br>
+                                    <small id="photocaption">Browse</small>
                                 </label>
                                 <input id="inputphoto" type="file" class="invisible">
                             </div>
@@ -157,14 +156,113 @@
                             </div>
 
                         </div>
+                        <!-----------------------------------HEAD END----------------------------------------->
                         <hr style="border-bottom: 2px solid rgba(0,177,177,1)">
-                        <div class="row" style="justify-content:space-between">
-                            <div class="col-md-">
-                                <h2 class="pl-100"><b>Work Experience</b></h2>
-                                <div class="row"></div>
+
+                        <div class="row">
+                            <!----------------------------------LEFT SECTION--------------------------------->
+                            <div class="col-md-7">
+                                <h2 class="pl-75"><b>Work Experience</b></h2>
+                                <table id="work-experience">
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="row side-design-2">
+                                                    <h4 id="position-name" class="w-100" contenteditable="true" onclick="selectAll()"><b>Founder, CEO & Lead Designer</b></h4>
+                                                    <h5 id="company" contenteditable="true" onclick="selectAll()">SpaceX - Space Exploration Technologies</h5>
+                                                    <div class="space-between text-12">
+                                                        <span id="work-time" class="color-1" contenteditable="true" onclick="selectAll()"><i>06/2002 -
+                                                                Present</i></span>
+                                                        <span id="work-location" class="color-1" contenteditable="true" onclick="selectAll()"><i>Howthorne,
+                                                                USA</i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="pl-75  text-12">
+                                                    <span class="color-1"><i>Accomplishments</i></span>
+                                                    <ul class="accomplishments" contenteditable="true" onclick="selectAll()">
+                                                        <li >Successfully launched Falcon Heavy, the most Powerful
+                                                            operational rocket in the world by a factor of two, with the
+                                                            ability to lift into orbit nearly 64 metric tons (141,000
+                                                            lb)
+                                                            -- a mass greater than a 737 jetliner loaded with
+                                                            passangers, crew, luggage and fuel.</li>
+                                                        <li>Plans to reduce space transportation costs to enable people
+                                                            to colonize Mars.</li>
+                                                        <li>Developed the Falcon 9 spacecraft which replaced the space
+                                                            shuttle when it retired in 2011.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!------------------------------2 ----------------------->
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="row side-design-2">
+                                                    <h4 id="position-name" class="w-100"><b>Founder</b></h4>
+                                                    <h5 id="company">The Boring Company</h5>
+                                                    <div class="space-between text-12">
+                                                        <span id="work-time" class="color-1"><i>12/2016 -
+                                                                Present</i></span>
+                                                        <span id="work-location" class="color-1"><i>Howthorne,
+                                                                USA</i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="pl-75 text-12">
+                                                    <span class="color-1"><i>Accomplishments</i></span>
+                                                    <ul class="accomplishments">
+                                                        <li>Raised $10m by selling 20,000 flamethrowers in 4 days.</li>
+                                                        <li>Raised $1m by selling 50,00 baseball caps.</li>
+                                                        <li>Hyperloop - an ultra highspeed underground public
+                                                            transportation system in which passangers are transported on
+                                                            autonomous electric pods travelling at 600+ miles per hour
+                                                            in a pressurized cabin. </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!----------------------------- 3 ------------------------------->
+                                    <tr>
+                                        <td>
+                                            <div class="row">
+                                                <div class="row side-design-2">
+                                                    <h4 id="position-name"><b>Founder, CEO & Lead Designer</b></h4>
+                                                    <h5 id="company">SpaceX - Space Exploration Technologies</h5>
+                                                    <div class="space-between text-12">
+                                                        <span id="work-time" class="color-1"><i>06/2002 -
+                                                                Present</i></span>
+                                                        <span id="work-location" class="color-1"><i>Howthorne,
+                                                                USA</i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="pl-75  text-12">
+                                                    <span class="color-1"><i>Accomplishments</i></span>
+                                                    <ul class="accomplishments">
+                                                        <li>Successfully launched Falcon Heavy, the most Powerful
+                                                            operational rocket in the world by a factor of two, with the
+                                                            ability to lift into orbit nearly 64 metric tons (141,000
+                                                            lb)
+                                                            -- a mass greater than a 737 jetliner loaded with
+                                                            passangers, crew, luggage and fuel.</li>
+                                                        <li>Plans to reduce space transportation costs to enable people
+                                                            to colonize Mars.</li>
+                                                        <li>Developed the Falcon 9 spacecraft which replaced the space
+                                                            shuttle when it retired in 2011.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr><td>
+                                        <button class="addButton" onclick="addWork()">Add Work</button>
+                                        <button class="removeButton" onclick="removeWork()">Remove Work</button>
+                                    </td></tr>
+                                </table>
                             </div>
 
-                            <!----------------------------------------------------------/-->
+                            <!-------------------------------RIGHT SECTION---------------------------/-->
                             <div class="col-md-5">
                                 <h2><b>Skills and Competencies</b></h2>
                                 <div id="skillset" contenteditable="true">

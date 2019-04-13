@@ -1,12 +1,12 @@
 function login() {
-    /*var provider = new firebase.auth.GoogleAuthProvider();
+    /**
+    var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function (result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
         
-
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -17,8 +17,10 @@ function login() {
         var credential = error.credential;
         // ...
         window.alert(errorMessage);
-    });*/
+    });
+    /**/
     window.location = "dashboard.html";
+    
 };
 
 function logout() {
@@ -353,9 +355,9 @@ function uploadFile() {
         setTimeout(() => {
             message.style.opacity = 1;
         }, 10);
-        
+
     } else {
-        window.alert('nothing is selected!');   
+        window.alert('nothing is selected!');
     }
 }
 
@@ -397,7 +399,7 @@ function popRegister() {
         //reg[3].style.height='10px';s
     } else {
 
-        
+
 
         window.location = "placementcell.html";
     }

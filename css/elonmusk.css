@@ -3,6 +3,15 @@
     padding:0;
     width:200px;
     border-radius: 100px;
+    box-shadow: 1px 1px 10px rgb(1, 1, 1);
+}
+#photocaption{
+    display: inline-block;
+    margin-top:10px; 
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+    background: rgba(1, 1, 1, 0.6);
 }
 
 .contact-icons{
@@ -30,6 +39,8 @@
 h1,h2,h3,h4,h5,h6{
     display: block;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 .color-1{
     color: rgb(0, 177, 177);
@@ -39,6 +50,10 @@ h1,h2,h3,h4,h5,h6{
 }
 .side-design{
     border-left: 75px solid black;
+    padding: 5px 25px;
+}
+.side-design-2{
+    border-left: 75px solid rgb(0, 177, 177);
     padding: 5px 25px;
 }
 .pl-100{
@@ -57,6 +72,20 @@ border-radius: 5px;
 max-width: 200px;
 font-size: 12pt;
 }
+
+.space-between{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+}
+
+.accomplishments{
+    list-style: square;
+    padding-left:15px;
+    line-height: 1.4;
+}
+
 .skill{
     display: inline-block;
     padding: 5px 10px;
