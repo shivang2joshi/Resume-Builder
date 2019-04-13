@@ -44,7 +44,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
             <div class="container">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="index.html" onclick="saveResume()">CVMaker</a>
+                <a id="homepage-link" class="navbar-brand" href="index.html" onclick="saveResume()">CVMaker</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -58,7 +58,7 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link  waves-effect waves-light" href="dashboard.html"
+                            <a id="dashboard-link" class="nav-link  waves-effect waves-light" href="dashboard.html"
                                 onclick="saveResume()">Dashboard
                             </a>
                         </li>
@@ -345,9 +345,9 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button class="addButton small-btn"
+                                            <button id="add-position" class="addButton small-btn"
                                                 onclick="addtoList('positions-list')">Add</button>
-                                            <button class="removeButton small-btn"
+                                            <button id="remove-position" class="removeButton small-btn"
                                                 onclick="removeRow('positions-list')">Remove</button>
                                         </td>
                                     </tr>
@@ -392,9 +392,9 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <button class="addButton small-btn"
+                                            <button id="add-hobby" class="addButton small-btn"
                                                 onclick="addtoList('hobbies-list')">Add</button>
-                                            <button class="removeButton small-btn"
+                                            <button id="remove-hobby" class="removeButton small-btn"
                                                 onclick="removeRow('hobbies-list')">Remove</button>
                                         </td>
                                     </tr>
