@@ -58,15 +58,15 @@
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link smooth-link waves-effect waves-light" href="#home">Home
+              <a id="home-link" class="nav-link smooth-link waves-effect waves-light" href="#home">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link smooth-link" href="#temp-section">Templates</a>
+              <a id="temp-link" class="nav-link smooth-link" href="#temp-section">Templates</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link smooth-link" href="#placement-cell">Placement Cell</a>
+                <a id="placement-link" class="nav-link smooth-link" href="#placement-cell">Placement Cell</a>
               </li>
             <li class="nav-item">
               <a id="dashboard-link" class="nav-link" href="dashboard.html">Dashboard</a>
@@ -194,23 +194,23 @@
                 <hr>
                 <div id="flname" class="row mb-4 invisible" style="opacity:0">
                   <div class="col-md-6">
-                    <input class="form-control" type="text" placeholder="First name">
+                    <input id="fname" class="form-control" type="text" placeholder="First name">
                   </div>
                   <div class="col-md-6">
-                    <input class="form-control" type="text" placeholder="Last name">
+                    <input id="lname" class="form-control" type="text" placeholder="Last name">
                   </div>
                 </div>
 
                 <input id="institute" class="form-control mb-4 invisible" style="opacity:0" type="text" placeholder="Institute">
                 <input id="e-mail" class="form-control mb-4" type="e-mail" placeholder="e-mail">
                 <input id="password" class="form-control mb-4" type="password" placeholder="password">
-                <small style="display:inline-block;overflow:hidden" id="forgotpswd"> <a href="">Forgot password?</a></small>
+                <small id="forgotpswd" style="display:inline-block;overflow:hidden"> <a href="">Forgot password?</a></small>
                 
                 <div class="container text-center">
                   <button id="plasignin" class="btn-pla-sig"
                     onclick="placementlogin()"> Sign In </button><br><br>
                   <p id="p" style="display:inline-block;overflow:none"> Does not have account?</p>
-                  <a style="display:inline-block" class="btn-pla-sig" onclick="popRegister()">Register</a>
+                  <a id="plaregister" style="display:inline-block" class="btn-pla-sig" onclick="popRegister()">Register</a>
                 </div>
               </div>
 

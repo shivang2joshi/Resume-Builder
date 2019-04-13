@@ -114,24 +114,30 @@
                 <div class="col-md-12">
                     <div id="resume" class="container my-resume-page">
                         <div class="row" style="padding-top:50px;">
-                            
+
                             <div class="col-md-5">
                                 <div class="row side-design">
                                     <h1 id="name" contenteditable="true" onclick="selectAll()"> Elon Musk</h1>
-                                    <h4 id="current-position" class="color-1" contenteditable="true" onclick="selectAll()"> Entrepreneur, Engineer,....</h4>
+                                    <h4 id="current-position" class="color-1" contenteditable="true"
+                                        onclick="selectAll()"> Entrepreneur, Engineer,....</h4>
                                 </div>
                                 <div class="row pl-100">
-                                    <p id="about" class="text-14 color-2" contenteditable="true" onclick="selectAll()">sdmskdk kkadkasdk kasdkaskd kasdknsakdn aksndknaskdn aksndknaskdn</p>
+                                    <p id="about" class="text-14 color-2" contenteditable="true" onclick="selectAll()">
+                                        sdmskdk kkadkasdk kasdkaskd kasdknsakdn aksndknaskdn aksndknaskdn</p>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <img id="photo" src="" alt="...." height="180">
-                                <input id="inputphoto" type="file">
+                                <label for="inputphoto">
+                                    <img id="photo" src="" alt="....">
+                                    <small id="photocaption">Click to replace</small>
+                                </label>
+                                <input id="inputphoto" type="file" class="invisible">
                             </div>
                             <div class="col-md-4 text-12">
                                 <div class="text-right">
-                                        <span contenteditable="true" onclick="selectAll()" class="inline-block">elon@teslamoters.com</span>
-                                        <span class="contact-icons inline-block">e</span>    
+                                    <span contenteditable="true" onclick="selectAll()"
+                                        class="inline-block">elon@teslamoters.com</span>
+                                    <span class="contact-icons inline-block">e</span>
                                 </div>
                                 <br>
                                 <div class="text-right">
@@ -152,10 +158,13 @@
 
                         </div>
                         <hr style="border-bottom: 2px solid rgba(0,177,177,1)">
-                        <div class="row">
-                            <div class="col-md-7">
-                                <h2 class="pl-75"><b>Work Experience</b></h2>
+                        <div class="row" style="justify-content:space-between">
+                            <div class="col-md-">
+                                <h2 class="pl-100"><b>Work Experience</b></h2>
+                                <div class="row"></div>
                             </div>
+
+                            <!----------------------------------------------------------/-->
                             <div class="col-md-5">
                                 <h2><b>Skills and Competencies</b></h2>
                                 <div id="skillset" contenteditable="true">
@@ -164,7 +173,7 @@
                                 </div>
                                 <input id="inputskill" type="text" placeholder="JavaScript, C++">
                                 <button class="addButton" onclick="AddSkill3()">Add</button>
-                            
+
                                 <hr>
 
                                 <h2><b>Achievements & Certificates</b></h2>
@@ -185,7 +194,7 @@
                                 </div>
                                 <input id="inputinterest" type="text" placeholder="Research and Developement">
                                 <button class="addButton" onclick="Addinterest3()">Add</button>
-                                
+
                                 <hr>
                                 <div>
                                     <h3 class="CVMaker color-1">CVMaker.com</h3>
@@ -196,7 +205,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </main>
 
 
@@ -216,10 +225,9 @@
         firebase.auth().onAuthStateChanged(function (curruser) {
             if (curruser) {
                 user = curruser;
-                var pic=document.getElementById('inputphoto');
-                pic.onclick = function(){
-                    document.getElementById('photo').src = pic.files[0].value;
-                };
+                var pic = document.getElementById('inputphoto');
+                pic.onclick = function () {};
+                document.getElementById('photo').src = user.photoURL;
                 dbref = firebase.database().ref("users/" + user.uid);
 
                 // this is not working as desired------

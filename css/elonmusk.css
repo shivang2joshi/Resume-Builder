@@ -1,3 +1,10 @@
+
+#photo{
+    padding:0;
+    width:200px;
+    border-radius: 100px;
+}
+
 .contact-icons{
     display: inline-block;
     padding: 0px 15px;
@@ -42,13 +49,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 input{
-margin: 5px 10px;
+margin: 20px 0px;
 padding: 5px;
 background: none;
 border: 2px solid grey;
 border-radius: 5px;
+max-width: 200px;
+font-size: 12pt;
 }
-
 .skill{
     display: inline-block;
     padding: 5px 10px;
