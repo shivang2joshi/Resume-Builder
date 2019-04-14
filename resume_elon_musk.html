@@ -46,7 +46,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark my-opac-bg">
             <div class="container">
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="index.html" onclick="saveResume()">CVMaker</a>
+                <a class="navbar-brand" href="index.html" onclick="saveResumeElon()">CVMaker</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -61,7 +61,7 @@
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link  waves-effect waves-light" href="dashboard.html"
-                                onclick="saveResume()">Dashboard
+                                onclick="saveResumeElon()">Dashboard
                             </a>
                         </li>
                     </ul>
@@ -92,7 +92,7 @@
                 <div class="text-center">
                     <div id="controlls" class="my-controls inline-block">
                         <ul style="padding-left:0%">
-                            <li><button id="save-doc" class="btn-select" onclick="saveResume()">Save</button></li>
+                            <li><button id="save-doc" class="btn-select" onclick="saveResumeElon()">Save</button></li>
                             <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button>
                             </li>
                             <li><button id="download-doc" class="btn-select">Download</button></li>
@@ -114,17 +114,20 @@
                 <div class="col-md-12">
                     <div id="resume" class="container my-resume-page">
                         <div class="row" style="padding-top:50px;">
-                            <div class="col-md-5">
+                            <div class="col-md-6">
                                 <div class="row side-design">
                                     <h1 id="name" contenteditable="true" onclick="selectAll()"> Elon Musk</h1>
                                     <h4 id="current-position" class="color-1" contenteditable="true"
-                                        onclick="selectAll()"> Entrepreneur, Engineer,....</h4>
+                                        onclick="selectAll()"> Entrepreneur, Engineer, Inventor and Investor</h4>
                                 </div>
                                 <div class="row pl-100">
                                     <p id="about" class="text-14 color-2" contenteditable="true" onclick="selectAll()">
-                                        sdmskdk kkadkasdk kasdkaskd kasdknsakdn aksndknaskdn aksndknaskdn</p>
+                                        Aiming to reduce global warming through sustainable energy production and
+                                        consumption. Planning to Reduce the risk of human extinction by making life
+                                        multi-planetary and setting up a human colony on Mars.</p>
                                 </div>
                             </div>
+                            <!---------------------------------------------------->
                             <div class="col-md-3">
                                 <label for="inputphoto" class="text-center">
                                     <img id="photo" src="" alt="...."><br>
@@ -132,7 +135,8 @@
                                 </label>
                                 <input id="inputphoto" type="file" class="invisible">
                             </div>
-                            <div class="col-md-4 text-12">
+                            <!---------------------------------------------------->
+                            <div class="col-md-3 text-12" style="padding-top:35px;">
                                 <div class="text-right">
                                     <span contenteditable="true" onclick="selectAll()"
                                         class="inline-block">elon@teslamoters.com</span>
@@ -168,19 +172,24 @@
                                         <td>
                                             <div class="row">
                                                 <div class="row side-design-2">
-                                                    <h4 id="position-name" class="w-100" contenteditable="true" onclick="selectAll()"><b>Founder, CEO & Lead Designer</b></h4>
-                                                    <h5 id="company" contenteditable="true" onclick="selectAll()">SpaceX - Space Exploration Technologies</h5>
+                                                    <h4 id="position-name" class="w-100" contenteditable="true"
+                                                        onclick="selectAll()"><b>Founder, CEO & Lead Designer</b></h4>
+                                                    <h5 id="company" contenteditable="true" onclick="selectAll()">SpaceX
+                                                        - Space Exploration Technologies</h5>
                                                     <div class="space-between text-12">
-                                                        <span id="work-time" class="color-1" contenteditable="true" onclick="selectAll()"><i>06/2002 -
+                                                        <span id="work-time" class="color-1" contenteditable="true"
+                                                            onclick="selectAll()"><i>06/2002 -
                                                                 Present</i></span>
-                                                        <span id="work-location" class="color-1" contenteditable="true" onclick="selectAll()"><i>Howthorne,
+                                                        <span id="work-location" class="color-1" contenteditable="true"
+                                                            onclick="selectAll()"><i>Howthorne,
                                                                 USA</i></span>
                                                     </div>
                                                 </div>
                                                 <div class="pl-75  text-12">
                                                     <span class="color-1"><i>Accomplishments</i></span>
-                                                    <ul class="accomplishments" contenteditable="true" onclick="selectAll()">
-                                                        <li >Successfully launched Falcon Heavy, the most Powerful
+                                                    <ul class="accomplishments" contenteditable="true"
+                                                        onclick="selectAll()">
+                                                        <li>Successfully launched Falcon Heavy, the most Powerful
                                                             operational rocket in the world by a factor of two, with the
                                                             ability to lift into orbit nearly 64 metric tons (141,000
                                                             lb)
@@ -255,10 +264,12 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    <tr><td>
-                                        <button class="addButton" onclick="addWork()">Add Work</button>
-                                        <button class="removeButton" onclick="removeWork()">Remove Work</button>
-                                    </td></tr>
+                                    <tr>
+                                        <td>
+                                            <button class="addButton" onclick="addWork()">Add Work</button>
+                                            <button class="removeButton" onclick="removeWork()">Remove Work</button>
+                                        </td>
+                                    </tr>
                                 </table>
                             </div>
 
@@ -266,8 +277,18 @@
                             <div class="col-md-5">
                                 <h2><b>Skills and Competencies</b></h2>
                                 <div id="skillset" contenteditable="true">
-                                    <span class="skill">Java</span>
-                                    <span class="skill">Python</span>
+                                    <span class="skill">Thinking through first principles</span>
+                                    <span class="skill">Marketing</span>
+                                    <span class="skill">Micromanagement</span>
+                                    <span class="skill">Goal Oriented</span>
+                                    <span class="skill">Resiliency</span>
+                                    <span class="skill">Future focused</span>
+                                    <span class="skill">Leadership</span>
+                                    <span class="skill">Creativity</span>
+                                    <span class="skill">Time Management</span>
+                                    <span class="skill">Persistence</span>
+                                    <span class="skill">Turning ideas into companies</span>
+                                    <span class="skill">Long-term thinking</span>
                                 </div>
                                 <input id="inputskill" type="text" placeholder="JavaScript, C++">
                                 <button class="addButton" onclick="AddSkill3()">Add</button>
@@ -324,8 +345,9 @@
             if (curruser) {
                 user = curruser;
                 var pic = document.getElementById('inputphoto');
-                pic.onclick = function () {};
-                document.getElementById('photo').src = user.photoURL;
+               pic.onchange = function () {
+                    document.getElementById('photo').src = pic.value;
+                };
                 dbref = firebase.database().ref("users/" + user.uid);
 
                 // this is not working as desired------
