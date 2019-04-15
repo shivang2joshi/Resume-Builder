@@ -221,14 +221,14 @@ function saveResume() {
             edu_tabledata[i - 2][j] = rowcells[j].innerHTML;
         //console.log(i);
     }
-    //console.log(edu_tabledata);
+    console.log(edu_tabledata);
     //Skills
     tablerows = document.getElementById('skills-table').rows;
     var skills_tabledata = [];
     for (i = 1; i < tablerows.length - 1; i++) {
         skills_tabledata.push(tablerows[i].cells[1].innerHTML);
     }
-    //console.log(skills_tabledata);
+    console.log(skills_tabledata);
     //Internships
     tablerows = document.getElementById('internships-table').rows;
     var internships_tabledata = [];
@@ -552,7 +552,7 @@ function removeRow(tableid) {
     }
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     document.getElementById(tableid).deleteRow(lastrowindex - 1);
-
+    
 }
 
 function removeAchievements() {

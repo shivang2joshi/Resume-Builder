@@ -58,7 +58,7 @@
 
     // create canvas object  
     function getCanvas(page) {
-        page.width((a4[0] * 1.7) - 80).css('max-width', 'none');
+        page.width((a4[0] * 1.8) - 80).css('max-width', 'none');
         //page.height((a4[1] * 1.3333) - 80).css('max-height','none');
         return html2canvas(page, {
             imageTimeout: 2000,
