@@ -396,12 +396,12 @@ function popRegister() {
             reg[5].style.display = 'none';
             reg[4].style.display = 'none';
         }, 400);
-        //reg[3].style.height='10px';s
+        //reg[3].style.pheight='10px';s
     } else {
+        
+        
 
-
-
-        window.location = "placementcell.html";
+        //window.location = "placementcell.html";
     }
 }
 

@@ -5,6 +5,21 @@ h3{
 #user-photo{
     border-radius: 23.5px;
 }
+.card-text{
+    display: block;
+    min-height:4rem;
+}
+
+.message-section{
+    border: 1px solid none;
+    border-radius: 10px;
+    margin: 5% 0%;
+    text-align: center;
+    padding: 5% 10%;
+    background: rgba(51, 255, 0, 0.4);
+    opacity: 0;
+    transition: .2s ease-in;
+}
 
 .my-fixed-tab {
     position: fixed;
