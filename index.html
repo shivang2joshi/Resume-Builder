@@ -57,7 +57,7 @@
 
           <!-- Links -->
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a id="home-link" class="nav-link smooth-link waves-effect waves-light" href="#home">Home
                 <span class="sr-only">(current)</span>
               </a>
@@ -206,12 +206,13 @@
                   placeholder="Institute">
                 <input id="e-mail" class="form-control mb-4" type="e-mail" placeholder="e-mail">
                 <input id="password" class="form-control mb-4" type="password" placeholder="password">
-                <small id="forgotpswd" style="display:inline-block;overflow:hidden"> <a href="">Forgot
-                    password?</a></small>
+                <small id="forgotpswd" style="display:inline-block;overflow:hidden">
+                   <a href="" onclick="window.alert('kindly drop a mail at admin@cvmaker.com with institute name')">
+                    Forgot password?</a></small>
 
                 <div class="container text-center">
                   <button id="plasignin" class="btn-pla-sig" onclick="placementlogin()"> Sign In </button><br><br>
-                  <p id="p" style="display:inline-block;overflow:none"> Does not have account?</p>
+                  <p id="p" style="display:inline-block;overflow:none"> Do not have an account?</p>
                   <a id="plaregister" style="display:inline-block" class="btn-pla-sig"
                     onclick="popRegister()">Register</a>
                 </div>

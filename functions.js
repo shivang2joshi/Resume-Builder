@@ -1,7 +1,3 @@
-const functions = {
-    add: (num1, num2) => num1 + num2
-}
-
 
 function login() {
     /**/
@@ -27,7 +23,7 @@ function login() {
     });
     /**/
 
-};
+}
 
 function logout() {
     firebase.auth().signOut()
@@ -46,9 +42,21 @@ function applyBorder(element) {
     element.style.border = "1px solid rgb(150,150,150)";
     element.style.borderRadius = "3px";
 }
-
+function checkFields(){
+    var fields = document.getElementsByClassName('input-field');
+    var i;
+    for(i=0;i<fields.length;i++){
+        if(fields[i].innerText=="")
+            return false;
+    }
+    return true;
+}
 function printResume() {
     //document represent respective resume template
+    if(!checkFields()){
+        window.alert('you can not have Empty fields printed');
+        return;
+    }
 
     var printdocument = document.getElementById('resume').innerHTML;
     var originalDocument = document.body.innerHTML;
@@ -313,7 +321,7 @@ function placementlogin() {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-            signOut();
+            firebase.auth().signOut();
         }
     });
 
@@ -325,7 +333,7 @@ function placementlogin() {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-            console.log(errorMessage);
+            window.alert(errorMessage);
             // ...
         });
     return "placement login successful";
@@ -339,6 +347,7 @@ function replaceDotwithSpace(s) {
     str = new String(s);
     return str.replace(".", " ");
 }
+
 
 function uploadFile() {
 
@@ -422,24 +431,25 @@ function popRegister() {
         var fname = document.getElementById('fname').value,
             lname = document.getElementById('lname').value,
             institute = document.getElementById('institute').value,
-            email = document.getElementById('e-mail').value,
+            email =replaceDotwithSpace(document.getElementById('e-mail').value),
             password = document.getElementById('password').value;
 
         var newinstitute = {
             'first name': fname,
-            'lirst name': lname,
+            'last name': lname,
             'institute': institute,
             'email': email,
             'password': password,
         }
-        printf(1);
+
         firebase.database().ref("placement cells")
             .child(institute).set(newinstitute);
-        printf(3);
+        
         document.getElementById('message').classList.remove('invisible');
         setTimeout(() => {
             document.getElementById('message').style.opacity = 1;
         }, 10);
+
     }
 }
 
@@ -483,9 +493,6 @@ function addSkills() {
     var lastrowindex = skilltable.rows.length - 1;
     var newrow = skilltable.insertRow(lastrowindex);
     var cell = newrow.insertCell(0);
-    cell.setAttribute('contenteditable', "true");
-    cell.setAttribute('spellcheck', 'true');
-    cell.setAttribute('onclick', 'selectAll()');
     cell.innerHTML = '<b>Technical Electives</b>';
 
     cell = newrow.insertCell(-1);
@@ -575,22 +582,25 @@ function addAchievements() {
 
 //resume removeButtons utility
 function removeRow(tableid) {
-    //console.log(tableid);
+    
+    var list;
     if (tableid == 'skills-table') {
         document.getElementById('remove-skill').classList.add('invisible');
         document.getElementById('add-skill').classList.remove('invisible');
     } else if (tableid == 'hobbies-list') {
-        var list = document.getElementById('hobbies-list')
+        list = document.getElementById('hobbies-list');
         list.removeChild(list.lastChild);
+        //printf('removed');printf(list);
         return;
     } else if (tableid == 'positions-list') {
-        var list = document.getElementById('positions-list')
+        list = document.getElementById('positions-list');
         list.removeChild(list.lastChild);
         return;
     }
+
+ 
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     document.getElementById(tableid).deleteRow(lastrowindex - 1);
-
 }
 
 function removeAchievements() {

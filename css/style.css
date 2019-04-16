@@ -1,16 +1,18 @@
-
-h3{
-    font-weight:400;
+h3 {
+    font-weight: 400;
 }
-#user-photo{
+
+#user-photo {
     border-radius: 23.5px;
 }
-.card-text{
+
+
+.card-text {
     display: block;
-    min-height:4rem;
+    min-height: 4rem;
 }
 
-.message-section{
+.message-section {
     border: 1px solid none;
     border-radius: 10px;
     margin: 5% 0%;
@@ -91,8 +93,8 @@ h3{
     color: aliceblue;
 }
 
-.no-background{
-    background:none;
+.no-background {
+    background: none;
 }
 
 .my-template-button {
@@ -184,8 +186,8 @@ h3{
 .get-big {
     width: 100%;
     padding-bottom: 20%;
-    padding-right:5%;
-    padding-left:5%;
+    padding-right: 5%;
+    padding-left: 5%;
     transition: .4s ease;
 }
 
@@ -195,7 +197,7 @@ h3{
     padding-left: 0;
 }
 
-.btn-select{
+.btn-select {
     padding: 5px 21px;
     border: 1px solid rgba(177, 175, 175, 0.431);
     border-radius: 4px;
@@ -204,11 +206,13 @@ h3{
     background: inherit;
     transition: .2s ease;
 }
-.btn-select:hover{
+
+.btn-select:hover {
     background: rgb(17, 100, 255);
-    color:white;
+    color: white;
 }
-.btn-pla-sig{
+
+.btn-pla-sig {
     padding: 5px 21px;
     border: 2px solid rgba(177, 175, 175, 0.431);
     border-radius: 5px;
@@ -218,27 +222,34 @@ h3{
     background: inherit;
     transition: .2s ease;
 }
-.btn-pla-sig:hover{
+
+.btn-pla-sig:hover {
     background: rgba(133, 111, 111, 0.651);
 }
 
-#formheading{
+#formheading {
     transition: .2s ease-out;
 }
 
-#flname,#forgotpswd,#plasignin, #institute, #p {
+#flname,
+#forgotpswd,
+#plasignin,
+#institute,
+#p {
     transition: .4s ease;
 }
-.black-transparent{
+
+.black-transparent {
     background: rgba(1, 1, 1, 0.5);
     border: 1px solid grey;
 }
 
-.fontblack{
-    color:black;
+.fontblack {
+    color: black;
 }
-.fontwhite{
-    color:aliceblue;
+
+.fontwhite {
+    color: aliceblue;
 }
 
 /*------------------Resume CSS---------------------*/
@@ -288,6 +299,9 @@ h3{
     border-collapse: separate;
 }
 
+.input-field:hover{
+    background: #e1f5c7b0;
+}
 .invisible {
     display: none;
 }
@@ -339,7 +353,7 @@ table:nth-child(n+2) tr:first-child{
     transition-duration: .3s;
 }
 
-.small-btn{
+.small-btn {
     font-size: 9pt;
 }
 
@@ -379,7 +393,7 @@ table:nth-child(n+2) tr:first-child{
     display: inline-block;
 }
 
-.save-message{
+.save-message {
     position: fixed;
     z-index: 1000;
     display: none;
@@ -395,8 +409,8 @@ table:nth-child(n+2) tr:first-child{
     font-weight: 500;
 }
 
-@media only screen and (max-width: 800px){
-    #logo{
+@media only screen and (max-width: 800px) {
+    #logo {
         display: none;
     }
 }
