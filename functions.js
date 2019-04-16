@@ -2,7 +2,6 @@ const functions = {
     add : (num1, num2) => num1 + num2
 }
 
-module.exports = functions;
 
 function login() {
     /**/
@@ -347,17 +346,19 @@ function uploadFile() {
     var instituteid;
 
     if (file) {
-        var filename = file.value;
-        var pdf = new RegExp("*.pdf");
+        var filename = file.name;
+        var pdf = new RegExp(".pdf");
+        printf(filename);
         if (!pdf.test(filename)){
+            window.alert('please upload a pdf document');
             return "wrong format";
         }
         firebase.auth().onAuthStateChanged(
             function (user) {
                 if (user) {
                     instituteid = replaceDotwithSpace(user.email);
-                    print(instituteid);
-                    print(file);
+                    printf(instituteid);
+                    printf(file);
                     firebase.storage().ref()
                         .child(instituteid)
                         .put(file);
@@ -365,6 +366,7 @@ function uploadFile() {
                 }
             }
         );
+
         var message = document.getElementById('message');
         message.classList.remove('invisible');
         setTimeout(() => {
