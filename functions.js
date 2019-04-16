@@ -1,3 +1,9 @@
+const functions = {
+    add : (num1, num2) => num1 + num2
+}
+
+module.exports = functions;
+
 function login() {
     /**/
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -7,6 +13,7 @@ function login() {
         // The signed-in user info.
         var user = result.user;
         window.location = "dashboard.html";
+        return "login done";
         
     }).catch(function (error) {
         // Handle Errors here.
@@ -28,6 +35,7 @@ function logout() {
         .then(function () {
             window.location = "index.html";
         });
+        return "logout successful";
 }
 
 function selectAll() {
@@ -66,6 +74,7 @@ function printResume() {
         window.print();
         document.body.innerHTML = originalDocument;
     }, 500);
+    return "print successful";
 }
 
 function previewResume() {
@@ -91,6 +100,7 @@ function previewResume() {
         document.getElementById("preview-doc").innerHTML = "Preview";
         isPreviewClicked = true; //now Preview option should be available
     }
+    return "preview successful";
 }
 
 function loadResume() {
@@ -194,7 +204,7 @@ function loadResume() {
         document.getElementById('awards-list')
             .innerHTML = snapshot.child('awards').val();
 
-        console.log("user data loaded from latest saved database");
+        return "user data loaded from latest saved database";
     }, function (error) {
         console.log("Error: " + error.code);
     });
@@ -294,7 +304,7 @@ function saveResume() {
                 document.getElementById('save-message-div').style.opacity = 1;
             }, 2500 + 800);
         });
-
+        return  "save successful";
 }
 
 function placementlogin() {
@@ -319,6 +329,7 @@ function placementlogin() {
             console.log(errorMessage);
             // ...
         });
+        return "placement login successful";
 }
 
 function printf(x) {
@@ -336,7 +347,11 @@ function uploadFile() {
     var instituteid;
 
     if (file) {
-
+        var filename = file.value;
+        var pdf = new RegExp("*.pdf");
+        if (!pdf.test(filename)){
+            return "wrong format";
+        }
         firebase.auth().onAuthStateChanged(
             function (user) {
                 if (user) {
@@ -355,10 +370,14 @@ function uploadFile() {
         setTimeout(() => {
             message.style.opacity = 1;
         }, 10);
+        
+        return "right format"; 
 
     } else {
         window.alert('nothing is selected!');
+        return "nothing is selected";
     }
+    
 }
 
 var x = 0;
