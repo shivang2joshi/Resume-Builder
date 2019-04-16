@@ -1,5 +1,5 @@
 const functions = {
-    add : (num1, num2) => num1 + num2
+    add: (num1, num2) => num1 + num2
 }
 
 
@@ -13,7 +13,7 @@ function login() {
         var user = result.user;
         window.location = "dashboard.html";
         return "login done";
-        
+
     }).catch(function (error) {
         // Handle Errors here.
         var errorCode = error.code;
@@ -26,7 +26,7 @@ function login() {
         window.alert(errorMessage);
     });
     /**/
-    
+
 };
 
 function logout() {
@@ -34,7 +34,7 @@ function logout() {
         .then(function () {
             window.location = "index.html";
         });
-        return "logout successful";
+    return "logout successful";
 }
 
 function selectAll() {
@@ -303,7 +303,7 @@ function saveResume() {
                 document.getElementById('save-message-div').style.opacity = 1;
             }, 2500 + 800);
         });
-        return  "save successful";
+    return "save successful";
 }
 
 function placementlogin() {
@@ -328,7 +328,7 @@ function placementlogin() {
             console.log(errorMessage);
             // ...
         });
-        return "placement login successful";
+    return "placement login successful";
 }
 
 function printf(x) {
@@ -349,7 +349,7 @@ function uploadFile() {
         var filename = file.name;
         var pdf = new RegExp(".pdf");
         printf(filename);
-        if (!pdf.test(filename)){
+        if (!pdf.test(filename)) {
             window.alert('please upload a pdf document');
             return "wrong format";
         }
@@ -372,14 +372,14 @@ function uploadFile() {
         setTimeout(() => {
             message.style.opacity = 1;
         }, 10);
-        
-        return "right format"; 
+
+        return "right format";
 
     } else {
         window.alert('nothing is selected!');
         return "nothing is selected";
     }
-    
+
 }
 
 var x = 0;
@@ -419,10 +419,27 @@ function popRegister() {
         }, 400);
         //reg[3].style.pheight='10px';s
     } else {
-        
-        
+        var fname = document.getElementById('fname').value,
+            lname = document.getElementById('lname').value,
+            institute = document.getElementById('institute').value,
+            email = document.getElementById('e-mail').value,
+            password = document.getElementById('password').value;
 
-        //window.location = "placementcell.html";
+        var newinstitute = {
+            'first name': fname,
+            'lirst name': lname,
+            'institute': institute,
+            'email': email,
+            'password': password,
+        }
+        printf(1);
+        firebase.database().ref("placement cells")
+            .child(institute).set(newinstitute);
+        printf(3);
+        document.getElementById('message').classList.remove('invisible');
+        setTimeout(() => {
+            document.getElementById('message').style.opacity = 1;
+        }, 10);
     }
 }
 
@@ -573,7 +590,7 @@ function removeRow(tableid) {
     }
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     document.getElementById(tableid).deleteRow(lastrowindex - 1);
-    
+
 }
 
 function removeAchievements() {
