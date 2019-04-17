@@ -30,7 +30,7 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="functions.js"></script>
     <script src="app.js"></script>
-    <script src="elonmusk.js"></script>
+
 
 
 </head>
@@ -110,6 +110,35 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div id="message" class="message-section invisible">
+                    <small class="fontblack">
+                        <ol class="text-left">
+                            <li>Use Google Chrome for Best experience.</li>
+                            <li>Click on <b>Save</b> for saving data into database</li>
+                            <li>
+                                While using <b>Print/Save PDF</b> kindly
+                                <ul>
+                                    <li>
+                                        uncheck <b>header and footer</b>
+                                    </li>
+                                    <li>
+                                        check <b>Background graphics</b>
+                                    </li>
+                                    <li>
+                                        apply margins <b>zero</b>
+                                    </li>
+                                </ul>
+                                for best printing or Saving as <b>PDF</b>
+                            </li>
+                        </ol>
+                    </small>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -117,7 +146,8 @@
                         <div class="row" style="padding-top:50px;">
                             <div class="col-md-6">
                                 <div class="row side-design">
-                                    <h1 id="name" contenteditable="true" onclick="selectAll()"> Elon Musk</h1>
+                                    <h1 id="name" contenteditable="true" onclick="selectAll()"
+                                        style="min-width:100%;n "> Elon Musk</h1>
                                     <h4 id="current-position" class="color-1" contenteditable="true"
                                         onclick="selectAll()"> Entrepreneur, Engineer, Inventor and Investor</h4>
                                 </div>
@@ -138,7 +168,7 @@
                                     class="invisible">
                             </div>
                             <!---------------------------------------------------->
-                            <div class="col-md-3 text-12" style="padding-top:35px;">
+                            <div class="col-md-3 text-12" style="padding-top:35px">
                                 <div class="text-right">
                                     <span contenteditable="true" onclick="selectAll()"
                                         class="inline-block">elon@teslamoters.com</span>
@@ -333,9 +363,16 @@
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
-    <script src="createPDF.js"></script>
+    <script src="elonmusk.js"></script>
 
     <script>
+        document.body.onload = function () {
+            document.getElementById('message').classList.remove('invisible');
+            setTimeout(() => {
+                document.getElementById('message').style.opacity = 1;
+            }, 1000);
+
+        }
         //controls handler
         var isPreviewClicked = true;
 
@@ -348,12 +385,11 @@
                 user = curruser;
                 var template = document.getElementById('template-name').innerText;
                 var photourl = firebase.storage().ref(user.uid + "-" + template);
-                if(photourl){
+                if (photourl) {
                     photourl.getDownloadURL().then(function (url) {
                         document.getElementById('photo').src = url;
                     });
-                }
-                else{
+                } else {
                     document.getElementById('photo').src = user.photoURL;
                 }
 

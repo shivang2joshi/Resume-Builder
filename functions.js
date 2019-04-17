@@ -467,7 +467,6 @@ function popRegister() {
 
 
 var newCellPlaceholder = 'Click to select';
-
 //resume addButtons utility
 function addEducation() {
     var lastrowindex = document.getElementById('education-table').rows.length - 1;
