@@ -446,6 +446,13 @@ function popRegister() {
             'email': email,
             'password': password,
         }
+       
+        if(password.length<6)
+        {
+            window.alert('password too short');
+            x=1;
+            return;
+        }
 
         firebase.database().ref("placement cells")
             .child(institute).set(newinstitute);
