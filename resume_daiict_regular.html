@@ -111,7 +111,16 @@
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <div id="message" class="message-section invisible">
-                    <p class="fontblack">While using <b>Print/Save PDF</b> kindly uncheck <b>header and footer</b></p>
+                    <small class="fontblack">
+                        <ol class="text-left">
+                            <li>Use Google Chrome for Best experience.</li>
+                            <li>Click on <b>Save</b> for saving data into database</li>
+                            <li>
+                                While using <b>Print/Save PDF</b> kindly uncheck <b>header and footer</b>, <b>Background
+                                    graphics</b> for best printing or Saving as <b>PDF</b>
+                            </li>
+                        </ol>
+                    </small>
                 </div>
             </div>
         </div>
@@ -425,10 +434,6 @@
             setTimeout(() => {
                 document.getElementById('message').style.opacity = 1;
             }, 10);
-
-            setTimeout(() => {
-                document.getElementById('message').classList.add('invisible');
-            }, 7000);
         }
 
         //controls handler

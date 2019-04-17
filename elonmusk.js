@@ -27,3 +27,22 @@ function removeWork(){
     workexp.deleteRow(lastrowindex);
     
 }
+
+function loadfile(event){
+    document.getElementById('photo').src = 
+    URL.createObjectURL(event.target.files[0]);
+}
+
+function SaveandLoad(){
+    var user = firebase.auth().currentUser,
+    template = document.getElementById('template-name').innerText;
+    var photo = document.getElementById('inputphoto').files[0];
+    firebase.storage().ref().child(user.uid + "-" + template).put(photo)
+    .then(function(){
+        var photourl = firebase.storage().ref(user.uid + "-" + template);
+        photourl.getDownloadURL().then(function (url) {
+            document.getElementById('photo').src = url;
+        });
+    });
+    printf('uploaded');
+}

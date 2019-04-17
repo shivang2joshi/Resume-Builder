@@ -2,6 +2,7 @@
 #photo{
     padding:0;
     width:200px;
+    height: 200px;
     border-radius: 100px;
     box-shadow: 1px 1px 10px rgb(1, 1, 1);
 }

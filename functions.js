@@ -26,6 +26,7 @@ function login() {
 }
 
 function logout() {
+    saveResume();
     firebase.auth().signOut()
         .then(function () {
             window.location = "index.html";
@@ -107,6 +108,7 @@ function previewResume() {
         document.getElementById("preview-doc").innerHTML = "Preview";
         isPreviewClicked = true; //now Preview option should be available
     }
+
     return "preview successful";
 }
 
@@ -598,9 +600,11 @@ function removeRow(tableid) {
         return;
     }
 
- 
+
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
-    document.getElementById(tableid).deleteRow(lastrowindex - 1);
+    printf(lastrowindex);
+    if((tableid!='education-table' && lastrowindex>1) || (tableid=='education-table' && lastrowindex>2))
+        document.getElementById(tableid).deleteRow(lastrowindex - 1);
 }
 
 function removeAchievements() {
