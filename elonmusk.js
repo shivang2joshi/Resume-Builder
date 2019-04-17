@@ -42,6 +42,7 @@ function SaveandLoad(){
         var photourl = firebase.storage().ref(user.uid + "-" + template);
         photourl.getDownloadURL().then(function (url) {
             document.getElementById('photo').src = url;
+            printf('photo loaded');
         });
     });
     printf('uploaded');

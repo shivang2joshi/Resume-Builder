@@ -26,7 +26,10 @@ function login() {
 }
 
 function logout() {
-    saveResume();
+    
+    if(document.getElementById('template-name')!=null)
+        if(document.getElementById('template-name').innerText!='resume_elon_musk')
+            saveResume();
     firebase.auth().signOut()
         .then(function () {
             window.location = "index.html";
