@@ -305,6 +305,11 @@ h3 {
     display: inline-block;
 }
 
+#resume{
+    opacity:0;
+    transition: .7s ease-in;
+}
+
 .my-side-line {
     border-left: 4px solid rgb(14, 2, 80);
     padding-left: 20px;

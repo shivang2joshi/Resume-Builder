@@ -353,6 +353,7 @@ function placementlogin() {
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            //printf(user.displayName + " signed out.");
             firebase.auth().signOut();
         }
     });
@@ -380,7 +381,6 @@ function replaceDotwithSpace(s) {
     return str.replace(".", " ");
 }
 
-
 function uploadFile() {
 
     var file = document.getElementById('inp-file').files[0];
@@ -394,19 +394,14 @@ function uploadFile() {
             window.alert('please upload a pdf document');
             return "wrong format";
         }
-        firebase.auth().onAuthStateChanged(
-            function (user) {
-                if (user) {
-                    instituteid = replaceDotwithSpace(user.email);
-                    printf(instituteid);
-                    printf(file);
-                    firebase.storage().ref()
-                        .child(instituteid)
-                        .put(file);
-                    //pdf will be found at firebase storage
-                }
-            }
-        );
+        instituteid = replaceDotwithSpace(currentUser.email);
+        printf(instituteid);
+        printf(file);
+        firebase.storage().ref()
+            .child(instituteid)
+            .put(file);
+        //pdf will be found at firebase storage
+    
 
         var message = document.getElementById('message');
         message.classList.remove('invisible');

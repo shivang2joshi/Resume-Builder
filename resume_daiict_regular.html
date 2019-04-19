@@ -438,6 +438,15 @@
             setTimeout(() => {
                 document.getElementById('message').style.opacity = 1;
             }, 10);
+            
+            setTimeout(() => {
+                $("html,body").animate({
+                    scrollTop: $('#message').offset().top
+                },1000);
+            }, 2000);
+            setTimeout(() => {
+                document.getElementById('resume').style.opacity=1;
+            }, 2500);
         }
 
         //controls handler
