@@ -351,12 +351,7 @@ function placementlogin() {
     var email = document.getElementById('e-mail').value,
         password = document.getElementById('password').value;
 
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            //printf(user.displayName + " signed out.");
-            firebase.auth().signOut();
-        }
-    });
+    firebase.auth().signOut();
 
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then(function () {
@@ -396,7 +391,6 @@ function uploadFile() {
         }
         instituteid = replaceDotwithSpace(currentUser.email);
         printf(instituteid);
-        printf(file);
         firebase.storage().ref()
             .child(instituteid)
             .put(file);
