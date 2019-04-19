@@ -85,8 +85,11 @@
   <!--Main Navigation-->
 
 
-  <div id="preview-div" class="my-quickpreview">
-    <img id="preview-frame" src="" style="width: 100%; overflow:hidden;">
+
+  <div id="prev-cover" class="preview-cover">
+    <div id="preview-div" class="my-quickpreview">
+      <img id="preview-frame" src="" style="width: 100%; overflow:hidden;">
+    </div>
   </div>
 
   <a id="close-preview" class="my-close-preview">X</a>
@@ -203,7 +206,9 @@
         console.log(1);
         document.getElementById('preview-frame').src = "img/resumes/daiict.png";
         document.getElementById('preview-div').style.opacity = 1;
+        document.getElementById('prev-cover').style.opacity = 1;
         document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('prev-cover').style.zIndex = 1000; 
         document.getElementById('close-preview').style.opacity = 1;
         document.getElementById('close-preview').style.zIndex = 1000;
       };
@@ -214,7 +219,9 @@
         console.log(1);
         document.getElementById('preview-frame').src = "img/resumes/daiict_classic.png";
         document.getElementById('preview-div').style.opacity = 1;
+        document.getElementById('prev-cover').style.opacity = 1;
         document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('prev-cover').style.zIndex = 1000;
         document.getElementById('close-preview').style.opacity = 1;
         document.getElementById('close-preview').style.zIndex = 1000;
       };
@@ -224,7 +231,9 @@
         console.log(1);
         document.getElementById('preview-frame').src = "img/resumes/elon-musk-one-page-resume.png";
         document.getElementById('preview-div').style.opacity = 1;
+        document.getElementById('prev-cover').style.opacity = 1;
         document.getElementById('preview-div').style.zIndex = 1000;
+        document.getElementById('prev-cover').style.zIndex = 1000;
         document.getElementById('close-preview').style.opacity = 1;
         document.getElementById('close-preview').style.zIndex = 1000;
       };
@@ -233,7 +242,9 @@
         if (previewisON) {
           document.getElementById('preview-frame').src = "";
           document.getElementById('preview-div').style.opacity = 0;
+          document.getElementById('prev-cover').style.opacity = 0;
           document.getElementById('preview-div').style.zIndex = -1;
+          document.getElementById('prev-cover').style.zIndex = -1;
           document.getElementById('close-preview').style.opacity = 0;
           document.getElementById('close-preview').style.zIndex = -1;
           previewisON = false;

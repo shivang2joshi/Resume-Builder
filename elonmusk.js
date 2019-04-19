@@ -39,16 +39,111 @@ function SaveandLoad() {
         template = document.getElementById('template-name').innerText;
     var photo = document.getElementById('inputphoto').files[0];
     firebase.storage().ref().child(user.uid + "-" + template).put(photo);
-    var photourl = firebase.storage().ref(user.uid + "-" + template);
-    photourl.getDownloadURL().then(function (url) {
-        document.getElementById('photo').src = url;
-        printf('photo loaded');
-    });
+    setTimeout(() => {
+        var photourl = firebase.storage().ref(user.uid + "-" + template);
+        photourl.getDownloadURL().then(function (url) {
+            document.getElementById('photo').src = url;
+            printf('photo loaded');
+        });
+    }, 1000);
     printf('uploaded');
 }
 
+function SavetoDatabase() {
+    var template = document.getElementById('template-name').innerHTML;
+    //--------------------------
+    var name = document.getElementById('name').innerHTML;
+    var yourposition = document.getElementById('your-position').innerHTML;
+    var about = document.getElementById('about').innerHTML;
+    //
+    var emailaddr = document.getElementById('e-mail').innerHTML;
+    var phone = document.getElementById('phone').innerHTML;
+    var location = document.getElementById('location').innerHTML;
+    var twitter = document.getElementById('twitter-handle').innerHTML;
+    //
+    //---------------------------
+
+    var tablerows = document.getElementById('work-experience').rows;
+    var workdata = [];
+    var i;
+    for (i = 0; i < tablerows.length - 1; i++) {
+        workdata.push(tablerows[i].cells[0].innerHTML);
+    }
+
+    var skills = document.getElementById('skillset').innerHTML;
+    var achievements = document.getElementById('achievements').innerHTML;
+    var interests = document.getElementById('interestset').innerHTML;
+
+    var resumeDetails = {
+        name: name,
+        position: yourposition,
+        about: about,
+        email: emailaddr,
+        phone: phone,
+        location: location,
+        twitter: twitter,
+        work: workdata,
+        skillset: skills,
+        achievements: achievements,
+        interest: interests
+    };
+
+    firebase.database().ref("users/" + user.uid)
+        .child(template)
+        .set(resumeDetails)
+        .then(function () {
+            document.getElementById('save-message-div').style.display = 'block';
+            setTimeout(function () {
+                document.getElementById('save-message-div').style.opacity = 0;
+            }, 2500);
+            setTimeout(function () {
+                document.getElementById('save-message-div').style.display = 'none';
+                document.getElementById('save-message-div').style.opacity = 1;
+            }, 2500 + 800);
+        });
+    return "save successful";
+}
+
+function LoadfromDatabase() {
+    var template = document.getElementById('template-name').innerHTML;
+    //retrieve data    
+    var ref = firebase.database().ref("users/" + user.uid + "/" + template);
+
+    ref.on("value", function (snapshot) {
+        document.getElementById('name')
+            .innerHTML = snapshot.child('name').val();
+        document.getElementById('your-position')
+            .innerHTML = snapshot.child('position').val();
+        document.getElementById('about')
+            .innerHTML = snapshot.child('about').val();
+        //    
+        document.getElementById('e-mail')
+            .innerHTML = snapshot.child('email').val();
+        document.getElementById('phone')
+            .innerHTML = snapshot.child('phone').val();
+        document.getElementById('location')
+            .innerHTML = snapshot.child('location').val();
+        document.getElementById('twitter-handle')
+            .innerHTML = snapshot.child('twitter').val();
+        //-------------------------------
+        var work = snapshot.child('work').val();
+        var rows = document.getElementById('work-experience').rows;
+        for (var i = 0; i < rows.length - 1; i++) {
+            rows[i].cells[0].innerHTML = work[i];
+        }
+        //
+        document.getElementById('skillset')
+            .innerHTML = snapshot.child('skillset').val();
+        document.getElementById('achievements')
+            .innerHTML = snapshot.child('achievements').val();
+        document.getElementById('interestset')
+            .innerHTML = snapshot.child('interest').val();
+    }, function (error){
+        window.alert("Error : " + error.code);
+    });
 
 
+}
 
 
 (function () {

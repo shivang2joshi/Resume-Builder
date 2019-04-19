@@ -1,4 +1,3 @@
-
 function login() {
     /**/
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -26,9 +25,9 @@ function login() {
 }
 
 function logout() {
-    
-    if(document.getElementById('template-name')!=null)
-        if(document.getElementById('template-name').innerText!='resume_elon_musk')
+
+    if (document.getElementById('template-name') != null)
+        if (document.getElementById('template-name').innerText != 'resume_elon_musk')
             saveResume();
     firebase.auth().signOut()
         .then(function () {
@@ -46,18 +45,20 @@ function applyBorder(element) {
     element.style.border = "1px solid rgb(150,150,150)";
     element.style.borderRadius = "3px";
 }
-function checkFields(){
+
+function checkFields() {
     var fields = document.getElementsByClassName('input-field');
     var i;
-    for(i=0;i<fields.length;i++){
-        if(fields[i].innerText=="")
+    for (i = 0; i < fields.length; i++) {
+        if (fields[i].innerText == "")
             return false;
     }
     return true;
 }
+
 function printResume() {
     //document represent respective resume template
-    if(!checkFields()){
+    if (!checkFields()) {
         window.alert('you can not have Empty fields printed');
         return;
     }
@@ -67,14 +68,24 @@ function printResume() {
 
     //order matter here
     document.getElementById('resume').classList.remove('my-resume-page');
+    document.body.style.background = "white";
     document.body.innerHTML = printdocument;
     var addbtns = document.getElementsByClassName('addButton');
     var rmbtns = document.getElementsByClassName('removeButton');
+    var inputs = document.getElementsByTagName('input');
+
     var i;
     for (i = 0; i < addbtns.length; i++)
         addbtns[i].style.display = 'none';
     for (i = 0; i < rmbtns.length; i++)
         rmbtns[i].style.display = 'none';
+
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].style.display = 'none';
+    }
+    if (document.getElementById('photocaption') != null) {
+        document.getElementById('photocaption').style.display = 'none';
+    }
     //
 
     //$(document).ready();
@@ -91,6 +102,7 @@ function printResume() {
 function previewResume() {
     var addbtns = document.getElementsByClassName("addButton");
     var rmbtns = document.getElementsByClassName("removeButton");
+    var inputs = document.getElementsByTagName('input');
     var i;
     if (isPreviewClicked) {
         for (i = 0; i < addbtns.length; i++) {
@@ -99,6 +111,13 @@ function previewResume() {
         for (i = 0; i < rmbtns.length; i++) {
             rmbtns[i].style.display = 'none';
         }
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].style.display = 'none';
+        }
+        if (document.getElementById('photocaption') != null) {
+            document.getElementById('photocaption').style.display = 'none';
+        }
+
         document.getElementById("preview-doc").innerHTML = "Edit";
         isPreviewClicked = false; //now edit option should be available
     } else {
@@ -108,6 +127,14 @@ function previewResume() {
         for (i = 0; i < rmbtns.length; i++) {
             rmbtns[i].style.display = 'inline';
         }
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].style.display = 'inline-block';
+        }
+
+        if (document.getElementById('photocaption') != null) {
+            document.getElementById('photocaption').style.display = 'inline-block';
+        }
+
         document.getElementById("preview-doc").innerHTML = "Preview";
         isPreviewClicked = true; //now Preview option should be available
     }
@@ -122,7 +149,7 @@ function loadResume() {
     var ref = firebase.database().ref("users/" + user.uid + "/" + template);
 
     ref.on("value", function (snapshot) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
         var tablerows;
         var i, j;
 
@@ -274,7 +301,7 @@ function saveResume() {
     var ul = document.getElementById('positions-list')
     var positions_list = ul.innerHTML;
     //hobbies
-    ul = document.getElementById('hobbies-list')
+    ul = document.getElementById('hobbies-list');
     var hobbies_list = ul.innerHTML;
     //achievments
     var awards_list = document.getElementById('awards-list').innerHTML;
@@ -436,7 +463,7 @@ function popRegister() {
         var fname = document.getElementById('fname').value,
             lname = document.getElementById('lname').value,
             institute = document.getElementById('institute').value,
-            email =replaceDotwithSpace(document.getElementById('e-mail').value),
+            email = replaceDotwithSpace(document.getElementById('e-mail').value),
             password = document.getElementById('password').value;
 
         var newinstitute = {
@@ -446,17 +473,16 @@ function popRegister() {
             'email': email,
             'password': password,
         }
-       
-        if(password.length<6)
-        {
+
+        if (password.length < 6) {
             window.alert('password too short');
-            x=1;
+            x = 1;
             return;
         }
 
         firebase.database().ref("placement cells")
             .child(institute).set(newinstitute);
-        
+
         document.getElementById('message').classList.remove('invisible');
         setTimeout(() => {
             document.getElementById('message').style.opacity = 1;
@@ -593,7 +619,7 @@ function addAchievements() {
 
 //resume removeButtons utility
 function removeRow(tableid) {
-    
+
     var list;
     if (tableid == 'skills-table') {
         document.getElementById('remove-skill').classList.add('invisible');
@@ -612,7 +638,7 @@ function removeRow(tableid) {
 
     var lastrowindex = document.getElementById(tableid).rows.length - 1;
     printf(lastrowindex);
-    if((tableid!='education-table' && lastrowindex>1) || (tableid=='education-table' && lastrowindex>2))
+    if ((tableid != 'education-table' && lastrowindex > 1) || (tableid == 'education-table' && lastrowindex > 2))
         document.getElementById(tableid).deleteRow(lastrowindex - 1);
 }
 

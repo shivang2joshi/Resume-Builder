@@ -93,7 +93,7 @@
                 <div class="text-center">
                     <div id="controlls" class="my-controls inline-block">
                         <ul style="padding-left:0%">
-                            <li><button id="save-doc" class="btn-select" onclick="saveResumeElon()">Save</button></li>
+                            <li><button id="save-doc" class="btn-select" onclick="SavetoDatabase()">Save</button></li>
                             <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button>
                             </li>
                             <li><button id="download-doc" class="btn-select">Download</button></li>
@@ -117,6 +117,10 @@
                     <small class="fontblack">
                         <ol class="text-left">
                             <li>Use Google Chrome for Best experience.</li>
+                            <li>Spelling mistakes</li>
+                            <ul>
+                                <li>right click for suggestions and select correct spelling</li>
+                            </ul>
                             <li>Click on <b>Save</b> for saving data into database</li>
                             <li>
                                 While using <b>Print/Save PDF</b> kindly
@@ -147,8 +151,8 @@
                             <div class="col-md-6">
                                 <div class="row side-design">
                                     <h1 id="name" contenteditable="true" onclick="selectAll()"
-                                        style="min-width:100%;n "> Elon Musk</h1>
-                                    <h4 id="current-position" class="color-1" contenteditable="true"
+                                        style="min-width:100%;"> Elon Musk</h1>
+                                    <h4 id="your-position" class="color-1" contenteditable="true"
                                         onclick="selectAll()"> Entrepreneur, Engineer, Inventor and Investor</h4>
                                 </div>
                                 <div class="row pl-100">
@@ -170,27 +174,26 @@
                             <!---------------------------------------------------->
                             <div class="col-md-3 text-12" style="padding-top:35px">
                                 <div class="text-right">
-                                    <span contenteditable="true" onclick="selectAll()"
+                                    <span id="e-mail" contenteditable="true" onclick="selectAll()"
                                         class="inline-block">elon@teslamoters.com</span>
                                     <span class="contact-icons inline-block">e</span>
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span contenteditable="true" onclick="selectAll()">8457-343-4332</span>
+                                    <span id="phone" contenteditable="true" onclick="selectAll()">8457-343-4332</span>
                                     <span class="contact-icons">p</span>
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span contenteditable="true" onclick="selectAll()">Los Angeles, USA</span>
+                                    <span id="location" contenteditable="true" onclick="selectAll()">Los Angeles, USA</span>
                                     <span class="contact-icons">l</span>
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span contenteditable="true" onclick="selectAll()">@elonmusk</span>
+                                    <span id="twitter-handle" contenteditable="true" onclick="selectAll()">@elonmusk</span>
                                     <span class="contact-icons">t</span>
                                 </div>
                             </div>
-
                         </div>
                         <!-----------------------------------HEAD END----------------------------------------->
                         <hr style="border-bottom: 2px solid rgba(0,177,177,1)">
@@ -309,6 +312,7 @@
                             <div class="col-md-5">
                                 <h2><b>Skills and Competencies</b></h2>
                                 <div id="skillset" contenteditable="true">
+                                    
                                     <span class="skill">Thinking through first principles</span>
                                     <span class="skill">Marketing</span>
                                     <span class="skill">Micromanagement</span>
@@ -328,7 +332,7 @@
                                 <hr>
 
                                 <h2><b>Achievements & Certificates</b></h2>
-                                <div class="text-achievements" contenteditable="true" onclick="selectAll()">
+                                <div id="achievements" class="text-achievements" contenteditable="true" onclick="selectAll()">
                                     <p>53rd Richest Person in the world -Forbes(2018)</p>
                                     <p>21st on the Forbes list of The World's Most Powerful People (2016)</p>
                                 </div>
@@ -397,7 +401,7 @@
                 // this is not working as desired------
                 //checking if user is not first time visitor
                 if (dbref != null) {
-                    //loadResume();
+                    LoadfromDatabase();
                 } else
                     console.log("First time visitor | Default data loaded");
                 //for first time user
