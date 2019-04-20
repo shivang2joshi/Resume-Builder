@@ -401,6 +401,12 @@ function uploadFile() {
             window.alert('please upload a pdf document');
             return "wrong format";
         }
+        if(file.size>1024000)
+        {
+            window.alert('Please upload a document of size less than 1Mb.');
+            return "large size";
+        }
+        
         instituteid = replaceDotwithSpace(currentUser.email);
         printf(instituteid);
         firebase.storage().ref()

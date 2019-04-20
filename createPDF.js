@@ -42,13 +42,12 @@
                 img = canvas.toDataURL("image/png"),
                 height = 0.264583 * canvas.height;
             if(height<a4height){
-                doc.addImage(img, 'JPEG', 2, 7, a4width, height);
+                doc.addImage(img, 'JPEG', 2, 7, a4width, height-30);
             }
             else{
                 doc.addImage(img, 'JPEG', 2, 7, a4width, a4height-10);    
             }
             doc.addPage();
-
 
             getCanvas(page2).then(function (canvas) {
                 var
@@ -57,7 +56,7 @@
                 //px to mm coversion
                 //canvas height is in px.
                 if(height<a4height){
-                    doc.addImage(img, 'JPEG', 2, 7, a4width, height);
+                    doc.addImage(img, 'JPEG', 2, 7, a4width, height-30);
                 }
                 else{
                     doc.addImage(img, 'JPEG', 2, 7, a4width, a4height-10);    

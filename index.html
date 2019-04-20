@@ -207,7 +207,7 @@
                 <input id="e-mail" class="form-control mb-4" type="e-mail" placeholder="e-mail">
                 <input id="password" class="form-control mb-4" type="password" placeholder="password">
                 <small id="forgotpswd" style="display:inline-block;overflow:hidden">
-                   <a href="" onclick="window.alert('kindly drop a mail at admin@cvmaker.com with institute name')">
+                  <a href="" onclick="window.alert('kindly drop a mail at admin@cvmaker.com with institute name')">
                     Forgot password?</a></small>
 
                 <div class="container text-center">
@@ -216,7 +216,7 @@
                   <a id="plaregister" style="display:inline-block" class="btn-pla-sig"
                     onclick="popRegister()">Register</a>
                 </div>
-                
+
                 <div id="message" class="message-section invisible">
                   <small>Thank you for Registering with us</small>
                   <br>
@@ -243,28 +243,13 @@
       <br><br>
       <ul class="list-unstyled list-inline text-center">
         <li class="list-inline-item">
-          <a class="btn-floating btn-fb mx-1">
+          <a class="btn-floating btn-fb mx-1" data-js="facebook-share">
             <i class="fab fa-facebook-f"> </i>
           </a>
         </li>
         <li class="list-inline-item">
-          <a class="btn-floating btn-tw mx-1">
+          <a class="btn-floating btn-tw mx-1" data-js="twitter-share">
             <i class="fab fa-twitter"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-gplus mx-1">
-            <i class="fab fa-google-plus-g"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-li mx-1">
-            <i class="fab fa-linkedin-in"> </i>
-          </a>
-        </li>
-        <li class="list-inline-item">
-          <a class="btn-floating btn-dribbble mx-1">
-            <i class="fab fa-dribbble"> </i>
           </a>
         </li>
       </ul>
@@ -320,6 +305,29 @@
         dashboard.classList.add('invisible');
       }
     });
+    var twitterShare = document.querySelector('[data-js="twitter-share"]');
+    var sharemessage = "Hey, Checkout this new #CVMaker, It makes beautiful resumes and it's simple and easy."
+    twitterShare.onclick = function (e) {
+      e.preventDefault();
+      var twitterWindow = window.open('https://twitter.com/share?url=' + document.URL, 'twitter-popup',
+        'height=350,width=600');
+      if (twitterWindow.focus) {
+        twitterWindow.focus();
+      }
+      return false;
+    }
+
+    var facebookShare = document.querySelector('[data-js="facebook-share"]');
+
+    facebookShare.onclick = function (e) {
+      e.preventDefault();
+      var facebookWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + document.URL,
+        'facebook-popup', 'height=350,width=600');
+      if (facebookWindow.focus) {
+        facebookWindow.focus();
+      }
+      return false;
+    }
   </script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
