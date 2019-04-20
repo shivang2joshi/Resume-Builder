@@ -56,9 +56,8 @@ function checkFields() {
     return true;
 }
 
-function ValidateEmail(id) {
-    var emailfield = document.getElementById(id).innerText;
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailfield)) {
+function ValidateEmail(emailid) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailid)) {
         return (true);
     }
     return (false);
@@ -70,7 +69,8 @@ function printResume() {
         window.alert('you can not have Empty fields printed');
         return;
     }
-    if (!ValidateEmail('e-mail')) {
+    var emailfield = document.getElementById('e-mail').innerText;
+    if (!ValidateEmail(emailfield)) {
         window.alert('Invalid Email!');
         return;
     }
@@ -491,17 +491,19 @@ function popRegister() {
             x=1;
             return;
         }
-        if(!ValidateEmail('e-mail')){
+        /**/ 
+        var emailid = document.getElementById('e-mail').value;
+        if(!ValidateEmail(emailid)){
             window.alert('Invalid Email id!');
             x=1;
             return;
         }
+        /**/
         if (password.length < 6) {
             window.alert('Length of password should be atleast 6 characters.');
             x = 1;
             return;
         }
-
 
         firebase.database().ref("placement cells")
             .child(institute).set(newinstitute)

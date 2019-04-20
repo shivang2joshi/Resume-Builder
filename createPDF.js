@@ -21,7 +21,7 @@
             window.alert('you can not have Empty fields printed');
             return;
         }
-        if (!ValidateEmail()) {
+        if (!ValidateEmail('e-mail')) {
             window.alert('Invalid Email!');
             return;
         }
