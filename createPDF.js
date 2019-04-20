@@ -3,6 +3,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
     <script src="createPDF.js"></script>*/
 (function () {
+    
     var
         form = $('#resume'),
         page1 = $('#resume-page-1'),
@@ -16,6 +17,14 @@
         a4 = [595, 842]; // for a4 size paper width and height in pixels  
 
     $('#download-doc').on('click', function () {
+        if (!checkFields()) {
+            window.alert('you can not have Empty fields printed');
+            return;
+        }
+        if (!ValidateEmail()) {
+            window.alert('Invalid Email!');
+            return;
+        }
         $('body').scrollTop(0);
         previewResume();
         createPDF();

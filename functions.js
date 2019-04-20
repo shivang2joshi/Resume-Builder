@@ -56,10 +56,22 @@ function checkFields() {
     return true;
 }
 
+function ValidateEmail(id) {
+    var emailfield = document.getElementById(id).innerText;
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailfield)) {
+        return (true);
+    }
+    return (false);
+}
+
 function printResume() {
     //document represent respective resume template
     if (!checkFields()) {
         window.alert('you can not have Empty fields printed');
+        return;
+    }
+    if (!ValidateEmail('e-mail')) {
+        window.alert('Invalid Email!');
         return;
     }
 
@@ -395,7 +407,7 @@ function uploadFile() {
             .child(instituteid)
             .put(file);
         //pdf will be found at firebase storage
-    
+
 
         var message = document.getElementById('message');
         message.classList.remove('invisible');
@@ -463,14 +475,39 @@ function popRegister() {
             'password': password,
         }
 
+
+        if (fname == "") {
+            window.alert('Enter First name.');
+            x=1;
+            return;
+        }
+        if (lname == "") {
+            window.alert('Enter Last name.');
+            x=1;
+            return;
+        }
+        if (institute == "") {
+            window.alert('Enter institute name.');
+            x=1;
+            return;
+        }
+        if(!ValidateEmail('e-mail')){
+            window.alert('Invalid Email id!');
+            x=1;
+            return;
+        }
         if (password.length < 6) {
-            window.alert('password too short');
+            window.alert('Length of password should be atleast 6 characters.');
             x = 1;
             return;
         }
 
+
         firebase.database().ref("placement cells")
-            .child(institute).set(newinstitute);
+            .child(institute).set(newinstitute)
+            .catch(function (error) {
+                window.alert(error.code);
+            });
 
         document.getElementById('message').classList.remove('invisible');
         setTimeout(() => {
