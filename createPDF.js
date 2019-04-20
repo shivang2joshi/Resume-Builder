@@ -21,7 +21,8 @@
             window.alert('you can not have Empty fields printed');
             return;
         }
-        if (!ValidateEmail('e-mail')) {
+        var emailid = document.getElementById('e-mail').innerText;
+        if (!ValidateEmail(emailid)) {
             window.alert('Invalid Email!');
             return;
         }
