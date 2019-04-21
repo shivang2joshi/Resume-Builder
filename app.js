@@ -13,7 +13,7 @@ setTimeout(() => {
         firebase.auth().onAuthStateChanged(function (user) {
             // calling other window in here will run abruptly
             if (user) {
-                //printf(user);
+                //'printf(user);
                 //signed in
                 currentUser = user;
                 if (document.getElementById('user-photo')) { //to be sure we have such element on this page.
