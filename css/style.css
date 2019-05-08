@@ -437,6 +437,14 @@ table:nth-child(n+2) tr:first-child{
     }
 }
 
+textarea{
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px;
+    font-size:11pt;
+    color: grey;
+    margin: 0;  
+}
 /*
 .form-group {
     border: 1px solid white;

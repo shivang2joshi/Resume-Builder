@@ -154,12 +154,15 @@ function previewResume() {
     return "preview successful";
 }
 
-function loadResume() {
+function loadResume(template = -1, ref=null) {
 
-    var template = document.getElementById('template-name').innerHTML;
+    if (template == -1)
+        template = document.getElementById('template-name').innerHTML;
     //retrieve data    
-    var ref = firebase.database().ref("users/" + user.uid + "/" + template);
-
+    
+    if (ref == null)
+        ref = firebase.database().ref("users/" + user.uid + "/" + template);
+    
     ref.on("value", function (snapshot) {
         //console.log(snapshot.val());
         var tablerows;
@@ -401,12 +404,11 @@ function uploadFile() {
             window.alert('please upload a pdf document');
             return "wrong format";
         }
-        if(file.size>1024000)
-        {
+        if (file.size > 1024000) {
             window.alert('Please upload a document of size less than 1Mb.');
             return "large size";
         }
-        
+
         instituteid = replaceDotwithSpace(currentUser.email);
         printf(instituteid);
         firebase.storage().ref()
@@ -484,24 +486,24 @@ function popRegister() {
 
         if (fname == "") {
             window.alert('Enter First name.');
-            x=1;
+            x = 1;
             return;
         }
         if (lname == "") {
             window.alert('Enter Last name.');
-            x=1;
+            x = 1;
             return;
         }
         if (institute == "") {
             window.alert('Enter institute name.');
-            x=1;
+            x = 1;
             return;
         }
-        /**/ 
+        /**/
         var emailid = document.getElementById('e-mail').value;
-        if(!ValidateEmail(emailid)){
+        if (!ValidateEmail(emailid)) {
             window.alert('Invalid Email id!');
-            x=1;
+            x = 1;
             return;
         }
         /**/
