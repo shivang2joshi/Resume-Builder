@@ -1,42 +1,39 @@
-
 body, h1, h2, h4, h5, h6 {
-    font-weight: 300;
+    display: block;
+    font-weight: 400;
 }
 h3 {
-    font-weight: 400;
+    font-weight: 500;
+}
+a:hover{
+    text-decoration: none;
 }
 
 #user-photo {
     border-radius: 23.5px;
 }
-
-
 .card-text {
     display: block;
     min-height: 4rem;
 }
-
 .message-section {
-    border: 1px solid none;
     border-radius: 10px;
-    margin: 5% 0%;
-    text-align: center;
-    padding: 5% 10%;
+    margin: 20px;
+    padding: 30px;
     background: rgba(51, 255, 0, 0.4);
     opacity: 0;
     transition: .2s ease-in;
 }
-
 .my-fixed-tab {
     position: fixed;
-    top: 0%;
-    left: 0%;
+    top: 0;
     right: 0;
+    left: 0;
     z-index: 1;
+    min-height: 60px;
 }
-
 .my-opac-bg {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .my-login-button {
@@ -80,21 +77,18 @@ h3 {
 .my-logout-button {
     margin: 7px 0px 0px 17px;
     padding: 7px 21px;
-    border-radius: 7px;
+    border-radius: 3px;
     border-style: none;
-    color: rgb(255, 9, 9);
-    background: black;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0),rgba(155, 0, 0, 0.8));
+    color: rgb(185, 185, 185);
     font-family: sans-serif;
-    font-size: 14pt;
+    font-size: 12pt;
     transition-duration: .4s;
     cursor: pointer;
 }
 
 .my-logout-button:hover {
-    font-size: 18pt;
-    margin-top: 0%;
-    background: rgb(243, 12, 12);
-    color: aliceblue;
+    background: linear-gradient(rgba(0, 0, 0, 0),rgba(255, 0, 0, 0.9));
 }
 
 .no-background {
@@ -117,14 +111,18 @@ h3 {
 }
 
 .my-main {
-    /* setting background image with gradient overlay */
+    /* setting background image with gradient overlay
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bgpicture-1.png);
     background-attachment: fixed;
     background-size: cover;
     /**/
+    background: rgb(236, 233, 233);
     margin: 0px auto auto auto;
     padding: 100px 0%;
-    color: aliceblue;
+    color: rgb(39, 39, 39);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /**/
     /*uncomment for image background*/
 }
@@ -134,6 +132,7 @@ h3 {
     top: auto;
     bottom: 0cm;
     margin-top: auto;
+    background-color: white;
 }
 
 .my-row {
@@ -201,19 +200,16 @@ h3 {
 
 .get-big {
     width: 100%;
-    padding-bottom: 20%;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 30px 15px;
     transition: .4s ease;
 }
 
 .get-big:hover {
-    width: 110%;
-    padding-bottom: 0;
-    padding-left: 0;
+    transform: scale(1.05);
 }
 
 .btn-select {
+    font-weight: 400;
     padding: 5px 21px;
     border: 1px solid rgba(177, 175, 175, 0.431);
     border-radius: 4px;
@@ -221,6 +217,10 @@ h3 {
     margin: 5px 10px;
     background: inherit;
     transition: .2s ease;
+}
+
+.btn-select:focus{
+    outline: none;
 }
 
 .btn-select:hover {
@@ -256,8 +256,8 @@ h3 {
 }
 
 .black-transparent {
-    background: rgba(1, 1, 1, 0.5);
-    border: 1px solid grey;
+    background: whitesmoke;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .fontblack {
@@ -265,7 +265,15 @@ h3 {
 }
 
 .fontwhite {
-    color: aliceblue;
+    color: black;
+}
+
+.card-title{
+    background-color: lightgray;
+    padding: 10px;
+}
+.card-text{
+    height: 50px;
 }
 
 /*------------------Resume CSS---------------------*/
@@ -348,35 +356,48 @@ table:nth-child(n+2) tr:first-child{
 .addButton {
     margin: 10px 5px;
     padding: 5px 14px;
-    background: rgb(128, 255, 128);
-    color: black;
-    border: none;
+    background: rgb(187, 255, 187);
+    color:green;
+    border:none;
     border-radius: 3px;
     font-size: 11pt;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.27);
+    font-weight: 600;
+    /* box-shadow: 0 4px 5px rgba(0, 0, 0, 0.27); */
+    transition-duration: .3s;
+}
+.addButton::after {
+    content: " +";
+}
+.addButton:focus{
+    outline: none;
 }
 
 .removeButton {
     margin: 10px 5px;
     padding: 5px 14px;
-    background: rgba(255, 0, 0, 0.596);
-    color: black;
+    background:pink;
+    color: rgb(180, 0, 0);
     border: none;
     border-radius: 3px;
     font-size: 11pt;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.27);
+    font-weight: 600;
+    transition-duration: .3s;
+    /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.27); */
+}
+.removeButton::after{
+    content: " -";
+}
+
+.removeButton:focus{
+    outline: none;
 }
 
 .addButton:hover {
-    margin: 0px 5px;
-    font-size: 14pt;
-    transition-duration: .3s;
+    transform: scale(1.1);
 }
 
 .removeButton:hover {
-    margin: 0px 0px;
-    font-size: 14pt;
-    transition-duration: .3s;
+    transform: scale(1.1);
 }
 
 .small-btn {
@@ -395,12 +416,16 @@ table:nth-child(n+2) tr:first-child{
     background: rgb(236, 233, 233);
 }
 
+.relative {
+    position: relative;
+}
+.sticky{
+    position: sticky;
+    top: 40px;
+    z-index: 1000;
+}
 .my-controls {
-    /*position: fixed;
-    z-index: 100;
-    right: 0;
-    top: 25%;
-    */
+    background-color: white;
     margin: 15px 15px;
     text-align: center;
     background-color: white;
@@ -421,13 +446,13 @@ table:nth-child(n+2) tr:first-child{
 
 .save-message {
     position: fixed;
-    z-index: 1000;
+    z-index: 2000;
     display: none;
-    top: 25px;
+    top: 10px;
     left: 47%;
     padding: 5px 15px;
-    color: aliceblue;
-    background: rgb(44, 187, 75);
+    color: green;
+    background: lightgreen;
     border: none;
     border-radius: 4px;
     transition: .7s ease-out;

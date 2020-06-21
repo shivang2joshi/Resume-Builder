@@ -82,61 +82,49 @@
     <!--Main Navigation-->
 
     <main class="my-main my-resume-bg">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="text-center">
-                    <div id="controlls" class="my-controls inline-block">
-                        <ul style="padding-left:0%">
-                            <li><button id="save-doc" class="btn-select" onclick="SavetoDatabase()">Save</button></li>
-                            <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button>
-                            </li>
-                            <li><button id="download-doc" class="btn-select">Download</button></li>
-                            <li><button id="print-doc" class="btn-select" onclick="printResume()">Print/Save
-                                    PDF</button></li>
-                            <li style="display:none">
-                                <script src="https://apis.google.com/js/platform.js" async defer></script>
-                                <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf"
-                                    data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
-                                </div>
-                            </li>
-                        </ul>
+        <div id="controlls" class="my-controls sticky inline-block">
+            <ul style="padding-left:0%">
+                <li><button id="save-doc" class="btn-select" onclick="saveResume()">Save</button></li>
+                <li><button id="preview-doc" class="btn-select" onclick="previewResume()">Preview</button>
+                </li>
+                <li><button id="download-doc" class="btn-select">Download</button></li>
+                <li><button id="print-doc" class="btn-select" onclick="printResume()">Print/Save
+                        PDF</button></li>
+                <li style="display:none">
+                    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                    <div id="savetodrive" class="g-savetodrive" data-src="/files/resume_daiict_classic.pdf"
+                        data-filename="Resume_Daiict.pdf" data-sitename="CVMaker">
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <div id="message" class="message-section invisible">
-                    <small class="fontblack">
-                        <ol class="text-left">
-                            <li>Use Google Chrome for Best experience.</li>
-                            <li>Spelling mistakes</li>
-                            <ul>
-                                <li>right click for suggestions and select correct spelling</li>
-                            </ul>
-                            <li>Click on <b>Save</b> for saving data into database</li>
-                            <li>
-                                While using <b>Print/Save PDF</b> kindly
-                                <ul>
-                                    <li>
-                                        uncheck <b>header and footer</b>
-                                    </li>
-                                    <li>
-                                        check <b>Background graphics</b>
-                                    </li>
-                                    <li>
-                                        apply margins <b>zero</b>
-                                    </li>
-                                </ul>
-                                for best printing or Saving as <b>PDF</b>
-                            </li>
-                        </ol>
-                    </small>
-                </div>
-            </div>
+                </li>
+            </ul>
         </div>
 
+        <div id="message" class="message-section invisible">
+            <h5><b>Guidelines</b></h5>
+            <ol class="text-left">
+                <li>Use Google Chrome for Best experience.</li>
+                <li>Spelling mistakes</li>
+                <ul>
+                    <li>right click for suggestions and select correct spelling</li>
+                </ul>
+                <li>Click on <b>Save</b> for saving data into database</li>
+                <li>
+                    While using <b>Print/Save PDF</b> kindly
+                    <ul>
+                        <li>
+                            uncheck <b>header and footer</b>
+                        </li>
+                        <li>
+                            check <b>Background graphics</b>
+                        </li>
+                        <li>
+                            apply margins <b>zero</b>
+                        </li>
+                    </ul>
+                    for best printing or Saving as <b>PDF</b>
+                </li>
+            </ol>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -306,6 +294,35 @@
             </div>
         </div>
     </main>
+    <footer class="page-footer font-small special-color-dark pt-4 my-footer">
+        <!-- Footer Elements -->
+        <div class="container text-center">
+          <!-- Social buttons -->
+          Share this Website
+          <br><br>
+          <ul class="list-unstyled list-inline text-center">
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-fb mx-1" data-js="facebook-share">
+                <i class="fab fa-facebook-f"> </i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="" class="btn-floating btn-tw mx-1" data-js="twitter-share">
+                <i class="fab fa-twitter"> </i>
+              </a>
+            </li>
+          </ul>
+          <!-- Social buttons -->
+        </div>
+    
+        <div class="footer-copyright text-center py-3">Designed & Developed by
+          <a>Shivang Joshi</a>
+          &nbsp;|&nbsp;
+          Follow me on GitHub  
+          <a href="https://github.com/shivang2joshi">  <i class="fab fa-github"></i></a>
+        </div>
+      </footer>
+      
 
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
