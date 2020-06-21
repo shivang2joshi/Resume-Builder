@@ -5,14 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
     <link href="css/elonmusk.css" rel="stylesheet">
     <title>DA-IICT Template</title>
     <link rel="icon" type="image/x-icon" href="img/daiictlogo.jpg">
@@ -30,9 +27,6 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script src="functions.js"></script>
     <script src="app.js"></script>
-
-
-
 </head>
 
 <body class="my-resume-bg">
@@ -152,12 +146,13 @@
                                 <div class="row side-design">
                                     <h1 id="name" contenteditable="true" onclick="selectAll()"
                                         class="head-field input-field"> Elon Musk</h1>
-                                        <br>
+                                    <br>
                                     <h4 id="your-position" class="color-1 head-field input-field" contenteditable="true"
                                         onclick="selectAll()"> Entrepreneur, Engineer, Inventor and Investor</h4>
                                 </div>
                                 <div class="row pl-100">
-                                    <p id="about" class="text-14 color-2 head-field input-field" contenteditable="true" onclick="selectAll()">
+                                    <p id="about" class="text-14 color-2 head-field input-field" contenteditable="true"
+                                        onclick="selectAll()">
                                         Aiming to reduce global warming through sustainable energy production and
                                         consumption. Planning to Reduce the risk of human extinction by making life
                                         multi-planetary and setting up a human colony on Mars.</p>
@@ -181,22 +176,25 @@
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span id="phone" contenteditable="true" class="input-field" onclick="selectAll()">8457-343-4332</span>
+                                    <span id="phone" contenteditable="true" class="input-field"
+                                        onclick="selectAll()">8457-343-4332</span>
                                     <span class="contact-icons"><i class="fa fa-mobile"> </i></span>
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span id="location" contenteditable="true" onclick="selectAll()">Los Angeles, USA</span>
+                                    <span id="location" contenteditable="true" onclick="selectAll()">Los Angeles,
+                                        USA</span>
                                     <span class="contact-icons"><i class="fa fa-map-marker"></i></span>
                                 </div>
                                 <br>
                                 <div class="text-right">
-                                    <span id="twitter-handle" contenteditable="true" onclick="selectAll()">@elonmusk</span>
+                                    <span id="twitter-handle" contenteditable="true"
+                                        onclick="selectAll()">@elonmusk</span>
                                     <span class="contact-icons">
-                                            <i class="fab fa-twitter"></i></span>
+                                        <i class="fab fa-twitter"></i></span>
                                 </div>
                             </div>
-                        </div>  
+                        </div>
                         <!-----------------------------------HEAD END----------------------------------------->
                         <hr style="border-bottom: 2px solid rgba(0,177,177,1)">
 
@@ -209,8 +207,9 @@
                                         <td>
                                             <div class="row">
                                                 <div class="row side-design-2">
-                                                    <h4 id="position-name" class="w-100 input-field" contenteditable="true"
-                                                        onclick="selectAll()"><b>Founder, CEO & Lead Designer</b></h4>
+                                                    <h4 id="position-name" class="w-100 input-field"
+                                                        contenteditable="true" onclick="selectAll()"><b>Founder, CEO &
+                                                            Lead Designer</b></h4>
                                                     <h5 id="company" contenteditable="true" onclick="selectAll()">SpaceX
                                                         - Space Exploration Technologies</h5>
                                                     <div class="space-between text-12">
@@ -242,7 +241,7 @@
                                         </td>
                                     </tr>
                                     <!------------------------------2 ----------------------->
-                                    
+
                                     <tr>
                                         <td>
                                             <button class="addButton" onclick="addWork()">Add Work</button>
@@ -256,7 +255,7 @@
                             <div class="col-md-5">
                                 <h2><b>Skills and Competencies</b></h2>
                                 <div id="skillset" class="input-field" contenteditable="true">
-                                    
+
                                     <span class="skill">Thinking through first principles</span>
                                     <span class="skill">Marketing</span>
                                     <span class="skill">Micromanagement</span>
@@ -276,7 +275,8 @@
                                 <hr>
 
                                 <h2><b>Achievements & Certificates</b></h2>
-                                <div id="achievements" class="text-achievements" contenteditable="true" onclick="selectAll()">
+                                <div id="achievements" class="text-achievements" contenteditable="true"
+                                    onclick="selectAll()">
                                     <p>53rd Richest Person in the world -Forbes(2018)</p>
                                     <p>21st on the Forbes list of The World's Most Powerful People (2016)</p>
                                 </div>
@@ -322,10 +322,10 @@
             setTimeout(() => {
                 $("html,body").animate({
                     scrollTop: $('#message').offset().top
-                },1000);
+                }, 1000);
             }, 2000);
             setTimeout(() => {
-                document.getElementById('resume').style.opacity=1;
+                document.getElementById('resume').style.opacity = 1;
             }, 2500);
 
         }

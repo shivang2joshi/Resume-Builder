@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+
     <title>DA-IICT Template</title>
     <link rel="icon" type="image/x-icon" href="img/daiictlogo.jpg">
-    
+
 
     <!-- Firebase App is always required and must be first -->
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase-app.js"></script>
@@ -447,21 +444,22 @@
             </div>
         </div>
         <div class="row">
-                <div class="col-md-12">
-                    <div class="text-center">
-                        <div id="controlls" class="my-controls inline-block">
-                            <ul style="display: flex; justify-content:flex-end">
-                                <li>
-                                    <button id="sharingtoggle" class="btn-select fontblack">Link Sharing is OFF</button>
-                                </li>
-                                <li>
-                                    <textarea name="link" id="sharedlink" cols="50" rows="3" onclick="selectAll()"></textarea>
-                                </li>
-                            </ul>
-                        </div>
+            <div class="col-md-12">
+                <div class="text-center">
+                    <div id="controlls" class="my-controls inline-block">
+                        <ul style="display: flex; justify-content:flex-end">
+                            <li>
+                                <button id="sharingtoggle" class="btn-select fontblack">Link Sharing is OFF</button>
+                            </li>
+                            <li>
+                                <textarea name="link" id="sharedlink" cols="50" rows="3"
+                                    onclick="selectAll()"></textarea>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -498,37 +496,34 @@
                 user = curruser;
                 dbref = firebase.database().ref("users/" + user.uid);
                 var togglebtn = document.getElementById('sharingtoggle');
-                dbref.on("value",function(snap){
+                dbref.on("value", function (snap) {
                     printf(snap.child('sharing').val());
-                    if(snap.child('sharing').val()=='on')
-                    {
+                    if (snap.child('sharing').val() == 'on') {
                         document.getElementById('sharedlink').value =
-                        domainurl + "?0=" + user.uid + "&1=resume_daiict_classic";
+                            domainurl + "?0=" + user.uid + "&1=resume_daiict_classic";
                         togglebtn.innerText = "Link Sharing is ON";
-                        document.getElementById('sharedlink').setAttribute('rows','3');
-                    }
-                    else{
-                        document.getElementById('sharedlink').value = "Your link will appear here. click to select and copy.";
-                        document.getElementById('sharedlink').setAttribute('rows','1');
+                        document.getElementById('sharedlink').setAttribute('rows', '3');
+                    } else {
+                        document.getElementById('sharedlink').value =
+                            "Your link will appear here. click to select and copy.";
+                        document.getElementById('sharedlink').setAttribute('rows', '1');
                         togglebtn.innerText = "Link Sharing is OFF";
                     }
                 });
 
 
-                togglebtn.onclick = function(){
-                    if(togglebtn.innerText == "Link Sharing is OFF")
-                    {
+                togglebtn.onclick = function () {
+                    if (togglebtn.innerText == "Link Sharing is OFF") {
                         dbref.child('sharing').set('on');
                         document.getElementById('sharedlink').value =
-                        domainurl+"?0=" + user.uid + "&1=resume_daiict_classic";
+                            domainurl + "?0=" + user.uid + "&1=resume_daiict_classic";
                         togglebtn.innerText = "Link Sharing is ON";
-                    }
-                    else
-                    {
+                    } else {
                         dbref.child('sharing').set('off');
-                        document.getElementById('sharedlink').value = "Your link will appear here. click to select and copy.";
+                        document.getElementById('sharedlink').value =
+                            "Your link will appear here. click to select and copy.";
                         togglebtn.innerText = "Link Sharing is OFF";
-                    }    
+                    }
                 };
 
 
