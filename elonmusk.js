@@ -13,7 +13,18 @@ function Addinterest3() {
 }
 
 var workexperienceformat =
-    '<div class="row"><div class="row side-design-2"><h4 id="position-name" class="w-100" contenteditable="true" onclick="selectAll()"><b>Role at the Company</b></h4><h5 id="company" contenteditable="true" onclick="selectAll()">Company Name</h5><div class="space-between text-12"><span id="work-time" class="color-1" contenteditable="true" onclick="selectAll()"><i>06/2002-Present</i></span><span id="work-location" class="color-1" contenteditable="true" onclick="selectAll()"><i>Company Location</i></span></div></div><div class="pl-75  text-12"><span class="color-1"><i>Accomplishments</i></span><ul class="accomplishments" contenteditable="true" onclick="selectAll()"><li>List of accomplishments here...</li></ul></div></div>';
+    '<div class="row">' +
+    '<div class="row side-design-2">' +
+    '<h4 id="position-name" class="w-100" contenteditable="true" onclick="selectAll()">' +
+    '<b>Role at the Company</b>' +
+    '</h4>' +
+    '<h5 id="company" contenteditable="true" onclick="selectAll()">' +
+    'Company Name' +
+    '</h5>' +
+    '<div class="space-between text-12">' +
+    '<span id="work-time" class="color-1" contenteditable="true" onclick="selectAll()">' +
+    '<i>06/2002-Present</i>' +
+    '</span><span id="work-location" class="color-1" contenteditable="true" onclick="selectAll()"><i>Company Location</i></span></div></div><div class="pl-75  text-12"><span class="color-1"><i>Accomplishments</i></span><ul class="accomplishments" contenteditable="true" onclick="selectAll()"><li>List of accomplishments here...</li></ul></div></div>';
 
 function addWork() {
     var lastrowindex = document.getElementById('work-experience').rows.length - 1;
@@ -110,21 +121,32 @@ function LoadfromDatabase() {
     var ref = firebase.database().ref("users/" + user.uid + "/" + template);
 
     ref.on("value", function (snapshot) {
-        document.getElementById('name')
-            .innerHTML = snapshot.child('name').val();
-        document.getElementById('your-position')
-            .innerHTML = snapshot.child('position').val();
-        document.getElementById('about')
-            .innerHTML = snapshot.child('about').val();
+        if (snapshot.child('name').val())
+            document.getElementById('name')
+                .innerHTML = snapshot.child('name').val();
+        if (snapshot.child('your-position').val())
+            document.getElementById('your-position')
+                .innerHTML = snapshot.child('position').val();
+
+        if (snapshot.child('about').val())
+            document.getElementById('about')
+                .innerHTML = snapshot.child('about').val();
         //    
-        document.getElementById('e-mail')
-            .innerHTML = snapshot.child('email').val();
-        document.getElementById('phone')
-            .innerHTML = snapshot.child('phone').val();
-        document.getElementById('location')
-            .innerHTML = snapshot.child('location').val();
-        document.getElementById('twitter-handle')
-            .innerHTML = snapshot.child('twitter').val();
+        if (snapshot.child('email').val())
+            document.getElementById('e-mail')
+                .innerHTML = snapshot.child('email').val();
+
+        if (snapshot.child('phone').val())
+            document.getElementById('phone')
+                .innerHTML = snapshot.child('phone').val();
+
+        if (snapshot.child('location').val())
+            document.getElementById('location')
+                .innerHTML = snapshot.child('location').val();
+
+        if (snapshot.child('twitter-handle').val())
+            document.getElementById('twitter-handle')
+                .innerHTML = snapshot.child('twitter').val();
         //-------------------------------
         var work = snapshot.child('work').val();
         var rows = document.getElementById('work-experience').rows;
@@ -132,13 +154,19 @@ function LoadfromDatabase() {
             rows[i].cells[0].innerHTML = work[i];
         }
         //
-        document.getElementById('skillset')
-            .innerHTML = snapshot.child('skillset').val();
-        document.getElementById('achievements')
-            .innerHTML = snapshot.child('achievements').val();
-        document.getElementById('interestset')
-            .innerHTML = snapshot.child('interest').val();
-    }, function (error){
+        if (snapshot.child('skillset').val())
+            document.getElementById('skillset')
+                .innerHTML = snapshot.child('skillset').val();
+
+        if (snapshot.child('achievements').val())
+            document.getElementById('achievements')
+                .innerHTML = snapshot.child('achievements').val();
+
+        if (snapshot.child('interestset').val())
+            document.getElementById('interestset')
+                .innerHTML = snapshot.child('interest').val();
+
+    }, function (error) {
         window.alert("Error : " + error.code);
     });
 
