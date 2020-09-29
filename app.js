@@ -30,9 +30,6 @@ setTimeout(() => {
             //not signed in
             printf('not signed in');
             currentUser = null;
-            
-            if (window.location.pathname !== '/index.html')
-                window.location = "./index.html";
         }
     });
 }, 800);
