@@ -124,7 +124,7 @@ function LoadfromDatabase() {
         if (snapshot.child('name').val())
             document.getElementById('name')
                 .innerHTML = snapshot.child('name').val();
-        if (snapshot.child('your-position').val())
+        if (snapshot.child('position').val())
             document.getElementById('your-position')
                 .innerHTML = snapshot.child('position').val();
 
@@ -144,7 +144,7 @@ function LoadfromDatabase() {
             document.getElementById('location')
                 .innerHTML = snapshot.child('location').val();
 
-        if (snapshot.child('twitter-handle').val())
+        if (snapshot.child('twitter').val())
             document.getElementById('twitter-handle')
                 .innerHTML = snapshot.child('twitter').val();
         //-------------------------------
@@ -162,7 +162,7 @@ function LoadfromDatabase() {
             document.getElementById('achievements')
                 .innerHTML = snapshot.child('achievements').val();
 
-        if (snapshot.child('interestset').val())
+        if (snapshot.child('interest').val())
             document.getElementById('interestset')
                 .innerHTML = snapshot.child('interest').val();
 
