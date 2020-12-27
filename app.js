@@ -29,7 +29,7 @@ setTimeout(() => {
         } else {
             //not signed in
             printf('not signed in');
-            currentUser = null;    
+            currentUser = null;
         }
     });
 }, 800);
